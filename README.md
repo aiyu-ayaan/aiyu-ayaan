@@ -27,8 +27,7 @@
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
-<a href="https://dev.to/aiyu.exe" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/devto.svg" alt="aiyu.exe" height="30" width="40" /></a>
-<a href="https://stackoverflow.com/users/ayaan-hassan" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/stack-overflow.svg" alt="ayaan-hassan" height="30" width="40" /></a>
+<a href="https://stackoverflow.com/users/12109206/ayaan-hassan" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/stack-overflow.svg" alt="ayaan-hassan" height="30" width="40" /></a>
 <a href="https://fb.com/theaiyu" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg" alt="theaiyu" height="30" width="40" /></a>
 <a href="https://instagram.com/aiyu.exe_" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="aiyu.exe_" height="30" width="40" /></a>
 </p>
