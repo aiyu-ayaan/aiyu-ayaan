@@ -7,7 +7,7 @@
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=aiyu-ayaan&label=Profile%20views&color=0e75b6&style=flat" alt="aiyu-ayaan" /> </p>
 
 
-- 🔭 I’m currently working on [BIT App](https://play.google.com/store/apps/details?id=com.aatec.bit)
+- 🔭 I’m currently working on [BIT App](https://play.google.com/store/apps/details?id=com.atech.bit)
 
 - 🌱 I’m currently learning **Kotlin**
 
