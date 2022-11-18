@@ -21,6 +21,6 @@ val aiyu = developer {
 
 Stats
 <br> <br>
-<img src="https://github-readme-stats.vercel.app/api?username=aiyu-ayaan&show_icons=true&theme=transparent" alt="aiyu-ayaan" />
+<img src="https://github-readme-stats.vercel.app/api?username=aiyu-ayaan&show_icons=true" alt="aiyu-ayaan" />
 
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=aiyu-ayaan&show_icons=true&theme=transparent"/>
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=aiyu-ayaan&show_icons=true&layout=compact&hide=css"/>
