@@ -14,7 +14,7 @@ val aiyu = developer {
     links {
         portfolio = "aiyu-ayaan-portfolio.netlify.app"
         instagram = "aiyu.exe_"
-        linkedin = "ayaan-hassan-5295aa130"
+        linkedin = "aiyu"
     }
 }
 ```
