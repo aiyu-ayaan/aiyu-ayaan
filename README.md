@@ -1,7 +1,12 @@
 <h1 align="center">Hi 👋, I'm Ayaan</h1>
 <h3 align="center">A self-made Android developer from India</h3>
 
+
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=aiyu-ayaan&label=Profile%20views&color=0e75b6&style=flat" alt="aiyu-ayaan" /> </p>
+
+<div id="header" align="center">
+  <img src="https://media.giphy.com/media/M9gbBd9nbDrOTu1Mqx/giphy.gif" width="100"/>
+</div>
 
 More about me
 ```kotlin
