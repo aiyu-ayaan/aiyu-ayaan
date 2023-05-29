@@ -1,5 +1,5 @@
 <h1 align="center">Hi 👋, I'm Ayaan</h1>
-<h3 align="center">A self-made Android developer from India</h3>
+<h3 align="center">A DIY Android Developer 👨‍💻</h3>
 
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=aiyu-ayaan&label=Profile%20views&color=0e75b6&style=flat" alt="aiyu-ayaan" /> </p>
@@ -17,9 +17,8 @@ val aiyu = developer {
     }
     tech("Kotlin", "Java", "Python", "JavaScript")
     links {
-        portfolio = "aiyu-ayaan-portfolio.netlify.app"
-        instagram = "aiyu.exe_"
-        linkedin = "aiyu"
+         linkedin = "aiyu"
+         instagram = "aiyu.exe_"
     }
 }
 ```
