@@ -18,12 +18,10 @@ val aiyu = developer {
     tech("Kotlin", "Java", "Python", "JavaScript")
     links {
          linkedin = "aiyu"
-         instagram = "aiyu.exe_"
+         instagram = "aiyu.dev_"
     }
 }
 ```
 Stats
 <br> <br>
-<img src="https://github-readme-stats.vercel.app/api?username=aiyu-ayaan&show_icons=true&theme=codeSTACKr&rank_icon=percentile" alt="aiyu-ayaan" />
-[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com?user=aiyu-ayaan&theme=tokyonight&background=09131C&border=0C1A25&stroke=D9582B&fire=D9582B&ring=D9582B&currStreakNum=FFFFFF&sideNums=FFFFFF&sideLabels=D9582B&dates=F2DF2E&currStreakLabel=D9582B)](https://github.com/aiyu-ayaan)
 <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=aiyu-ayaan&show_icons=true&layout=compact&hide=css&theme=codeSTACKr"/>
