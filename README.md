@@ -1,6 +1,7 @@
 ### Hey 👋, I'm Ayaan
 [![Github](https://img.shields.io/github/followers/aiyu-ayaan?label=Follow&style=social)](https://github.com/aiyu-ayaan)
 <a href="http://www.github.com/aiyu-ayaan"> <img src="https://komarev.com/ghpvc/?username=aiyu-ayaan&label=Profile%20views&color=0e75b6&style=flat" alt="aiyu-ayaan" /> </a>
+[![committers.top badge](https://user-badge.committers.top/india/aiyu-ayaan.svg)](https://user-badge.committers.top/india/aiyu-ayaan)
 
 I'm a master's student passionate about solving complicated problems and creating software solutions :robot:. I :heart: Open Source and therefore enjoy working on interesting open source projects.
 ```kotlin
