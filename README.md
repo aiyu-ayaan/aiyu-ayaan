@@ -7,35 +7,68 @@ I'm a master's student passionate about solving complicated problems and creatin
 val aiyu = developer {
     about {
         name = "Ayaan Ansari"
-        role = AndroidDeveloper
+        role = "Android Developer"
+        description = "Building efficient Android apps with modern technologies."
     }
-    tech("Kotlin", "Java", "Python", "JavaScript","Dart")
+    
+    tech {
+        languages("Kotlin", "Java", "Python", "SQLite")
+        frameworks("Jetpack Compose", "Android SDK", "Ktor", "Retrofit", "Firebase")
+        tools("Android Studio", "GitHub", "VS Code", "PyCharm")
+    }
+    
     links {
-         linkedin = "aiyu"
-         instagram = "aiyu.dev_"
+        linkedin = "https://www.linkedin.com/in/aiyu"
+        github = "https://github.com/aiyu-ayaan"
+        playStoreApp = "https://play.google.com/store/apps/details?id=com.atech.bit"
     }
+    
     education {
-         Education(
-            collegeName="BIT Mesra"
-            courseName="BCA"
-            year="2019-2021"
-            grade=8.22
-        ),
-         Education(
-            collegeName="BIT Mesra"
-            courseName="MCA"
-            year="2023-Present"
-            grade=null
+        Education(
+            collegeName = "BIT Mesra",
+            courseName = "MCA",
+            year = "2023 - Present"
         )
-   }
+        Education(
+            collegeName = "BIT Mesra",
+            courseName = "BCA",
+            year = "2019-2022",
+            grade = 8.22
+        )
+    }
+    
     experience {
-          Experience(
-            companyName="BeyondSchool",
-            jobTitle="Android Developer"
-            duration="Jul 2022 - Mar 2023"
-       )
+        Experience(
+            companyName = "BeyondSchool",
+            jobTitle = "Android Developer Intern",
+            duration = "Jul 2023 - Mar 2024",
+            description = "Worked on TTS, STT, and gamification features to enhance learning apps."
+        )
+    }
+    
+    projects {
+        projectName = "BIT App"
+        description = "ERP access, syllabus browsing, and user personalization for students."
+
+        projectName = "TTS-Engine"
+        description = "Text-to-speech library for Android with easy integration."
+
+        projectName = "Gemini CLI"
+        description = "Command-line tool integrating Gemini's creative and analytical features."
+
+        projectName = "Research Hub"
+        description = "Android and web app for managing research applications."
+    }
+    
+    leadership {
+        Leadership(
+            title = "Technical Head",
+            organization = "RAD Society, BIT Mesra",
+            duration = "Aug 2021 - May 2022"
+        )
     }
 }
+
 ```
 <b>My GitHub Stats</b>
 <br> <br>
