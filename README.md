@@ -2,73 +2,121 @@
 [![Github](https://img.shields.io/github/followers/aiyu-ayaan?label=Follow&style=social)](https://github.com/aiyu-ayaan)
 <a href="http://www.github.com/aiyu-ayaan"> <img src="https://komarev.com/ghpvc/?username=aiyu-ayaan&label=Profile%20views&color=0e75b6&style=flat" alt="aiyu-ayaan" /> </a>
 
-I'm a master's student passionate about solving complicated problems and creating software solutions :robot:. I :heart: Open Source and therefore enjoy working on interesting open source projects.
 ```kotlin
-val aiyu = developer {
+val bio = """
+    Life is the space where I escape from the corporate world! 🚀
+    I love solving complicated problems and crafting software solutions 🤖.
+    Open Source is my guilty pleasure—I can't resist diving into interesting projects! ❤️
+"""
+```
+
+```kotlin
+val ayaan = developer {
     about {
-        name = "Ayaan Ansari"
-        role = "Android Developer"
-        description = "Building efficient Android apps with modern technologies."
+        name = "Ayaan Ansari 🚀"
+        role = "Android Developer | Kotlin Enthusiast"
+        description = """
+            |Building performant Android applications with modern architecture patterns
+            |Exploring Kotlin Multiplatform for cross-platform solutions ✨
+            |Open-source contributor passionate about developer tooling & education
+        """.trimMargin()
     }
     
     tech {
-        languages("Kotlin", "Java", "Python", "SQLite")
-        frameworks("Jetpack Compose", "Android SDK", "Ktor", "Retrofit", "Firebase")
-        tools("Android Studio", "GitHub", "VS Code", "PyCharm")
+        languages("Kotlin", "Java", "Python", "C++", "SQL")
+        frameworks {
+            +"Android SDK/Jetpack"
+            +"Jetpack Compose"
+            +"Kotlin Multiplatform (Exploring 🔭)"
+            +"Ktor/Retrofit"
+            +"Room/Paging"
+            +"Firebase"
+        }
+        tools("Android Studio", "GitHub Actions", "Figma", "Postman", "Jira")
+        architectures("MVVM", "MVI", "Clean Architecture")
     }
     
     links {
         linkedin = "https://www.linkedin.com/in/aiyu"
         github = "https://github.com/aiyu-ayaan"
-        playStoreApp = "https://play.google.com/store/apps/details?id=com.atech.bit"
+        playStore = "https://play.google.com/store/apps/dev?id=9010297981454032885"
+        twitter = "https://twitter.com/aiyu_ayaan"
     }
     
     education {
         Education(
-            collegeName = "BIT Mesra",
-            courseName = "MCA",
-            year = "2023 - Present"
+            institution = "🎓 BIT Mesra",
+            program = "MCA (Master of Computer Applications)",
+            timeline = "2023 - Present",
+            highlights = listOf("Advanced Software Engineering", "Machine Learning")
         )
+        
         Education(
-            collegeName = "BIT Mesra",
-            courseName = "BCA",
-            year = "2019-2022",
-            grade = 8.22
+            institution = "🎓 BIT Mesra",
+            program = "BCA (Bachelor of Computer Applications)",
+            timeline = "2019 - 2022",
+            score = "CGPA: 8.22",
+            achievements = listOf("Technical Head of RAD Society")
         )
     }
     
     experience {
         Experience(
-            companyName = "BeyondSchool",
-            jobTitle = "Android Developer Intern",
-            duration = "Jul 2023 - Mar 2024",
-            description = "Worked on TTS, STT, and gamification features to enhance learning apps."
+                company = "💼 Adrosonic",
+                role = "Software Engineer (Trainee)",
+                duration = "July 2024 - Present",
+                achievements = listOf(
+                    "• Hands-on to Intelligent Automation",
+                )
+        )
+        Experience(
+            company = "💼 BeyondSchool",
+            role = "Android Developer",
+            duration = "July 2023 - March 2024",
+            achievements = listOf(
+                "• Implemented TTS/STT features improving accessibility by 40%",
+                "• Developed gamification system increasing user engagement by 65%",
+                "• Reduced API response time by 30% through caching strategies",
+                "• Integrated CI/CD pipelines reducing deployment time by 50%"
+            )
         )
     }
     
     projects {
-        projectName = "BIT App"
-        description = "ERP access, syllabus browsing, and user personalization for students."
-
-        projectName = "TTS-Engine"
-        description = "Text-to-speech library for Android with easy integration."
-
-        projectName = "Gemini CLI"
-        description = "Command-line tool integrating Gemini's creative and analytical features."
-
-        projectName = "Research Hub"
-        description = "Android and web app for managing research applications."
-    }
-    
-    leadership {
-        Leadership(
-            title = "Technical Head",
-            organization = "RAD Society, BIT Mesra",
-            duration = "Aug 2021 - May 2022"
+        Project(
+            name = "📱 BIT Campus App",
+            description = "All-in-one student portal with 10k+ downloads",
+            tech = "Jetpack Compose • KMM • Firebase",
+            link = "https://play.google.com/store/apps/details?id=com.atech.bit"
+        )
+        
+        Project(
+            name = "🔊 TTS Engine Library",
+            description = "Open-source text-to-speech module with 150+ stars",
+            tech = "AndroidX • Kotlin Coroutines • Gradle Plugin",
+            link = "https://github.com/aiyu-ayaan/TTS-Engine"
+        )
+        
+        Project(
+            name = "🧠 Gemini CLI",
+            description = "AI-powered terminal assistant with RAG capabilities",
+            tech = "Kotlin Multiplatform • Gemini API • Gradle KTS",
+            link = "https://github.com/aiyu-ayaan/gemini-cli"
+        )
+        Project(
+            name = "🔬 Research Hub KMP",
+            description = "Knowledge-sharing platform for researchers built with Kotlin Multiplatform",
+            techStack = listOf("Kotlin Multiplatform", "Jetpack Compose", "Ktor"),
+            link = "https://github.com/aiyu-ayaan/research-hub-kmp"
         )
     }
+    
+    exploring {
+        +"Kotlin Multiplatform mobile (KMM)"
+        +"Compose Multiplatform"
+        +"Gradle plugin development"
+    }
 }
-
 ```
 <b>My GitHub Stats</b>
 <br> <br>
