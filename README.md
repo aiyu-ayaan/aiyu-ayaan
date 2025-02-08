@@ -107,7 +107,7 @@ val ayaan = developer {
             name = "🔬 Research Hub KMP",
             description = "Knowledge-sharing platform for researchers built with Kotlin Multiplatform",
             techStack = listOf("Kotlin Multiplatform", "Jetpack Compose", "Ktor"),
-            link = "https://github.com/aiyu-ayaan/research-hub-kmp"
+            link = "https://github.com/ResearchHub24/Research-Hub-KMP"
         )
     }
     
