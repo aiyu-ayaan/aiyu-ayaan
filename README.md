@@ -1,4 +1,11 @@
 ### Hey 👋, I'm Ayaan
+
+<p align="left"> 
+   <img src="https://static.wikia.nocookie.net/valorant/images/3/35/Omen_Cat_Dance_Spray.gif/revision/latest?cb=20230312212946" alt="tiqdev"/>
+</p>
+
+
+
 [![Github](https://img.shields.io/github/followers/aiyu-ayaan?label=Follow&style=social)](https://github.com/aiyu-ayaan)
 <a href="http://www.github.com/aiyu-ayaan"> <img src="https://komarev.com/ghpvc/?username=aiyu-ayaan&label=Profile%20views&color=0e75b6&style=flat" alt="aiyu-ayaan" /> </a>
 
