@@ -8,6 +8,7 @@
 
 [![Github](https://img.shields.io/github/followers/aiyu-ayaan?label=Follow&style=social)](https://github.com/aiyu-ayaan)
 <a href="http://www.github.com/aiyu-ayaan"> <img src="https://komarev.com/ghpvc/?username=aiyu-ayaan&label=Profile%20views&color=0e75b6&style=flat" alt="aiyu-ayaan" /> </a>
+[![wakatime](https://wakatime.com/badge/user/3a4240f0-6bea-4626-be2a-1129790e4336.svg)](https://wakatime.com/@3a4240f0-6bea-4626-be2a-1129790e4336)
 
 ```kotlin
 val bio = """
