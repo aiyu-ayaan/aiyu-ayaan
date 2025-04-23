@@ -21,7 +21,7 @@ val bio = """
 ```kotlin
 val ayaan = developer {
     about {
-        name = "Ayaan Ansari 🚀"
+        name = "Ayaan 🚀"
         role = "Android Developer | Kotlin Enthusiast"
         description = """
             |Building performant Android applications with modern architecture patterns
