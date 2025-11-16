@@ -1,15 +1,41 @@
-### Hey 👋, I'm Ayaan
+<div align="center">
+  
+# 👋 Hey, I'm Ayaan Ansari
+
 ![BgImage](bg_img.png)
 
-[![Github](https://img.shields.io/github/followers/aiyu-ayaan?label=Follow&style=social)](https://github.com/aiyu-ayaan)
-<a href="http://www.github.com/aiyu-ayaan"> <img src="https://komarev.com/ghpvc/?username=aiyu-ayaan&label=Profile%20views&color=0e75b6&style=flat" alt="aiyu-ayaan" /> </a>
-[![wakatime](https://wakatime.com/badge/user/3a4240f0-6bea-4626-be2a-1129790e4336.svg)](https://wakatime.com/@3a4240f0-6bea-4626-be2a-1129790e4336)
+<p align="center">
+  <a href="https://github.com/aiyu-ayaan">
+    <img src="https://img.shields.io/github/followers/aiyu-ayaan?label=Follow&style=social" alt="GitHub Followers"/>
+  </a>
+  <a href="https://www.linkedin.com/in/aiyu">
+    <img src="https://img.shields.io/badge/-LinkedIn-0077B5?style=flat&logo=Linkedin&logoColor=white" alt="LinkedIn"/>
+  </a>
+  <a href="mailto:ayaan35200@gmail.com">
+    <img src="https://img.shields.io/badge/-Email-D14836?style=flat&logo=Gmail&logoColor=white" alt="Email"/>
+  </a>
+  <a href="https://play.google.com/store/apps/dev?id=9010297981454032885">
+    <img src="https://img.shields.io/badge/-Play%20Store-3DDC84?style=flat&logo=google-play&logoColor=white" alt="Play Store"/>
+  </a>
+</p>
+
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=aiyu-ayaan&label=Profile%20views&color=0e75b6&style=flat" alt="Profile views"/>
+  <a href="https://wakatime.com/@3a4240f0-6bea-4626-be2a-1129790e4336">
+    <img src="https://wakatime.com/badge/user/3a4240f0-6bea-4626-be2a-1129790e4336.svg" alt="WakaTime"/>
+  </a>
+</p>
+
+</div>
+
+## 🚀 About Me
 
 ```kotlin
 val bio = """
-    Building enterprise solutions by day, crafting mobile experiences by night! 🚀
-    I love solving complex problems and architecting scalable software solutions 🤖.
-    Open Source is my passion—always exploring new technologies and patterns! ❤️
+    🏢 Building enterprise solutions by day, crafting mobile experiences by night!
+    🤖 I love solving complex problems and architecting scalable software solutions.
+    ❤️ Open Source is my passion—always exploring new technologies and patterns!
+    ⚡ 2+ years of experience in mobile and enterprise application development.
 """
 ```
 
@@ -156,18 +182,141 @@ val ayaan = developer {
 }
 ```
 
-## 📊 **My GitHub Stats**
+---
 
-<br>
+## 🛠️ Tech Stack & Skills
 
-<a href="http://www.github.com/aiyu-ayaan"> 
-    <img src="https://raw.githubusercontent.com/aiyu-ayaan/github-stats/master/generated/overview.svg#gh-dark-mode-only" alt="aiyu-ayaan's GitHub stats"/>
-</a>
+<div align="center">
 
-<a href="http://www.github.com/aiyu-ayaan"> 
-    <img src="https://raw.githubusercontent.com/aiyu-ayaan/github-stats/master/generated/languages.svg#gh-dark-mode-only" alt="aiyu-ayaan's GitHub stats"/>
-</a>
+### Languages
+![Kotlin](https://img.shields.io/badge/Kotlin-0095D5?style=for-the-badge&logo=kotlin&logoColor=white)
+![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![C#](https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+
+### Frameworks & Technologies
+![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
+![Jetpack Compose](https://img.shields.io/badge/Jetpack%20Compose-4285F4?style=for-the-badge&logo=jetpack-compose&logoColor=white)
+![.NET](https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
+![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)
+![WordPress](https://img.shields.io/badge/WordPress-21759B?style=for-the-badge&logo=wordpress&logoColor=white)
+
+### Tools & Platforms
+![Android Studio](https://img.shields.io/badge/Android%20Studio-3DDC84?style=for-the-badge&logo=android-studio&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
+![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)
+![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
+
+### Architecture Patterns
+`MVVM` • `Clean Architecture` • `Repository Pattern` • `Dependency Injection` • `MVI`
+
+</div>
 
 ---
 
-*"Building tomorrow's software solutions, one commit at a time."* ✨
+## 📊 GitHub Stats & Activity
+
+<div align="center">
+
+<a href="http://www.github.com/aiyu-ayaan"> 
+    <img src="https://raw.githubusercontent.com/aiyu-ayaan/github-stats/master/generated/overview.svg#gh-dark-mode-only" alt="GitHub Stats" width="49%"/>
+</a>
+<a href="http://www.github.com/aiyu-ayaan"> 
+    <img src="https://raw.githubusercontent.com/aiyu-ayaan/github-stats/master/generated/languages.svg#gh-dark-mode-only" alt="Top Languages" width="49%"/>
+</a>
+
+<br/>
+<br/>
+
+### 🔥 GitHub Streak
+<a href="https://github.com/aiyu-ayaan">
+    <img src="https://github-readme-streak-stats.herokuapp.com/?user=aiyu-ayaan&theme=dark&hide_border=true" alt="GitHub Streak"/>
+</a>
+
+<br/>
+<br/>
+
+### 🏆 GitHub Trophies
+<a href="https://github.com/aiyu-ayaan">
+    <img src="https://github-profile-trophy.vercel.app/?username=aiyu-ayaan&theme=darkhub&no-frame=true&no-bg=true&row=1&column=7" alt="GitHub Trophies"/>
+</a>
+
+<br/>
+<br/>
+
+### 📈 Contribution Graph
+<a href="https://github.com/aiyu-ayaan">
+    <img src="https://github-readme-activity-graph.vercel.app/graph?username=aiyu-ayaan&theme=react-dark&hide_border=true" alt="Contribution Graph"/>
+</a>
+
+</div>
+
+---
+
+## 💻 WakaTime Coding Stats
+
+<div align="center">
+
+[![WakaTime Stats](https://github-readme-stats.vercel.app/api/wakatime?username=aiyuayaan&layout=compact&theme=dark)](https://wakatime.com/@aiyuayaan)
+
+</div>
+
+---
+
+## 🌟 Featured Projects
+
+<div align="center">
+
+| Project | Description | Tech Stack | Links |
+|---------|-------------|------------|-------|
+| 💰 **ExpenseSync** | Cross-platform expense management app with 500+ users and 4.6/5 rating | Kotlin • Jetpack Compose • Firebase • MVVM | [View →](https://github.com/aiyu-ayaan) |
+| 🔬 **Research Hub KMP** | Cross-platform research collaboration tool | Kotlin Multiplatform • Compose • Koin | [View →](https://github.com/aiyu-ayaan) |
+| 🎓 **BIT App** | University student portal with 1000+ users and 4.7/5 rating | Android • Kotlin • Firebase • MVVM | [Play Store →](https://play.google.com/store/apps/details?id=com.atech.bit) |
+| 🔊 **TTS-Engine** | Custom Text-to-Speech library with 500+ downloads | Android Library • Kotlin | [GitHub →](https://github.com/aiyu-ayaan/TTS-Engine) |
+
+</div>
+
+---
+
+## 🎯 Currently Exploring
+
+<div align="center">
+
+```kotlin
+val currentFocus = listOf(
+    "🏢 Enterprise Application Development",
+    "📱 Kotlin Multiplatform Mobile (KMM)",
+    "🎨 Compose Multiplatform",
+    "☁️ Cloud Integration Patterns",
+    "💻 Modern .NET Development",
+    "🚀 Microservices Architecture"
+)
+```
+
+</div>
+
+---
+
+## 📫 Connect With Me
+
+<div align="center">
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/aiyu)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/aiyu-ayaan)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:ayaan35200@gmail.com)
+[![Play Store](https://img.shields.io/badge/Google_Play-414141?style=for-the-badge&logo=google-play&logoColor=white)](https://play.google.com/store/apps/dev?id=9010297981454032885)
+[![WakaTime](https://img.shields.io/badge/WakaTime-000000?style=for-the-badge&logo=wakatime&logoColor=white)](https://wakatime.com/@3a4240f0-6bea-4626-be2a-1129790e4336)
+
+</div>
+
+---
+
+<div align="center">
+
+### 💭 *"Building tomorrow's software solutions, one commit at a time."* ✨
+
+**Thank you for visiting my profile! Feel free to explore my repositories and connect with me!** 🚀
+
+</div>
