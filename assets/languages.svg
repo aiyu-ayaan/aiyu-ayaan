@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="410" height="211" viewBox="0 0 410 211" role="img" aria-label="Most used languages for aiyu-ayaan">
+  <title>Most used languages for aiyu-ayaan</title>
+  <style>
+    text { font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; font-size: 13px; }
+    .muted { fill: #86868b; }
+    .text { fill: #f5f5f7; }
+    .small { font-size: 11px; }
+  </style>
+  <clipPath id="frame"><rect width="410" height="211" rx="10"/></clipPath>
+  <g clip-path="url(#frame)">
+    <rect width="410" height="211" fill="#0b0b0d"/>
+    <rect width="410" height="34" fill="#111114"/>
+    <rect y="34" width="410" height="1" fill="#2b2b30"/>
+  </g>
+  <rect x="0.5" y="0.5" width="409" height="210" rx="10" fill="none" stroke="#2b2b30"/>
+  <circle cx="20" cy="17" r="5" fill="#ff375f"/>
+  <circle cx="38" cy="17" r="5" fill="#ff9f0a"/>
+  <circle cx="56" cy="17" r="5" fill="#30d158"/>
+  <text x="76" y="21.5" class="small"><tspan fill="#2997ff">$</tspan><tspan class="muted" dx="7">ls ./languages --sort=size</tspan></text>
+  <clipPath id="bar"><rect x="20" y="54" width="370" height="8" rx="4"/></clipPath>
+  <g clip-path="url(#bar)">
+    <rect x="20.0" y="54" width="99.0" height="8" fill="#f1e05a"/>
+    <rect x="121.0" y="54" width="86.5" height="8" fill="#A97BFF"/>
+    <rect x="209.5" y="54" width="84.4" height="8" fill="#3178c6"/>
+    <rect x="295.9" y="54" width="21.6" height="8" fill="#e34c26"/>
+    <rect x="319.5" y="54" width="20.9" height="8" fill="#3572A5"/>
+    <rect x="342.4" y="54" width="13.4" height="8" fill="#663399"/>
+    <rect x="357.8" y="54" width="30.2" height="8" fill="#86868b"/>
+  </g>
+  <circle cx="25" cy="89.5" r="5" fill="#f1e05a"/>
+  <text x="38" y="94" class="text">JavaScript</text>
+  <text x="189" y="94" class="muted" text-anchor="end">27.3%</text>
+  <circle cx="210" cy="89.5" r="5" fill="#A97BFF"/>
+  <text x="223" y="94" class="text">Kotlin</text>
+  <text x="374" y="94" class="muted" text-anchor="end">23.9%</text>
+  <circle cx="25" cy="119.5" r="5" fill="#3178c6"/>
+  <text x="38" y="124" class="text">TypeScript</text>
+  <text x="189" y="124" class="muted" text-anchor="end">23.4%</text>
+  <circle cx="210" cy="119.5" r="5" fill="#e34c26"/>
+  <text x="223" y="124" class="text">HTML</text>
+  <text x="374" y="124" class="muted" text-anchor="end">6.4%</text>
+  <circle cx="25" cy="149.5" r="5" fill="#3572A5"/>
+  <text x="38" y="154" class="text">Python</text>
+  <text x="189" y="154" class="muted" text-anchor="end">6.2%</text>
+  <circle cx="210" cy="149.5" r="5" fill="#663399"/>
+  <text x="223" y="154" class="text">CSS</text>
+  <text x="374" y="154" class="muted" text-anchor="end">4.2%</text>
+  <circle cx="25" cy="179.5" r="5" fill="#86868b"/>
+  <text x="38" y="184" class="text">Other</text>
+  <text x="189" y="184" class="muted" text-anchor="end">8.7%</text>
+</svg>
