@@ -1,179 +1,82 @@
-### Hey 👋, I'm Ayaan
-![BgImage](bg_img.png)
+<a href="https://me.aiyu.co.in/">
+  <img src="assets/header.gif" width="100%" alt="Hi, I'm Ayaan. Writes code on Linux, plays on Windows." />
+</a>
 
-[![Github](https://img.shields.io/github/followers/aiyu-ayaan?label=Follow&style=social)](https://github.com/aiyu-ayaan)
-<a href="http://www.github.com/aiyu-ayaan"> <img src="https://komarev.com/ghpvc/?username=aiyu-ayaan&label=Profile%20views&color=0e75b6&style=flat" alt="aiyu-ayaan" /> </a>
-[![wakatime](https://wakatime.com/badge/user/3a4240f0-6bea-4626-be2a-1129790e4336.svg)](https://wakatime.com/@3a4240f0-6bea-4626-be2a-1129790e4336)
+<p align="center">
+  <a href="https://me.aiyu.co.in/"><img src="https://img.shields.io/badge/portfolio-me.aiyu.co.in-007ec6?style=flat-square" alt="Portfolio: me.aiyu.co.in" /></a>
+  <a href="https://me.aiyu.co.in/api/resume"><img src="https://img.shields.io/badge/resume-PDF-007ec6?style=flat-square" alt="Resume (PDF)" /></a>
+  <a href="https://www.linkedin.com/in/aiyu/"><img src="https://img.shields.io/badge/linkedin-in%2Faiyu-007ec6?style=flat-square" alt="LinkedIn: in/aiyu" /></a>
+  <a href="mailto:ayaan35200@gmail.com"><img src="https://img.shields.io/badge/email-ayaan35200%40gmail.com-007ec6?style=flat-square" alt="Email: ayaan35200@gmail.com" /></a>
+</p>
+<p align="center">
+  <a href="https://github.com/aiyu-ayaan?tab=followers"><img src="https://img.shields.io/github/followers/aiyu-ayaan?style=flat-square&logo=github&label=followers&color=007ec6" alt="GitHub followers" /></a>
+  <a href="https://wakatime.com/@3a4240f0-6bea-4626-be2a-1129790e4336"><img src="https://wakatime.com/badge/user/3a4240f0-6bea-4626-be2a-1129790e4336.svg?style=flat-square" alt="Total time coded, tracked by WakaTime" /></a>
+</p>
 
-```kotlin
-val bio = """
-    Shipping production systems through agentic, spec-first workflows 🤖
-    Architecture, threat model, and phased backlog as machine-readable context
-    AI coding agents execute against a contract — I own review, integration, and hardening ✨
-    Open Source is my passion—building with modern tech and AI patterns! ❤️
-"""
-```
+## About
 
-```kotlin
-val ayaan = developer {
-    about {
-        name = "Ayaan Ansari 🚀"
-        role = "Software Engineer | AI-Assisted & Agentic Development"
-        location = "Mumbai, Maharashtra"
-        description = """
-            |Engineer who ships production systems through agentic, spec-first workflow
-            |Recent: 8-service E2EE communication platform (desktop, web, Android), multi-agent Android framework, AI-powered SaaS
-            |Day job: C#, Azure Functions, APIM, .NET Core on live client engagements at Adrosonic 💼
-            |Passionate about architecture-driven development, LLM integration, and modern patterns ✨
-        """.trimMargin()
-    }
-    
-    tech {
-        languages("TypeScript", "Kotlin", "Python", "C#", "Go", "Java", "SQL")
-        frameworks {
-            +"NestJS • Fastify • Express • FastAPI • .NET Core"
-            +"Next.js • React • Tailwind • Electron • Jetpack Compose • Kotlin Multiplatform"
-            +"WebRTC • WebSockets • Firebase • Ktor"
-        }
-        aiTools("LangChain", "Vercel AI SDK", "Gemini API", "OpenAI", "Claude", "Groq", "OpenRouter", "n8n")
-        tools("Docker • GitHub Actions • Prisma • Room • PostgreSQL • MongoDB • Redis • k6 • pnpm + Turborepo")
-        architectures("Microservices", "Clean Architecture", "MVVM", "E2EE (AES-256-GCM)", "Repository Pattern", "Dependency Injection")
-    }
-    
-    links {
-        linkedin = "https://www.linkedin.com/in/aiyu"
-        github = "https://github.com/aiyu-ayaan"
-        email = "ayaan35200@gmail.com"
-    }
-    
-    education {
-        Education(
-            institution = "🎓 BIT Mesra",
-            program = "MCA (Master of Computer Applications)",
-            timeline = "Aug 2023 - May 2025",
-            cgpa = "8.1/10.0"
-        )
-        
-        Education(
-            institution = "🎓 BIT Mesra",  
-            program = "BCA (Bachelor of Computer Applications)",
-            timeline = "Aug 2019 - May 2022",
-            cgpa = "8.2/10.0"
-        )
-    }
-    
-    experience {
-        Experience(
-            company = "💼 Adrosonic",
-            role = "Software Engineer",
-            duration = "Jun 2025 - Present",
-            location = "Mumbai, Maharashtra",
-            achievements = listOf(
-                "• Own delivery on two live client projects using C#, .NET Core, Azure Functions, and APIM",
-                "• Integrated Gemini into Azure Functions as reusable serverless LLM entry point",
-                "• Use AI coding agents as daily multiplier — brief, review, integrate against written architecture"
-            )
-        )
-        
-        Experience(
-            company = "💼 Adrosonic",
-            role = "Software Engineer (Trainee) - Internship",
-            duration = "Dec 2024 - Jun 2025",
-            location = "Mumbai, Maharashtra", 
-            achievements = listOf(
-                "• Developed enterprise POC for Dynamics 365 + Instanda integration, cutting process automation time by 40%",
-                "• Delivered WordPress and .NET Framework web work alongside enterprise solutions",
-                "• Redesigned office website UI/UX — 30% faster load times, 20% higher engagement"
-            )
-        )
-        
-        Experience(
-            company = "💼 BeyondSchool",
-            role = "Android Developer Intern",
-            duration = "Jul 2022 - Mar 2023",
-            location = "Ranchi, Jharkhand",
-            achievements = listOf(
-                "• Shipped TTS/STT accessibility features — 35% increase in engagement",
-                "• Designed gamification with rewards and leaderboards — 40% boost to retention", 
-                "• Optimized app flow reducing drop-off rates by 25%"
-            )
-        )
-    }
-    
-    featuredProjects {
-        Project(
-            name = "🔐 BetweenUs",
-            description = "Secure Discord-style E2EE communication platform with desktop (Electron), web (React), and native Android (Compose) clients",
-            tech = "NestJS • TypeScript • Electron • React • Kotlin/Compose • WebRTC • PostgreSQL • Redis • AES-256-GCM",
-            achievements = listOf(
-                "• 8 NestJS microservices (auth, server, chat, presence, notifications, call-service, admin) behind Nginx :8080",
-                "• Implemented E2EE messaging (WebCrypto on Desktop/Web, javax.crypto on Android) — server sees only ciphertext",
-                "• Engineered P2P WebRTC mesh with zero media server — call-service does signalling only, media streams direct via DTLS-SRTP",
-                "• Caught and fixed three authorization flaws in agent-written code; wrote CLAUDE.md, development/E2EE.md, and decision logs"
-            ),
-            link = "https://github.com/aiyu-ayaan/BetweenUs"
-        )
-        
-        Project(
-            name = "📊 LoadPulse", 
-            description = "Website performance testing workspace with AI-powered k6 script generation via Gemini, Groq, OpenRouter",
-            tech = "React • Node.js/Express • MongoDB • Socket.IO • k6 • Redis • Gemini/Groq/OpenRouter",
-            achievements = listOf(
-                "• Live dashboard via Socket.IO, concurrent k6 execution, cron + API hook integrations",
-                "• Redis-backed API caching, MongoDB field-level encryption, PM2 cluster mode scheduler singleton",
-                "• AI k6 script generation from natural language — custom metrics, thresholds, ramp-up profiles",
-                "• GitHub OAuth + TOTP 2FA, admin console, test history search/stop"
-            ),
-            link = "https://github.com/aiyu-ayaan/LoadPulse"
-        )
-        
-        Project(
-            name = "🌟 Aiyu - Portfolio & CMS",
-            description = "Production-grade portfolio CMS with AI Neural Core (Gemini), visual task scheduler, MCP server, and 52 preset themes",
-            tech = "Next.js 16 • React 19 • PostgreSQL • Prisma • Gemini • Docker • TailwindCSS",
-            achievements = listOf(
-                "• Gemini AI Neural Core generating 64+ token design systems from prompts, project naming, tech-stack mapping",
-                "• Visual 60s cron scheduler with n8n-style fixed/expression toggles, AES-256 encrypted ${env.KEY} secrets, dynamic ${site}/${device} variables",
-                "• 52 preset themes (Dracula, Tokyo Night, Nord, Cyberpunk, Catppuccin), Markdown blog with Notion sync, full-screen LaTeX resume IDE with AI refinement",
-                "• Exposed MCP server with custom tools; dual-routed webhooks to n8n, Discord, Telegram, ntfy; live server health monitoring and AI log analyzer"
-            ),
-            link = "https://github.com/aiyu-ayaan/Aiyu"
-        )
-        
-        Project(
-            name = "🎓 BIT App",
-            description = "University student portal with 1000+ users and 4.7/5 Play Store rating",
-            tech = "Android • Kotlin • Firebase • MVVM • Room • WorkManager",
-            achievements = listOf(
-                "• Custom analytics dashboard for usage monitoring and feature development",
-                "• Efficient background tasks via WorkManager and local Room database storage"
-            ),
-            link = "https://play.google.com/store/apps/details?id=com.atech.bit"
-        )
-    }
-    
-    exploring {
-        +"Agentic coding workflows and spec-first development"
-        +"Multi-agent orchestration and LLM API integration"
-        +"E2EE and cryptographic protocols"
-        +"Microservices architecture and system design"
-        +"Enterprise .NET and cloud patterns"
-    }
-}
-```
+Software Engineer at [Adrosonic](https://www.adrosonic.com/) in Mumbai, delivering client projects in C#, .NET Core, Azure Functions and APIM. Outside of work I design and ship full-stack systems, mostly in TypeScript and Kotlin.
 
-## 📊 **My GitHub Stats**
+I work spec-first with AI coding agents. The architecture, threat model and phased backlog are written down as context the agent can read (`CLAUDE.md`, decision logs) before any code exists. The agent implements against that contract. I own review, integration and hardening.
 
+- **Currently building:** [BetweenUs](https://github.com/aiyu-ayaan/BetweenUs), an end-to-end encrypted communication platform across desktop, web and Android.
+- **Focus areas:** agentic development workflows, LLM integration, applied cryptography, microservice architecture.
+- **Writing and more work:** [blog](https://me.aiyu.co.in/blogs), [project write-ups](https://me.aiyu.co.in/projects) and a [contact form](https://me.aiyu.co.in/contact-us) on my portfolio.
+
+## Featured projects
+
+| Project | Summary | Stack |
+| :-- | :-- | :-- |
+| [**BetweenUs**](https://github.com/aiyu-ayaan/BetweenUs) | End-to-end encrypted, Discord-style messaging and calls for desktop, web and Android. Eight NestJS services behind Nginx. Messages are encrypted on the client with AES-256-GCM, so the server stores only ciphertext. Calls use a peer-to-peer WebRTC mesh with no media server. | NestJS, TypeScript, Electron, React, Jetpack Compose, WebRTC, PostgreSQL, Redis |
+| [**Aiyu**](https://github.com/aiyu-ayaan/Aiyu) | The portfolio and CMS behind [me.aiyu.co.in](https://me.aiyu.co.in/). 52 themes, a Markdown blog with Notion sync, a LaTeX resume editor, a visual cron scheduler with encrypted secrets, and an MCP server. | Next.js 16, React 19, PostgreSQL, Prisma, Gemini, Docker |
+| [**Rewire**](https://github.com/aiyu-ayaan/Rewire) | Android app that reduces unwanted habits by adding intentional friction before distracting apps open. It is not a punishment or surveillance tool: it creates a pause, lets you choose, and measures what happens so you can learn your own patterns. | Kotlin, Android |
+| [**Domus**](https://github.com/aiyu-ayaan/Domus) | Local-first smart-home hub for your home server. | Rust |
+| [**Switchboard**](https://github.com/aiyu-ayaan/Switchboard) | Control your PC's displays, audio mixer and files directly from your phone. | Python |
+
+<details>
+<summary><b>More projects</b></summary>
 <br>
 
-<a href="http://www.github.com/aiyu-ayaan"> 
-    <img src="https://raw.githubusercontent.com/aiyu-ayaan/github-stats/master/generated/overview.svg#gh-dark-mode-only" alt="aiyu-ayaan's GitHub stats"/>
-</a>
+| Project | Summary |
+| :-- | :-- |
+| [**Agent-Verse**](https://github.com/aiyu-ayaan/Agent-Verse) | Multi-agent orchestration framework for Android. |
+| [**CodeDock**](https://github.com/aiyu-ayaan/CodeDock) | Self-hosted Codespaces alternative that provisions code-server containers through the Docker SDK. Written in Go. |
+| [**CodePilot**](https://github.com/aiyu-ayaan/Code-Pilot) | Local-first CI/CD dashboard that runs GitHub Actions with `nektos/act`. |
+| [**Roadlyn**](https://github.com/aiyu-ayaan/Roadlyn) | AI roadmap SaaS. LangChain and the Vercel AI SDK on Fastify, with BullMQ jobs. |
+| [**BIT App**](https://github.com/aiyu-ayaan/BIT-App) | Campus app for BIT Mesra. Used by 1,000+ students, rated 4.7/5 on Google Play. |
+| [**TTS-Engine**](https://github.com/aiyu-ayaan/tts-engine) | Android text-to-speech library published on JitPack, 500+ downloads. |
 
-<a href="http://www.github.com/aiyu-ayaan"> 
-    <img src="https://raw.githubusercontent.com/aiyu-ayaan/github-stats/master/generated/languages.svg#gh-dark-mode-only" alt="aiyu-ayaan's GitHub stats"/>
-</a>
+</details>
 
----
+## Experience
 
-*"Shipping production systems through agentic workflows, one commit at a time."* ✨
+| Period | Role | Highlights |
+| :-- | :-- | :-- |
+| Jun 2025 – Present | **Software Engineer**, Adrosonic | Own delivery on two live client projects in C#, .NET Core, Azure Functions and APIM. |
+| Dec 2024 – Jun 2025 | **Software Engineer (Trainee)**, Adrosonic | Built a Dynamics 365 + Instanda integration proof of concept that cut process automation time by 40%. |
+| Jul 2022 – Mar 2023 | **Android Developer Intern**, BeyondSchool | Shipped text-to-speech and speech-to-text accessibility (+35% engagement) and gamification (+40% retention). |
+
+**Education:** Master of Computer Applications (2023 – 2025, CGPA 8.1) and Bachelor of Computer Applications (2019 – 2022, CGPA 8.2), Birla Institute of Technology, Mesra.
+
+## Tech stack
+
+| Area | Tools |
+| :-- | :-- |
+| Languages | TypeScript, Kotlin, Python, C#, Go, Java, SQL |
+| Backend | NestJS, Fastify, FastAPI, .NET Core, Azure Functions, APIM, WebSockets, WebRTC |
+| Frontend and mobile | Next.js, React, Tailwind, Electron, Jetpack Compose, Kotlin Multiplatform |
+| AI and agents | Gemini, OpenAI, Claude, LangChain, Vercel AI SDK, MCP, n8n |
+| Data | PostgreSQL, MongoDB, Redis, Prisma, Firebase, BullMQ |
+| Infrastructure | Docker, Nginx, Azure, GitHub Actions, pnpm + Turborepo |
+
+## GitHub activity
+
+<p align="center">
+  <img src="assets/stats.svg" width="49%" alt="GitHub stats" />
+  <img src="assets/languages.svg" width="49%" alt="Most used languages" />
+</p>
+<p align="center">
+  <img src="assets/activity.svg" width="100%" alt="Contributions over the past year" />
+</p>
+
+<sub>Stat cards are generated by <a href="scripts/generate-stats.mjs"><code>scripts/generate-stats.mjs</code></a> and refreshed daily by a GitHub Action in this repository. The header is a <a href="https://github.com/heygen-com/hyperframes">HyperFrames</a> composition in <a href="hyperframes/profile"><code>hyperframes/profile</code></a>, in the same style as the story on my portfolio.</sub>

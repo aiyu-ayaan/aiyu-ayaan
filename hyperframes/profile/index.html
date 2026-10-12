@@ -1,0 +1,202 @@
+<!doctype html>
+<html
+  lang="en"
+  data-composition-variables='[
+    {"id":"host","type":"string","label":"Hostname","default":"aiyu"},
+    {"id":"bg","type":"color","label":"Background","default":"#050506"},
+    {"id":"bar","type":"color","label":"Title bar","default":"#111114"},
+    {"id":"fg","type":"color","label":"Text","default":"#f5f5f7"},
+    {"id":"muted","type":"color","label":"Muted text","default":"#86868b"},
+    {"id":"line","type":"color","label":"Hairline","default":"#2b2b30"},
+    {"id":"c1","type":"color","label":"Accent","default":"#2997ff"},
+    {"id":"ok","type":"color","label":"Success","default":"#30d158"}
+  ]'
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1200, height=400" />
+    <title>aiyu — profile header</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      :root {
+        --bg: #050506; --bar: #111114; --fg: #f5f5f7; --muted: #86868b;
+        --line: #2b2b30; --c1: #2997ff; --ok: #30d158;
+      }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: var(--bg); }
+      #root {
+        position: relative; width: 1200px; height: 400px; overflow: hidden;
+        background: var(--bg); color: var(--fg); border: 1px solid var(--line);
+        font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+      }
+
+      /* Window chrome, on screen for the whole film. */
+      #chrome { position: absolute; left: 0; right: 0; top: 0; height: 48px; background: var(--bar); border-bottom: 1px solid var(--line); z-index: 2; }
+      .dot { position: absolute; top: 17px; width: 14px; height: 14px; border-radius: 50%; }
+      .title { position: absolute; left: 0; right: 0; top: 0; line-height: 48px; text-align: center; font-size: 16px; color: var(--muted); }
+      #online { position: absolute; right: 28px; top: 0; line-height: 48px; font-size: 15px; letter-spacing: 1.5px; color: var(--ok); }
+      #online i { display: inline-block; width: 10px; height: 10px; margin-right: 12px; border-radius: 50%; background: var(--ok); }
+
+      .clip { position: absolute; left: 0; right: 0; top: 49px; bottom: 0; }
+      .later { visibility: hidden; }
+
+      /* POST */
+      #s-post { padding: 34px 56px; font-size: 19px; line-height: 1.95; color: var(--muted); }
+      #post-head { display: flex; justify-content: space-between; color: var(--fg); margin-bottom: 14px; }
+      #post-logo { font-weight: 800; letter-spacing: 0.2em; color: var(--c1); }
+      .pl .v { color: var(--ok); }
+      #mem { color: var(--fg); font-variant-numeric: tabular-nums; }
+
+      /* GRUB */
+      #s-grub { display: flex; align-items: center; justify-content: center; }
+      #grub { width: 640px; border: 1px solid #5a5a5e; font-size: 20px; color: var(--muted); }
+      #grub-head { padding: 11px 20px; border-bottom: 1px solid #5a5a5e; letter-spacing: 0.2em; text-transform: uppercase; font-size: 15px; display: flex; justify-content: space-between; }
+      #grub-list { position: relative; padding: 10px; }
+      #grub-sel { position: absolute; left: 10px; right: 10px; top: 10px; height: 48px; background: var(--c1); }
+      .gi { position: relative; height: 48px; line-height: 48px; padding: 0 20px; }
+      #gi-linux { color: var(--bg); font-weight: 700; }
+      #grub-foot { padding: 11px 20px; border-top: 1px solid #5a5a5e; font-size: 15px; }
+      #count { position: relative; display: inline-block; width: 1ch; color: var(--fg); }
+      #count span { position: absolute; left: 0; bottom: 0; }
+
+      /* systemd */
+      #s-sys { padding: 40px 56px; font-size: 19px; line-height: 1.95; color: var(--muted); }
+      .sl b { font-weight: 400; color: var(--ok); }
+      .sl u { text-decoration: none; color: var(--fg); }
+
+      /* whoami: the frame the film holds on */
+      #grid { position: absolute; inset: 0; background-image: radial-gradient(circle, #1d1d20 1.4px, transparent 1.6px); background-size: 34px 34px; }
+      .type { display: inline-block; overflow: hidden; white-space: nowrap; vertical-align: bottom; }
+      #prompt { position: absolute; left: 56px; top: 44px; font-size: 20px; color: var(--muted); }
+      #prompt b, #tagline b { font-weight: 400; color: var(--c1); margin-right: 13px; }
+      #hello { position: absolute; left: 54px; top: 96px; font-size: 66px; line-height: 1; font-weight: 700; }
+      #hello span, #cursor { color: var(--c1); }
+      #tagline { position: absolute; left: 56px; top: 195px; font-size: 23px; color: var(--muted); }
+      #cursor { font-weight: 700; margin-left: 8px; }
+      #rule { position: absolute; left: 56px; right: 56px; top: 273px; height: 1px; background: #1d1d20; transform-origin: left center; }
+      #tags { position: absolute; left: 56px; top: 298px; font-size: 16px; letter-spacing: 0.7px; color: var(--muted); }
+      #tags span { margin-right: 20px; }
+      #tags em { font-style: normal; color: var(--fg); }
+      #site { position: absolute; right: 56px; top: 298px; font-size: 16px; color: var(--c1); }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="profile" data-start="0" data-duration="9.5" data-width="1200" data-height="400">
+      <div id="chrome">
+        <span class="dot" style="left: 22px; background: #ff375f"></span>
+        <span class="dot" style="left: 48px; background: #ff9f0a"></span>
+        <span class="dot" style="left: 74px; background: #30d158"></span>
+        <span class="title" id="title-boot"><span class="host">aiyu</span> — boot</span>
+        <span class="title later" id="title-home"><span class="host">aiyu</span> — portfolio</span>
+        <span class="later" id="online"><i></i>ONLINE</span>
+      </div>
+
+      <section id="s-post" class="clip" data-start="0" data-duration="1" data-track-index="1">
+        <div id="post-head"><span id="post-logo">AIYU BIOS</span><span>v6 · uefi</span></div>
+        <p class="pl">cpu ............ <span class="v">ok</span></p>
+        <p class="pl">memory test .... <span id="mem">0</span>M <span class="v">ok</span></p>
+        <p class="pl">nvme0n1 ........ <span class="v">detected</span></p>
+        <p class="pl">boot order ..... grub → linux</p>
+      </section>
+
+      <section id="s-grub" class="clip later" data-start="1" data-duration="1" data-track-index="1">
+        <div id="grub">
+          <div id="grub-head"><span>GNU GRUB · dual boot</span><span>2.12</span></div>
+          <div id="grub-list">
+            <div id="grub-sel"></div>
+            <div class="gi" id="gi-linux">▸ linux — write code</div>
+            <div class="gi" id="gi-win">&nbsp; windows — play games</div>
+          </div>
+          <div id="grub-foot">booting linux in <span id="count">&nbsp;<span id="count-2">2</span><span id="count-1" class="later">1</span></span>s…</div>
+        </div>
+      </section>
+
+      <section id="s-sys" class="clip later" data-start="2" data-duration="1" data-track-index="1">
+        <p class="sl">[ <b>OK</b> ] Mounted <u>/home/aiyu</u>.</p>
+        <p class="sl">[ <b>OK</b> ] Started <u>projects.service</u>.</p>
+        <p class="sl">[ <b>OK</b> ] Started <u>blogs.service</u>.</p>
+        <p class="sl">[ <b>OK</b> ] Started <u>resume.service</u>.</p>
+        <p class="sl">[ <b>OK</b> ] Reached target <u>portfolio.target</u>.</p>
+      </section>
+
+      <section id="s-home" class="clip later" data-start="3" data-duration="6.5" data-track-index="1">
+        <div id="grid"></div>
+        <p id="prompt"><b>$</b><span class="type" id="type-whoami">whoami</span></p>
+        <h1 id="hello">Hi, I'm Ayaan<span>.</span></h1>
+        <p id="tagline"><b>&gt;</b><span class="type" id="type-tagline">Writes code on Linux, plays on Windows.</span><span id="cursor">_</span></p>
+        <div id="rule"></div>
+        <p id="tags">
+          <span class="tag">[ <em>software engineer</em> ]</span><span class="tag">[ <em>agentic, spec-first development</em> ]</span><span class="tag">[ <em>mumbai</em> ]</span>
+        </p>
+        <p id="site">me.aiyu.co.in</p>
+      </section>
+    </div>
+
+    <script>
+      (function () {
+        var vars = (window.__hyperframes && window.__hyperframes.getVariables && window.__hyperframes.getVariables()) || {};
+        var q = new URLSearchParams(location.search);
+        var get = function (k, d) { return q.has(k) ? q.get(k) : (vars[k] != null ? vars[k] : d); };
+        var $ = function (s) { return document.querySelector(s); };
+
+        var HOST = String(get("host", "aiyu")).toLowerCase().replace(/[^a-z0-9-]/g, "") || "aiyu";
+        document.querySelectorAll(".host").forEach(function (el) { el.textContent = HOST; });
+        ["bg", "bar", "fg", "muted", "line", "c1", "ok"].forEach(function (k) {
+          var v = get(k, null);
+          if (v) document.documentElement.style.setProperty("--" + k, v);
+        });
+
+        // Typed text: reveal a monospace run one character per step.
+        var typed = function (tl, sel, duration, at) {
+          var n = $(sel).textContent.length;
+          tl.fromTo(sel, { width: "0ch" }, { width: n + "ch", duration: duration, ease: "steps(" + n + ")" }, at);
+        };
+
+        var tl = gsap.timeline({ paused: true, defaults: { ease: "power2.out" } });
+
+        // POST: lines print, memory counts up.
+        tl.fromTo("#post-head", { opacity: 0 }, { opacity: 1, duration: 0.05, ease: "none" }, 0.02);
+        tl.fromTo(".pl", { opacity: 0 }, { opacity: 1, duration: 0.03, stagger: 0.14, ease: "none" }, 0.12);
+        var mem = { v: 0 };
+        var memEl = $("#mem");
+        tl.fromTo(mem, { v: 0 }, { v: 32768, duration: 0.4, ease: "none", onUpdate: function () { memEl.textContent = String(Math.round(mem.v / 1024) * 1024); } }, 0.26);
+        tl.set("#s-post", { autoAlpha: 0 }, 1);
+
+        // GRUB: menu snaps in, countdown ticks, linux is picked.
+        tl.set("#s-grub", { autoAlpha: 1 }, 1);
+        tl.fromTo("#grub", { opacity: 0, scale: 0.98 }, { opacity: 1, scale: 1, duration: 0.15 }, 1.02);
+        tl.set("#count-2", { autoAlpha: 0 }, 1.5);
+        tl.set("#count-1", { autoAlpha: 1 }, 1.5);
+        tl.fromTo("#grub-sel", { opacity: 1 }, { opacity: 0.55, duration: 0.08, yoyo: true, repeat: 1, ease: "none" }, 1.78);
+        tl.set("#s-grub", { autoAlpha: 0 }, 2);
+
+        // systemd: the site's sections come up as services.
+        tl.set("#s-sys", { autoAlpha: 1 }, 2);
+        tl.fromTo(".sl", { opacity: 0, x: -8 }, { opacity: 1, x: 0, duration: 0.1, stagger: 0.15 }, 2.04);
+        tl.set("#s-sys", { autoAlpha: 0 }, 3);
+
+        // whoami: the frame the film holds on.
+        tl.set("#s-home", { autoAlpha: 1 }, 3);
+        tl.set("#title-boot", { autoAlpha: 0 }, 3);
+        tl.set("#title-home", { autoAlpha: 1 }, 3);
+        tl.fromTo("#grid", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power1.out" }, 3);
+        tl.fromTo("#prompt", { opacity: 0 }, { opacity: 1, duration: 0.05, ease: "none" }, 3.05);
+        typed(tl, "#type-whoami", 0.4, 3.15);
+        tl.fromTo("#hello", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.45 }, 3.7);
+        tl.fromTo("#tagline", { opacity: 0 }, { opacity: 1, duration: 0.05, ease: "none" }, 4.2);
+        typed(tl, "#type-tagline", 1.2, 4.3);
+        tl.fromTo("#rule", { scaleX: 0 }, { scaleX: 1, duration: 0.45, ease: "power2.inOut" }, 5.55);
+        tl.fromTo(".tag", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.25, stagger: 0.1 }, 5.75);
+        tl.fromTo("#site", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 6.05);
+        tl.set("#online", { autoAlpha: 1 }, 6.1);
+
+        // Cursor keeps blinking through the hold and ends lit.
+        tl.fromTo("#cursor", { opacity: 1 }, { opacity: 0, duration: 0.5, ease: "steps(1)", repeat: 6, yoyo: true }, 6);
+        tl.set("#cursor", { opacity: 1 }, 9.5);
+
+        window.__timelines = window.__timelines || {};
+        window.__timelines["profile"] = tl;
+      })();
+    </script>
+  </body>
+</html>
