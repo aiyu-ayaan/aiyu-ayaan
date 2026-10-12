@@ -28,8 +28,10 @@ I work spec-first with AI coding agents. The architecture, threat model and phas
 | Project | Summary | Stack |
 | :-- | :-- | :-- |
 | [**BetweenUs**](https://github.com/aiyu-ayaan/BetweenUs) | End-to-end encrypted, Discord-style messaging and calls for desktop, web and Android. Eight NestJS services behind Nginx. Messages are encrypted on the client with AES-256-GCM, so the server stores only ciphertext. Calls use a peer-to-peer WebRTC mesh with no media server. | NestJS, TypeScript, Electron, React, Jetpack Compose, WebRTC, PostgreSQL, Redis |
-| [**LoadPulse**](https://github.com/aiyu-ayaan/LoadPulse) | Performance testing workspace built on k6. Live dashboard over Socket.IO, concurrent test runs, cron and API triggers, and k6 scripts generated from plain-English descriptions. Secured with GitHub OAuth and TOTP 2FA. | React, Express, MongoDB, Socket.IO, k6, Redis, Gemini |
 | [**Aiyu**](https://github.com/aiyu-ayaan/Aiyu) | The portfolio and CMS behind [me.aiyu.co.in](https://me.aiyu.co.in/). 52 themes, a Markdown blog with Notion sync, a LaTeX resume editor, a visual cron scheduler with encrypted secrets, and an MCP server. | Next.js 16, React 19, PostgreSQL, Prisma, Gemini, Docker |
+| [**Rewire**](https://github.com/aiyu-ayaan/Rewire) | Android app that reduces unwanted habits by adding intentional friction before distracting apps open. It is not a punishment or surveillance tool: it creates a pause, lets you choose, and measures what happens so you can learn your own patterns. | Kotlin, Android |
+| [**Domus**](https://github.com/aiyu-ayaan/Domus) | Local-first smart-home hub for your home server. | Rust |
+| [**Switchboard**](https://github.com/aiyu-ayaan/Switchboard) | Control your PC's displays, audio mixer and files directly from your phone. | Python |
 
 <details>
 <summary><b>More projects</b></summary>
@@ -41,7 +43,6 @@ I work spec-first with AI coding agents. The architecture, threat model and phas
 | [**CodeDock**](https://github.com/aiyu-ayaan/CodeDock) | Self-hosted Codespaces alternative that provisions code-server containers through the Docker SDK. Written in Go. |
 | [**CodePilot**](https://github.com/aiyu-ayaan/Code-Pilot) | Local-first CI/CD dashboard that runs GitHub Actions with `nektos/act`. |
 | [**Roadlyn**](https://github.com/aiyu-ayaan/Roadlyn) | AI roadmap SaaS. LangChain and the Vercel AI SDK on Fastify, with BullMQ jobs. |
-| [**Domus**](https://github.com/aiyu-ayaan/Domus) | Local-first smart home hub for a home server. |
 | [**BIT App**](https://github.com/aiyu-ayaan/BIT-App) | Campus app for BIT Mesra. Used by 1,000+ students, rated 4.7/5 on Google Play. |
 | [**TTS-Engine**](https://github.com/aiyu-ayaan/tts-engine) | Android text-to-speech library published on JitPack, 500+ downloads. |
 
