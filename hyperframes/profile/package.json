@@ -1,0 +1,11 @@
+{
+  "name": "profile",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npx --yes hyperframes@0.8.78 preview",
+    "check": "npx --yes hyperframes@0.8.78 check",
+    "render": "npx --yes hyperframes@0.8.78 render",
+    "gif": "npm install --no-save --no-package-lock puppeteer-core gifenc pngjs && node render-gif.mjs"
+  }
+}
