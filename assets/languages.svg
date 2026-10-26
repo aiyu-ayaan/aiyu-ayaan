@@ -19,29 +19,29 @@
   <text x="76" y="21.5" class="small"><tspan fill="#2997ff">$</tspan><tspan class="muted" dx="7">ls ./languages --sort=size</tspan></text>
   <clipPath id="bar"><rect x="20" y="54" width="370" height="8" rx="4"/></clipPath>
   <g clip-path="url(#bar)">
-    <rect x="20.0" y="54" width="80.5" height="8" fill="#A97BFF"/>
-    <rect x="102.5" y="54" width="68.4" height="8" fill="#f1e05a"/>
-    <rect x="172.9" y="54" width="68.3" height="8" fill="#3572A5"/>
-    <rect x="243.2" y="54" width="64.1" height="8" fill="#3178c6"/>
-    <rect x="309.3" y="54" width="19.3" height="8" fill="#e34c26"/>
-    <rect x="330.5" y="54" width="15.3" height="8" fill="#663399"/>
-    <rect x="347.8" y="54" width="40.2" height="8" fill="#86868b"/>
+    <rect x="20.0" y="54" width="80.6" height="8" fill="#A97BFF"/>
+    <rect x="102.6" y="54" width="68.3" height="8" fill="#3572A5"/>
+    <rect x="172.9" y="54" width="68.2" height="8" fill="#f1e05a"/>
+    <rect x="243.1" y="54" width="64.2" height="8" fill="#3178c6"/>
+    <rect x="309.4" y="54" width="19.3" height="8" fill="#e34c26"/>
+    <rect x="330.6" y="54" width="15.3" height="8" fill="#663399"/>
+    <rect x="347.9" y="54" width="40.1" height="8" fill="#86868b"/>
   </g>
   <circle cx="25" cy="89.5" r="5" fill="#A97BFF"/>
   <text x="38" y="94" class="text">Kotlin</text>
   <text x="189" y="94" class="muted" text-anchor="end">22.3%</text>
-  <circle cx="210" cy="89.5" r="5" fill="#f1e05a"/>
-  <text x="223" y="94" class="text">JavaScript</text>
+  <circle cx="210" cy="89.5" r="5" fill="#3572A5"/>
+  <text x="223" y="94" class="text">Python</text>
   <text x="374" y="94" class="muted" text-anchor="end">19.0%</text>
-  <circle cx="25" cy="119.5" r="5" fill="#3572A5"/>
-  <text x="38" y="124" class="text">Python</text>
+  <circle cx="25" cy="119.5" r="5" fill="#f1e05a"/>
+  <text x="38" y="124" class="text">JavaScript</text>
   <text x="189" y="124" class="muted" text-anchor="end">19.0%</text>
   <circle cx="210" cy="119.5" r="5" fill="#3178c6"/>
   <text x="223" y="124" class="text">TypeScript</text>
   <text x="374" y="124" class="muted" text-anchor="end">17.9%</text>
   <circle cx="25" cy="149.5" r="5" fill="#e34c26"/>
   <text x="38" y="154" class="text">HTML</text>
-  <text x="189" y="154" class="muted" text-anchor="end">5.8%</text>
+  <text x="189" y="154" class="muted" text-anchor="end">5.7%</text>
   <circle cx="210" cy="149.5" r="5" fill="#663399"/>
   <text x="223" y="154" class="text">CSS</text>
   <text x="374" y="154" class="muted" text-anchor="end">4.7%</text>
