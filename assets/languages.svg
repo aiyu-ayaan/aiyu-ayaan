@@ -19,13 +19,13 @@
   <text x="76" y="21.5" class="small"><tspan fill="#2997ff">$</tspan><tspan class="muted" dx="7">ls ./languages --sort=size</tspan></text>
   <clipPath id="bar"><rect x="20" y="54" width="370" height="8" rx="4"/></clipPath>
   <g clip-path="url(#bar)">
-    <rect x="20.0" y="54" width="80.4" height="8" fill="#A97BFF"/>
-    <rect x="102.4" y="54" width="68.0" height="8" fill="#3572A5"/>
-    <rect x="172.4" y="54" width="67.9" height="8" fill="#f1e05a"/>
-    <rect x="242.3" y="54" width="64.4" height="8" fill="#3178c6"/>
-    <rect x="308.7" y="54" width="19.2" height="8" fill="#e34c26"/>
-    <rect x="329.8" y="54" width="15.3" height="8" fill="#663399"/>
-    <rect x="347.1" y="54" width="40.9" height="8" fill="#86868b"/>
+    <rect x="20.0" y="54" width="80.3" height="8" fill="#A97BFF"/>
+    <rect x="102.3" y="54" width="67.9" height="8" fill="#3572A5"/>
+    <rect x="172.3" y="54" width="67.8" height="8" fill="#f1e05a"/>
+    <rect x="242.1" y="54" width="64.4" height="8" fill="#3178c6"/>
+    <rect x="308.5" y="54" width="19.1" height="8" fill="#e34c26"/>
+    <rect x="329.6" y="54" width="15.2" height="8" fill="#663399"/>
+    <rect x="346.9" y="54" width="41.1" height="8" fill="#86868b"/>
   </g>
   <circle cx="25" cy="89.5" r="5" fill="#A97BFF"/>
   <text x="38" y="94" class="text">Kotlin</text>
@@ -47,5 +47,5 @@
   <text x="374" y="154" class="muted" text-anchor="end">4.7%</text>
   <circle cx="25" cy="179.5" r="5" fill="#86868b"/>
   <text x="38" y="184" class="text">Other</text>
-  <text x="189" y="184" class="muted" text-anchor="end">11.6%</text>
+  <text x="189" y="184" class="muted" text-anchor="end">11.7%</text>
 </svg>
