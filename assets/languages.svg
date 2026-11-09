@@ -19,9 +19,9 @@
   <text x="76" y="21.5" class="small"><tspan fill="#2997ff">$</tspan><tspan class="muted" dx="7">ls ./languages --sort=size</tspan></text>
   <clipPath id="bar"><rect x="20" y="54" width="370" height="8" rx="4"/></clipPath>
   <g clip-path="url(#bar)">
-    <rect x="20.0" y="54" width="80.5" height="8" fill="#A97BFF"/>
-    <rect x="102.5" y="54" width="66.8" height="8" fill="#f1e05a"/>
-    <rect x="171.3" y="54" width="65.9" height="8" fill="#3178c6"/>
+    <rect x="20.0" y="54" width="80.6" height="8" fill="#A97BFF"/>
+    <rect x="102.6" y="54" width="66.8" height="8" fill="#f1e05a"/>
+    <rect x="171.4" y="54" width="65.9" height="8" fill="#3178c6"/>
     <rect x="239.2" y="54" width="61.2" height="8" fill="#3572A5"/>
     <rect x="302.4" y="54" width="18.8" height="8" fill="#e34c26"/>
     <rect x="323.2" y="54" width="16.8" height="8" fill="#dea584"/>
