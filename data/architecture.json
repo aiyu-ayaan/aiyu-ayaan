@@ -1,0 +1,77 @@
+{
+  "project": "BetweenUs",
+  "url": "https://github.com/aiyu-ayaan/BetweenUs",
+  "encryption": "Messages are encrypted on the client with AES-256-GCM. The server stores only ciphertext.",
+  "p2p": "Calls: WebRTC mesh, client to client. No media server.",
+  "clients": [
+    {
+      "name": "Desktop",
+      "kind": "desktop"
+    },
+    {
+      "name": "Web",
+      "kind": "web"
+    },
+    {
+      "name": "Android",
+      "kind": "android"
+    }
+  ],
+  "edge": [
+    {
+      "name": "Cloudflare Tunnel",
+      "detail": "no inbound ports"
+    },
+    {
+      "name": "Nginx gateway",
+      "detail": ":8080 routing, rate limits"
+    }
+  ],
+  "services": [
+    {
+      "name": "auth",
+      "port": 3001,
+      "detail": "JWT, OAuth"
+    },
+    {
+      "name": "server",
+      "port": 3003,
+      "detail": "roles, channels"
+    },
+    {
+      "name": "chat",
+      "port": 3004,
+      "detail": "messages, keys"
+    },
+    {
+      "name": "presence",
+      "port": 3005,
+      "detail": "online, typing"
+    },
+    {
+      "name": "notification",
+      "port": 3006,
+      "detail": "mutes, markers"
+    },
+    {
+      "name": "call",
+      "port": 3007,
+      "detail": "signalling"
+    },
+    {
+      "name": "remote-gateway",
+      "port": 3008,
+      "detail": "remote desktop"
+    }
+  ],
+  "stores": [
+    {
+      "name": "PostgreSQL",
+      "detail": "Prisma, opaque envelopes"
+    },
+    {
+      "name": "Redis",
+      "detail": "pub/sub fanout, presence"
+    }
+  ]
+}

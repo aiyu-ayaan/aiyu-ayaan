@@ -11,6 +11,7 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { validateData } from './validate-data.mjs';
 
 const LOGIN = process.env.GITHUB_LOGIN || 'aiyu-ayaan';
 const TOKEN = process.env.GITHUB_TOKEN;
@@ -39,6 +40,13 @@ const theme = {
 };
 const FONT = `ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace`;
 
+// Stop before anything is written if a data file does not match its schema.
+const problems = await validateData();
+if (problems.length) {
+  console.error(`data/ is invalid:\n${problems.map((e) => `  ${e}`).join('\n')}`);
+  process.exit(1);
+}
+
 // Hand-written content. One JSON file per section in data/; edit those files,
 // not the README blocks between <!-- name:start --> and <!-- name:end -->.
 const load = async (name) => JSON.parse(await readFile(join(DATA_DIR, `${name}.json`), 'utf8'));
@@ -51,6 +59,8 @@ const content = {
   experience: await load('experience'),
   education: await load('education'),
   stack: await load('stack'),
+  architecture: await load('architecture'),
+  achievements: await load('achievements'),
 };
 const HERO = { ...content.hero, orbit: content.hero.orbit.map((o) => [o.label, o.color]) };
 const STACK = content.stack.map((s) => [s.area.replace(' and ', ' + '), s.color, s.tools]);
@@ -262,8 +272,11 @@ const shortDate = (iso) => {
   return `${MONTHS[d.getUTCMonth()]} ${d.getUTCDate()}`;
 };
 
+// Plain text for SVG: no emoji, and no Markdown links, bold or code marks.
 const plain = (s) =>
   String(s || '')
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+    .replace(/\*\*|`/g, '')
     .replace(/\p{Extended_Pictographic}|️|‍/gu, '')
     .replace(/\s+/g, ' ')
     .trim();
@@ -527,12 +540,59 @@ const STAR = 'M6 .6l1.7 3.4 3.7.5-2.7 2.6.6 3.7L6 9.1 2.7 10.8l.6-3.7L.6 4.5l3.7
 const FORK =
   'M3 1.2a1.5 1.5 0 0 1 .6 2.9v1.2c0 .5.4.9.9.9h3c.5 0 .9-.4.9-.9V4.1a1.5 1.5 0 1 1 1.2 0v1.2A2.1 2.1 0 0 1 7.5 7.4H6.6v1.5a1.5 1.5 0 1 1-1.2 0V7.4H4.5A2.1 2.1 0 0 1 2.4 5.3V4.1A1.5 1.5 0 0 1 3 1.2z';
 
-// One repository as a raised slab: the face floats over its own extruded edge.
-function projectCard(repo, index) {
-  const width = 410;
-  const height = 196;
-  const color = repo.primaryLanguage?.color || theme.muted;
-  const lang = repo.primaryLanguage?.name || 'Other';
+// Isometric cube centred on (cx, cy) with half-width s.
+function isoCube(cx, cy, s, color) {
+  return `<path d="${poly([[cx, cy - s], [cx + s, cy - s / 2], [cx, cy], [cx - s, cy - s / 2]])}" fill="${shade(color, 1.25)}"/><path d="${poly([[cx - s, cy - s / 2], [cx, cy], [cx, cy + s], [cx - s, cy + s / 2]])}" fill="${shade(color, 0.78)}"/><path d="${poly([[cx + s, cy - s / 2], [cx, cy], [cx, cy + s], [cx + s, cy + s / 2]])}" fill="${shade(color, 0.48)}"/>`;
+}
+
+// Isometric projection around a screen origin: x runs right-down, y runs
+// left-down, z is up. k is the size of one unit in pixels.
+const iso = (ox, oy, k) => (x, y, z = 0) => [ox + (x - y) * 0.866 * k, oy + (x + y) * 0.5 * k - z * k];
+
+function isoBox(p, [x, y, z], [w, d, h], color) {
+  return `<path d="${poly([p(x, y + d, z), p(x + w, y + d, z), p(x + w, y + d, z + h), p(x, y + d, z + h)])}" fill="${color}"/><path d="${poly([p(x + w, y, z), p(x + w, y + d, z), p(x + w, y + d, z + h), p(x + w, y, z + h)])}" fill="${shade(color, 0.6)}"/><path d="${poly([p(x, y, z + h), p(x + w, y, z + h), p(x + w, y + d, z + h), p(x, y + d, z + h)])}" fill="${shade(color, 1.35)}"/>`;
+}
+
+const PLATFORMS = ['android', 'web', 'desktop', 'server'];
+
+// A small isometric device standing on (cx, cy), its screen lit in `color`.
+function device(kind, cx, cy, color) {
+  const p = iso(cx, cy, 2);
+  const body = '#3b3b44';
+  // A rectangle lying on the left-facing plane at depth y.
+  const face = (x0, x1, z0, z1, y, fill, extra = '') =>
+    `<path d="${poly([p(x0, y, z0), p(x1, y, z0), p(x1, y, z1), p(x0, y, z1)])}" fill="${fill}"${extra}/>`;
+  if (kind === 'android') {
+    return isoBox(p, [-3, -0.7, 0], [6, 1.4, 12], body) + face(-2.4, 2.4, 0.9, 11.1, 0.7, color, ' class="scr"');
+  }
+  if (kind === 'desktop') {
+    return (
+      isoBox(p, [-7, -4.4, 0.8], [14, 0.8, 9], body) +
+      face(-6.3, 6.3, 1.5, 9.1, -3.6, color, ' class="scr"') +
+      isoBox(p, [-7, -3.6, 0], [14, 8, 0.8], '#4a4a55')
+    );
+  }
+  if (kind === 'web') {
+    return (
+      isoBox(p, [-7, -0.4, 1], [14, 0.8, 11], body) +
+      face(-6.4, 6.4, 1.6, 11.4, 0.4, '#15151a') +
+      face(-6.4, 6.4, 9.6, 11.4, 0.4, color, ' class="scr"') +
+      face(-5.2, 2, 7, 7.8, 0.4, theme.muted, ' fill-opacity=".55"') +
+      face(-5.2, 4.4, 4.8, 5.6, 0.4, theme.muted, ' fill-opacity=".35"')
+    );
+  }
+  // server
+  return (
+    isoBox(p, [-4, -4, 0], [8, 8, 13], body) +
+    [2.2, 5.6, 9]
+      .map((z, i) => face(-3.2, 3.2, z, z + 2, 4, '#15151a') + face(1.6, 2.7, z + 0.6, z + 1.4, 4, color, ` class="led" style="animation-delay:${i * 0.4}s"`))
+      .join('')
+  );
+}
+
+// Shared shell for project cards: a face floating over its own extruded edge.
+// `inner` is drawn in the face's coordinate space.
+function slab({ width, height, color, index, label, title, inner }) {
   const fx = 6;
   const fy = 8;
   const fw = width - 22;
@@ -540,43 +600,27 @@ function projectCard(repo, index) {
   const ex = 9; // extrusion offset
   const ey = 11;
   const r = 12;
-
-  const lines = wrap(plain(repo.description), 46, 3);
-  const description = lines
-    .map((line, i) => `      <text x="20" y="${78 + i * 18}" class="muted">${esc(line)}</text>`)
-    .join('\n');
-
-  // Isometric cube in the language colour.
-  const cx = 34;
-  const cy = 36;
-  const s = 11;
-  const cube = `<g class="cube">
-        <path d="${poly([[cx, cy - s], [cx + s, cy - s / 2], [cx, cy], [cx - s, cy - s / 2]])}" fill="${shade(color, 1.25)}"/>
-        <path d="${poly([[cx - s, cy - s / 2], [cx, cy], [cx, cy + s], [cx - s, cy + s / 2]])}" fill="${shade(color, 0.78)}"/>
-        <path d="${poly([[cx + s, cy - s / 2], [cx, cy], [cx, cy + s], [cx + s, cy + s / 2]])}" fill="${shade(color, 0.48)}"/>
-      </g>`;
-
-  const footY = fh - 16;
-  const tagColor = repo.latestRelease?.isPrerelease ? theme.orange : theme.green;
-  const release = repo.latestRelease
-    ? `<rect x="${fw - 20 - repo.latestRelease.tagName.length * 6.7 - 14}" y="${footY - 13}" width="${repo.latestRelease.tagName.length * 6.7 + 14}" height="18" rx="9" fill="${tagColor}" fill-opacity=".12" stroke="${tagColor}" stroke-opacity=".45"/>
-      <text x="${fw - 27}" y="${footY}" text-anchor="end" class="small" fill="${tagColor}">${esc(repo.latestRelease.tagName)}</text>`
-    : '';
-
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img" aria-label="${esc(`${repo.name}: ${plain(repo.description)}`)}">
-  <title>${esc(repo.name)}</title>
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img" aria-label="${esc(label)}">
+  <title>${esc(title)}</title>
   <style>
     text { font-family: ${FONT}; font-size: 12px; }
     .muted { fill: ${theme.muted}; }
     .text { fill: ${theme.text}; }
     .small { font-size: 11px; }
+    .tiny { font-size: 9px; }
     .slab { animation: float 6s ease-in-out infinite; animation-delay: ${(index * -1.5).toFixed(1)}s; }
     .shadow { transform-box: fill-box; transform-origin: center; animation: shadow 6s ease-in-out infinite; animation-delay: ${(index * -1.5).toFixed(1)}s; }
     .cube { transform-box: fill-box; transform-origin: center; animation: bob 3s ease-in-out infinite; animation-delay: ${(index * -0.7).toFixed(1)}s; }
+    .dev { animation: lift 4s ease-in-out infinite; }
+    .scr { animation: lit 3s ease-in-out infinite; }
+    .led { animation: blink 1.6s steps(1) infinite; }
     .sheen { animation: sheen 6s ease-in-out infinite; animation-delay: ${(index * 0.9).toFixed(1)}s; }
     @keyframes float { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(-2px, -4px); } }
     @keyframes shadow { 0%, 100% { opacity: .75; transform: scale(1); } 50% { opacity: .45; transform: scale(.97); } }
     @keyframes bob { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-2.5px) scale(1.06); } }
+    @keyframes lift { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+    @keyframes lit { 0%, 100% { opacity: 1; } 50% { opacity: .6; } }
+    @keyframes blink { 50% { opacity: .15; } }
     @keyframes sheen { 0%, 55% { transform: translateX(-140px); } 100% { transform: translateX(${width + 140}px); } }
     ${REDUCED_MOTION}
   </style>
@@ -603,24 +647,100 @@ function projectCard(repo, index) {
     </g>
     <rect x="${fx + 0.5}" y="${fy + 0.5}" width="${fw - 1}" height="${fh - 1}" rx="${r}" fill="none" stroke="${theme.border}"/>
     <g transform="translate(${fx}, ${fy})">
-      ${cube}
+${inner}
+    </g>
+  </g>
+</svg>
+`;
+}
+
+// One recently pushed repository.
+function projectCard(repo, index) {
+  const width = 410;
+  const height = 196;
+  const fw = width - 22;
+  const fh = height - 28;
+  const color = repo.primaryLanguage?.color || theme.muted;
+  const lang = repo.primaryLanguage?.name || 'Other';
+  const description = wrap(plain(repo.description), 46, 3)
+    .map((line, i) => `      <text x="20" y="${78 + i * 18}" class="muted">${esc(line)}</text>`)
+    .join('\n');
+  const footY = fh - 16;
+  const stars = compact(repo.stargazerCount);
+  const tagColor = repo.latestRelease?.isPrerelease ? theme.orange : theme.green;
+  const release = repo.latestRelease
+    ? `<rect x="${fw - 20 - repo.latestRelease.tagName.length * 6.7 - 14}" y="${footY - 13}" width="${repo.latestRelease.tagName.length * 6.7 + 14}" height="18" rx="9" fill="${tagColor}" fill-opacity=".12" stroke="${tagColor}" stroke-opacity=".45"/>
+      <text x="${fw - 27}" y="${footY}" text-anchor="end" class="small" fill="${tagColor}">${esc(repo.latestRelease.tagName)}</text>`
+    : '';
+  const inner = `      <g class="cube">${isoCube(34, 36, 11, color)}</g>
       <text x="56" y="34" class="text" style="font-size:16px;font-weight:700">${esc(repo.name)}</text>
       <text x="56" y="50" class="small muted">pushed ${shortDate(repo.pushedAt)}</text>
       <g transform="translate(${fw - 20}, 22)">
-        <text x="0" y="12" text-anchor="end" class="text" font-weight="600">${compact(repo.stargazerCount)}</text>
-        <path d="${STAR}" transform="translate(${-compact(repo.stargazerCount).length * 7.3 - 17}, 1.5)" fill="${theme.orange}"/>
+        <text x="0" y="12" text-anchor="end" class="text" font-weight="600">${stars}</text>
+        <path d="${STAR}" transform="translate(${-stars.length * 7.3 - 17}, 1.5)" fill="${theme.orange}"/>
       </g>
 ${description}
       <circle cx="25" cy="${footY - 4}" r="5" fill="${color}"/>
       <text x="37" y="${footY}" class="text small">${esc(lang)}</text>
       <path d="${FORK}" transform="translate(${45 + lang.length * 6.7}, ${footY - 10})" fill="${theme.muted}"/>
       <text x="${61 + lang.length * 6.7}" y="${footY}" class="muted small">${compact(repo.forkCount)}</text>
-      ${release}
-    </g>
-  </g>
-</svg>
-`;
-  return svg;
+      ${release}`;
+  return slab({ width, height, color, index, label: `${repo.name}: ${plain(repo.description)}`, title: repo.name, inner });
+}
+
+// One featured project from data/featured-projects.json, with a device for
+// each platform it ships on. Stars and the release tag come from GitHub when
+// the project's URL matches a public repository.
+function featuredCard(project, index, repo) {
+  const width = 410;
+  const height = 282;
+  const fw = width - 22;
+  const fh = height - 28;
+  const color = repo?.primaryLanguage?.color || theme.blue;
+
+  const platforms = PLATFORMS.filter((k) => project.platforms.includes(k));
+  const devices = platforms
+    .map((kind, i) => {
+      const cx = fw - 34 - (platforms.length - 1 - i) * 50;
+      return `      <g class="dev" style="animation-delay:${(-i * 0.9).toFixed(1)}s">${device(kind, cx, 52, color)}</g>
+      <text x="${cx}" y="76" text-anchor="middle" class="muted tiny">${kind}</text>`;
+    })
+    .join('\n');
+
+  let meta = '';
+  if (repo) {
+    const stars = compact(repo.stargazerCount);
+    const tag = repo.latestRelease;
+    meta = `      <path d="${STAR}" transform="translate(56, 40) scale(.85)" fill="${theme.orange}"/>
+      <text x="70" y="50" class="small text">${stars}</text>${
+        tag
+          ? `\n      <text x="${78 + stars.length * 6.7}" y="50" class="small" fill="${tag.isPrerelease ? theme.orange : theme.green}">${esc(tag.tagName)}</text>`
+          : ''
+      }`;
+  }
+
+  const summary = wrap(plain(project.summary), 48, 5)
+    .map((line, i) => `      <text x="20" y="${106 + i * 17}" class="muted">${esc(line)}</text>`)
+    .join('\n');
+  const stack = wrap(project.stack, 52, 2)
+    .map((line, i) => `      <text x="20" y="${fh - 32 + i * 15}" class="small" fill="${shade(color, 1.35)}">${esc(line)}</text>`)
+    .join('\n');
+  const inner = `      <g class="cube">${isoCube(34, 36, 11, color)}</g>
+      <text x="56" y="34" class="text" style="font-size:16px;font-weight:700">${esc(project.name)}</text>
+${meta}
+${devices}
+${summary}
+      <rect x="20" y="${fh - 52}" width="${fw - 40}" height="1" fill="${theme.border}"/>
+${stack}`;
+  return slab({
+    width,
+    height,
+    color,
+    index,
+    label: `${project.name}: ${plain(project.summary)} Runs on ${platforms.join(', ')}. Stack: ${project.stack}.`,
+    title: project.name,
+    inner,
+  });
 }
 
 // Newest published release of each public repository, newest first.
@@ -686,10 +806,12 @@ const badgePart = (s) => encodeURIComponent(s.replace(/-/g, '--').replace(/_/g, 
 function readmeBlocks(projects) {
   const cell = (repo, i) =>
     `  <a href="${repo.url}"><img src="assets/latest-${i + 1}.svg" width="49%" alt="${esc(`${repo.name}: ${plain(repo.description)}`)}" /></a>`;
-  const latest = [];
-  for (let i = 0; i < projects.length; i += 2) {
-    latest.push(`<p align="center">\n${projects.slice(i, i + 2).map((repo, j) => cell(repo, i + j)).join('\n')}\n</p>`);
-  }
+  // Two cards per centred row.
+  const grid = (cells) => {
+    const out = [];
+    for (let i = 0; i < cells.length; i += 2) out.push(`<p align="center">\n${cells.slice(i, i + 2).join('\n')}\n</p>`);
+    return out.join('\n');
+  };
   const project = (p) => `[**${p.name}**](${p.url})`;
   return {
     links: `<p align="center">\n${content.links
@@ -699,8 +821,16 @@ function readmeBlocks(projects) {
       )
       .join('\n')}\n</p>`,
     about: [...content.about.paragraphs, content.about.bullets.map((b) => `- **${b.label}:** ${b.text}`).join('\n')].join('\n\n'),
-    'latest-projects': latest.join('\n'),
-    'featured-projects': table(['Project', 'Summary', 'Stack'], content.featured.map((p) => [project(p), p.summary, p.stack])),
+    'latest-projects': grid(projects.map(cell)),
+    'featured-projects': `${grid(
+      content.featured.map(
+        (p, i) =>
+          `  <a href="${p.url}"><img src="assets/featured-${i + 1}.svg" width="49%" alt="${esc(`${p.name}: ${plain(p.summary)}`)}" /></a>`,
+      ),
+    )}\n\n<details>\n<summary>Text version</summary>\n<br>\n\n${table(
+      ['Project', 'Summary', 'Stack', 'Platforms'],
+      content.featured.map((p) => [project(p), p.summary, p.stack, p.platforms.join(', ')]),
+    )}\n\n</details>`,
     'more-projects': table(['Project', 'Summary'], content.more.map((p) => [project(p), p.summary])),
     experience: table(
       ['Period', 'Role', 'Highlights'],
@@ -731,11 +861,6 @@ async function updateReadme(projects) {
     next = `${next.slice(0, from + start.length)}\n${body}\n${next.slice(to)}`;
   }
   if (next !== readme) await writeFile(README, next);
-}
-
-// Isometric cube centred on (cx, cy) with half-width s.
-function isoCube(cx, cy, s, color) {
-  return `<path d="${poly([[cx, cy - s], [cx + s, cy - s / 2], [cx, cy], [cx - s, cy - s / 2]])}" fill="${shade(color, 1.25)}"/><path d="${poly([[cx - s, cy - s / 2], [cx, cy], [cx, cy + s], [cx - s, cy + s / 2]])}" fill="${shade(color, 0.78)}"/><path d="${poly([[cx + s, cy - s / 2], [cx, cy], [cx, cy + s], [cx + s, cy + s / 2]])}" fill="${shade(color, 0.48)}"/>`;
 }
 
 // Header: the name extruded in 3D over a perspective floor that scrolls
@@ -961,6 +1086,294 @@ ${rows}`;
   });
 }
 
+// How one project is put together, from data/architecture.json: clients at the
+// top, then the edge, the services, and the stores. Dashes march along every
+// link in the direction requests travel.
+function architectureCard() {
+  const A = content.architecture;
+  const width = 840;
+  const clientY = 98;
+  const edgeY = 182;
+  const svcY = 272;
+  const busY = 358;
+  const storeY = 404;
+  const height = 448;
+  const cx = width / 2;
+
+  const lines = [];
+  const link = (x1, y1, x2, y2, cls = 'flow') => lines.push(`  <path class="${cls}" d="M${n1(x1)} ${n1(y1)}L${n1(x2)} ${n1(y2)}"/>`);
+  const label = (x, y, text, cls, anchor = 'middle') =>
+    `<text x="${n1(x)}" y="${n1(y)}" text-anchor="${anchor}" class="${cls}" stroke="${theme.bg}" stroke-width="4" stroke-linejoin="round" paint-order="stroke">${esc(text)}</text>`;
+  const nodes = [];
+
+  // Edge: tunnel then gateway, side by side in the middle.
+  const edgeGap = 180;
+  const edgeX = A.edge.map((_, i) => cx + 30 + (i - (A.edge.length - 1) / 2) * edgeGap);
+  A.edge.forEach((e, i) => {
+    const x = edgeX[i];
+    const color = i === A.edge.length - 1 ? theme.blue : theme.orange;
+    if (i > 0) link(edgeX[i - 1] + 18, edgeY, x - 18, edgeY);
+    const left = i === 0;
+    nodes.push(`  <g class="node" style="--i:${3 + i}">${isoCube(x, edgeY, 15, color)}${label(x + (left ? -24 : 24), edgeY - 2, e.name, 'text', left ? 'end' : 'start')}${label(x + (left ? -24 : 24), edgeY + 12, e.detail, 'muted tiny', left ? 'end' : 'start')}</g>`);
+  });
+
+  // Clients converge on the first edge node.
+  const clientGap = 120;
+  const clientX = A.clients.map((_, i) => edgeX[0] + (i - (A.clients.length - 1) / 2) * clientGap);
+  A.clients.forEach((c, i) => {
+    const x = clientX[i];
+    link(x, clientY + 22, edgeX[0], edgeY - 20);
+    nodes.push(`  <g class="node" style="--i:${i}">${device(c.kind, x, clientY, theme.blue)}${label(x, clientY + 18, c.name, 'text small')}</g>`);
+  });
+
+  // Peer-to-peer media never touches the servers: an arc over the clients.
+  const first = clientX[0];
+  const last = clientX[clientX.length - 1];
+  const arc = `  <path class="p2p" d="M${n1(first)} ${clientY - 34}Q${n1((first + last) / 2)} ${clientY - 72} ${n1(last)} ${clientY - 34}"/>
+  ${wrap(A.p2p, 40, 2).map((line, i) => `<text x="${n1(last + 38)}" y="${clientY - 26 + i * 14}" class="small" fill="${theme.green}">${esc(line)}</text>`).join('\n  ')}`;
+
+  // Services in one row, fed by the gateway, draining into a shared bus.
+  const gate = edgeX[edgeX.length - 1];
+  const svcGap = (width - 160) / Math.max(A.services.length - 1, 1);
+  const svcX = A.services.map((_, i) => 80 + i * svcGap);
+  A.services.forEach((s, i) => {
+    const x = svcX[i];
+    link(gate, edgeY + 18, x, svcY - 16);
+    link(x, svcY + 14, x, busY, 'flow data');
+    nodes.push(`  <g class="node" style="--i:${6 + i}">${isoCube(x, svcY, 13, theme.green)}${label(x, svcY + 30, s.name, 'text small')}${label(x, svcY + 43, `:${s.port}`, 'tiny', 'middle').replace('class="tiny"', `class="tiny" fill="${theme.green}"`)}${label(x, svcY + 56, s.detail, 'muted tiny')}</g>`);
+  });
+  lines.push(`  <path class="bus" d="M${n1(svcX[0])} ${busY}H${n1(svcX[svcX.length - 1])}"/>`);
+
+  // Stores hang off the bus.
+  const storeGap = 220;
+  A.stores.forEach((s, i) => {
+    const x = cx + (i - (A.stores.length - 1) / 2) * storeGap - 40;
+    link(x, busY, x, storeY - 12, 'flow data');
+    nodes.push(`  <g class="node" style="--i:${14 + i}">
+    <path d="M${x - 14} ${storeY - 8}V${storeY + 8}A14 6 0 0 0 ${x + 14} ${storeY + 8}V${storeY - 8}Z" fill="${shade(theme.pink, 0.55)}"/>
+    <ellipse cx="${x}" cy="${storeY - 8}" rx="14" ry="6" fill="${shade(theme.pink, 1.15)}"/>
+    <path d="M${x - 14} ${storeY}A14 6 0 0 0 ${x + 14} ${storeY}" fill="none" stroke="${theme.bg}" stroke-opacity=".5"/>
+    ${label(x + 24, storeY - 1, s.name, 'text small', 'start')}${label(x + 24, storeY + 12, s.detail, 'muted tiny', 'start')}</g>`);
+  });
+
+  const notes = wrap(A.encryption, 25, 5)
+    .map((note, i) => `  <text x="24" y="${62 + i * 15}" class="muted small">${esc(note)}</text>`)
+    .join('\n');
+
+  const body = `  <style>
+    .tiny { font-size: 10px; }
+    path.flow, path.p2p, path.bus { fill: none; stroke-linecap: round; }
+    .flow { stroke: ${theme.blue}; stroke-opacity: .55; stroke-width: 1.2; stroke-dasharray: 2 7; animation: march 1.1s linear infinite; }
+    .data { stroke: ${theme.pink}; }
+    .bus { stroke: ${theme.pink}; stroke-opacity: .5; stroke-width: 1.5; }
+    .p2p { stroke: ${theme.green}; stroke-width: 1.4; stroke-dasharray: 5 5; animation: swing 1.4s linear infinite alternate; }
+    .node { animation: in .55s ease-out both; animation-delay: calc(var(--i) * 70ms); }
+    @keyframes march { from { stroke-dashoffset: 9; } to { stroke-dashoffset: 0; } }
+    @keyframes swing { from { stroke-dashoffset: 10; } to { stroke-dashoffset: 0; } }
+    @keyframes in { from { opacity: 0; transform: translateY(8px); } }
+    ${REDUCED_MOTION}
+  </style>
+${notes}
+${lines.join('\n')}
+${arc}
+${nodes.join('\n')}`;
+  return card({
+    width,
+    height,
+    command: `docker compose ps  # ${A.project}`,
+    label: `${A.project} architecture. Clients: ${A.clients.map((c) => c.name).join(', ')}. Edge: ${A.edge.map((e) => e.name).join(', ')}. Services: ${A.services.map((s) => s.name).join(', ')}. Stores: ${A.stores.map((s) => s.name).join(', ')}. ${A.p2p}`,
+    body,
+  });
+}
+
+// Deterministic pseudo-random numbers, so the star field does not change between runs.
+function seeded(seed) {
+  let a = seed;
+  return () => {
+    a = (a + 0x6d2b79f5) | 0;
+    let t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+// Every public repository as a sphere on a tilted disc that turns slowly:
+// size follows stars, colour follows language, the most starred sit nearest
+// the core. Each sphere rests at its own position, so the picture is complete
+// even where animation is off.
+function galaxyCard(data) {
+  const width = 840;
+  const height = 404;
+  const cx = width / 2;
+  const cy = 222;
+  const tilt = 0.4;
+  const period = 150;
+  const repos = [...data.repos].sort((a, b) => b.stargazerCount - a.stargazerCount || b.pushedAt.localeCompare(a.pushedAt));
+  const n = repos.length || 1;
+
+  const colors = new Map();
+  const gradientId = (color) => {
+    if (!colors.has(color)) colors.set(color, `s${colors.size}`);
+    return colors.get(color);
+  };
+
+  const bodies = repos.map((repo, i) => {
+    const color = repo.primaryLanguage?.color || theme.muted;
+    const r = 3.2 + Math.sqrt(repo.stargazerCount) * 2.7;
+    const orbit = 44 + (368 - 44) * Math.sqrt((i + 0.5) / n);
+    const phase = (i * 0.61803398875) % 1; // golden-ratio spacing
+    const angle = phase * 2 * Math.PI;
+    const depth = -Math.cos(angle); // -1 far, +1 near
+    const named = i < 7 && repo.stargazerCount > 0;
+    return {
+      depth,
+      svg: `    <g class="gx" style="--r:${n1(orbit)};--x:${n1(orbit * Math.sin(angle))};animation-delay:${(-(phase * period + period / 4)).toFixed(1)}s"><g class="gy" style="--r:${n1(orbit * tilt)};--y:${n1(orbit * tilt * depth)};--s:${(0.95 + depth * 0.22).toFixed(2)};animation-delay:${(-(phase * period)).toFixed(1)}s"><circle r="${n1(r)}" fill="url(#${gradientId(color)})"/>${
+        named ? `<text x="${n1(r + 5)}" y="3.5" class="text" style="font-size:10px">${esc(repo.name)}</text>` : ''
+      }</g></g>`,
+    };
+  });
+  // Far spheres first, so near ones overlap them in the resting picture.
+  bodies.sort((a, b) => a.depth - b.depth);
+
+  const gradients = [...colors]
+    .map(
+      ([color, id]) =>
+        `    <radialGradient id="${id}" cx=".35" cy=".3" r=".75"><stop offset="0" stop-color="${shade(color, 1.6)}"/><stop offset=".55" stop-color="${color}"/><stop offset="1" stop-color="${shade(color, 0.35)}"/></radialGradient>`,
+    )
+    .join('\n');
+
+  const rand = seeded(7);
+  const dust = Array.from({ length: 90 }, (_, i) => {
+    const x = 8 + rand() * (width - 16);
+    const y = 42 + rand() * (height - 50);
+    return `<circle class="tw" style="animation-delay:${(-rand() * 5).toFixed(1)}s" cx="${n1(x)}" cy="${n1(y)}" r="${(0.4 + rand() * 0.7).toFixed(1)}"/>`;
+  }).join('');
+
+  // Languages by number of repositories.
+  const byLang = new Map();
+  for (const repo of repos) {
+    const name = repo.primaryLanguage?.name;
+    if (!name) continue;
+    const entry = byLang.get(name) || { name, color: repo.primaryLanguage.color || theme.muted, count: 0 };
+    entry.count++;
+    byLang.set(name, entry);
+  }
+  let lx = 24;
+  const legend = [...byLang.values()]
+    .sort((a, b) => b.count - a.count)
+    .slice(0, 6)
+    .map((l) => {
+      const out = `<circle cx="${lx + 4}" cy="${height - 22}" r="4" fill="${l.color}"/><text x="${lx + 13}" y="${height - 18}" class="muted small">${esc(l.name)} <tspan class="text">${l.count}</tspan></text>`;
+      lx += 13 + (l.name.length + String(l.count).length + 1) * 6.7 + 18;
+      return out;
+    })
+    .join('');
+
+  const body = `  <style>
+    .gx { transform: translateX(calc(var(--x) * 1px)); animation: gx ${period / 2}s cubic-bezier(.37,0,.63,1) infinite alternate; }
+    .gy { transform: translateY(calc(var(--y) * 1px)) scale(var(--s)); animation: gy ${period / 2}s cubic-bezier(.37,0,.63,1) infinite alternate; }
+    .tw { fill: #fff; animation: tw 5s ease-in-out infinite; }
+    .core { animation: core 7s ease-in-out infinite; }
+    @keyframes gx { from { transform: translateX(calc(var(--r) * -1px)); } to { transform: translateX(calc(var(--r) * 1px)); } }
+    @keyframes gy { from { transform: translateY(calc(var(--r) * -1px)) scale(.73); } to { transform: translateY(calc(var(--r) * 1px)) scale(1.17); } }
+    @keyframes tw { 0%, 100% { opacity: .15; } 50% { opacity: .7; } }
+    @keyframes core { 0%, 100% { opacity: .6; } 50% { opacity: 1; } }
+    ${REDUCED_MOTION}
+  </style>
+  <defs>
+    <clipPath id="sky"><rect x="1" y="35" width="${width - 2}" height="${height - 36}" rx="9"/></clipPath>
+    <radialGradient id="corehalo"><stop offset="0" stop-color="#cfe6ff" stop-opacity=".5"/><stop offset=".25" stop-color="${theme.blue}" stop-opacity=".22"/><stop offset="1" stop-color="${theme.blue}" stop-opacity="0"/></radialGradient>
+${gradients}
+  </defs>
+  <g clip-path="url(#sky)">
+    ${dust}
+    <ellipse class="core" cx="${cx}" cy="${cy}" rx="300" ry="${300 * tilt}" fill="url(#corehalo)"/>
+    <g transform="translate(${cx}, ${cy})">
+${bodies.map((b) => b.svg).join('\n')}
+    </g>
+  </g>
+  <text x="24" y="62" class="text" style="font-size:20px;font-weight:700">${n}<tspan class="muted small" dx="7" style="font-weight:400">public repositories</tspan></text>
+  <text x="24" y="80" class="muted small">size = stars, colour = language</text>
+  ${legend}`;
+  return card({
+    width,
+    height,
+    command: 'gh repo list --public | galaxy --3d',
+    label: `${n} public repositories by ${LOGIN} drawn as a rotating galaxy, sized by stars and coloured by language. Most starred: ${repos.slice(0, 5).map((r) => `${r.name} (${r.stargazerCount})`).join(', ')}.`,
+    body,
+  });
+}
+
+// A shelf of pedestals, one per entry in data/achievements.json. An entry
+// either names a live GitHub number (`source`) or carries its own `value`.
+function achievementsCard(data) {
+  const facts = contributionFacts(data.weeks);
+  const live = {
+    contributions: data.yearTotal,
+    commits: data.commits,
+    longestStreak: facts.longest,
+    currentStreak: facts.current,
+    pullRequests: data.pullRequests,
+    issues: data.issues,
+    stars: data.stars,
+    repositories: data.repos.length,
+    followers: data.followers,
+  };
+  const palette = [theme.blue, theme.green, theme.orange, theme.purple, theme.pink, '#64d2ff', '#ffd60a'];
+  const items = content.achievements.map((a, i) => ({
+    value: a.source ? compact(live[a.source]) : a.value,
+    label: a.label,
+    color: a.color || palette[i % palette.length],
+  }));
+
+  const width = 840;
+  const height = 252;
+  const step = (width - 40) / items.length;
+  const groundY = 176;
+  const body = items
+    .map((item, i) => {
+      const cx = 20 + step * (i + 0.5);
+      const p = iso(cx, groundY, 1);
+      const topY = groundY - 26;
+      const gy = topY - 34;
+      const gem = `<g class="gem" style="animation-delay:${(-i * 0.55).toFixed(2)}s">
+      <path d="${poly([[cx, gy - 15], [cx - 11, gy], [cx + 2, gy + 3]])}" fill="${shade(item.color, 1.5)}"/>
+      <path d="${poly([[cx, gy - 15], [cx + 11, gy], [cx + 2, gy + 3]])}" fill="${shade(item.color, 1.05)}"/>
+      <path d="${poly([[cx, gy + 15], [cx - 11, gy], [cx + 2, gy + 3]])}" fill="${shade(item.color, 0.72)}"/>
+      <path d="${poly([[cx, gy + 15], [cx + 11, gy], [cx + 2, gy + 3]])}" fill="${shade(item.color, 0.42)}"/>
+    </g>`;
+      const labelLines = wrap(item.label, 15, 2)
+        .map((line, j) => `<text x="${n1(cx)}" y="${groundY + 38 + j * 13}" text-anchor="middle" class="muted" style="font-size:10px">${esc(line)}</text>`)
+        .join('');
+      return `  <g class="rise" style="--i:${i}">
+    ${isoBox(p, [-17, -17, 0], [34, 34, 26], '#26262c')}
+    <path d="${poly([p(-17, 17, 26), p(17, 17, 26), p(17, -17, 26)])}" fill="none" stroke="${item.color}" stroke-width="1.2" stroke-linejoin="round"/>
+    <ellipse class="pool" style="animation-delay:${(-i * 0.55).toFixed(2)}s" cx="${n1(cx)}" cy="${topY}" rx="11" ry="5" fill="${item.color}" fill-opacity=".35"/>
+    ${gem}
+    <text x="${n1(cx)}" y="${gy - 28}" text-anchor="middle" class="text" style="font-size:19px;font-weight:700">${esc(item.value)}</text>
+    ${labelLines}
+  </g>`;
+    })
+    .join('\n');
+
+  const style = `  <style>
+    .rise { animation: rise .7s cubic-bezier(.2,.9,.25,1.15) both; animation-delay: calc(var(--i) * 110ms); }
+    .gem { animation: hover 3.8s ease-in-out infinite; }
+    .pool { transform-box: fill-box; transform-origin: center; animation: pool 3.8s ease-in-out infinite; }
+    @keyframes rise { from { opacity: 0; transform: translateY(16px); } }
+    @keyframes hover { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+    @keyframes pool { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(.7); opacity: .5; } }
+    ${REDUCED_MOTION}
+  </style>`;
+  return card({
+    width,
+    height,
+    command: 'ls ./achievements',
+    label: `Achievements: ${items.map((a) => `${a.value} ${a.label}`).join('; ')}.`,
+    body: `${style}\n${body}`,
+  });
+}
+
 const data = await collect();
 const stats = statsCard(data);
 const statsHeight = Number(stats.match(/height="(\d+)"/)[1]);
@@ -976,6 +1389,15 @@ await writeFile(join(OUT_DIR, 'stack.svg'), stackCard());
 await writeFile(join(OUT_DIR, 'experience.svg'), experienceCard());
 if (releases) await writeFile(join(OUT_DIR, 'releases.svg'), releases);
 await Promise.all(projects.map((repo, i) => writeFile(join(OUT_DIR, `latest-${i + 1}.svg`), projectCard(repo, i))));
+await Promise.all(
+  content.featured.map((project, i) => {
+    const repo = data.repos.find((r) => r.url.toLowerCase() === project.url.toLowerCase().replace(/\/$/, ''));
+    return writeFile(join(OUT_DIR, `featured-${i + 1}.svg`), featuredCard(project, i, repo));
+  }),
+);
+await writeFile(join(OUT_DIR, 'architecture.svg'), architectureCard());
+await writeFile(join(OUT_DIR, 'galaxy.svg'), galaxyCard(data));
+await writeFile(join(OUT_DIR, 'achievements.svg'), achievementsCard(data));
 await updateReadme(projects);
 
 console.log(
