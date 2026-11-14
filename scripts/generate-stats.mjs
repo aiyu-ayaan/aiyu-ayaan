@@ -1,5 +1,6 @@
 // Generates the cards used in README.md (stats, languages, 3D contribution
-// skyline, latest projects, releases) and rewrites the README's
+// skyline, latest projects, releases, plus the hero, stack and experience
+// cards whose content lives in profile.mjs) and rewrites the README's
 // latest-projects block so each card links to the right repository.
 // No dependencies: Node 20+ and a GitHub token in GITHUB_TOKEN.
 //
@@ -10,6 +11,7 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { EXPERIENCE, HERO, STACK } from './profile.mjs';
 
 const LOGIN = process.env.GITHUB_LOGIN || 'aiyu-ayaan';
 const TOKEN = process.env.GITHUB_TOKEN;
@@ -20,7 +22,7 @@ const EXCLUDED_LANGS = new Set(
 const README = join(OUT_DIR, '..', 'README.md');
 const MAX_LANGS = 6;
 const LATEST_COUNT = 4;
-const RELEASE_COUNT = 6;
+const RELEASE_COUNT = 8;
 
 const theme = {
   bg: '#0b0b0d',
@@ -69,7 +71,9 @@ query ($login: String!, $after: String) {
         pushedAt
         forkCount
         primaryLanguage { name color }
-        latestRelease { tagName publishedAt url }
+        releases(first: 5, orderBy: { field: CREATED_AT, direction: DESC }) {
+          nodes { tagName publishedAt url isPrerelease isDraft }
+        }
         stargazerCount
         languages(first: 10, orderBy: { field: SIZE, direction: DESC }) {
           edges { size node { name color } }
@@ -108,6 +112,9 @@ async function collect() {
     for (const repo of user.repositories.nodes) {
       stars += repo.stargazerCount;
       // Only public repositories may ever be named in the README.
+      // GitHub's latestRelease skips prereleases, which hides every project
+      // still in alpha or beta. Take the newest published release instead.
+      repo.latestRelease = repo.releases.nodes.find((r) => !r.isDraft && r.publishedAt) || null;
       if (!repo.isPrivate) repos.push(repo);
       for (const { size, node } of repo.languages.edges) {
         if (EXCLUDED_LANGS.has(node.name.toLowerCase())) continue;
@@ -517,9 +524,10 @@ function projectCard(repo, index) {
       </g>`;
 
   const footY = fh - 16;
+  const tagColor = repo.latestRelease?.isPrerelease ? theme.orange : theme.green;
   const release = repo.latestRelease
-    ? `<rect x="${fw - 20 - repo.latestRelease.tagName.length * 6.7 - 14}" y="${footY - 13}" width="${repo.latestRelease.tagName.length * 6.7 + 14}" height="18" rx="9" fill="${theme.green}" fill-opacity=".12" stroke="${theme.green}" stroke-opacity=".45"/>
-      <text x="${fw - 27}" y="${footY}" text-anchor="end" class="small" fill="${theme.green}">${esc(repo.latestRelease.tagName)}</text>`
+    ? `<rect x="${fw - 20 - repo.latestRelease.tagName.length * 6.7 - 14}" y="${footY - 13}" width="${repo.latestRelease.tagName.length * 6.7 + 14}" height="18" rx="9" fill="${tagColor}" fill-opacity=".12" stroke="${tagColor}" stroke-opacity=".45"/>
+      <text x="${fw - 27}" y="${footY}" text-anchor="end" class="small" fill="${tagColor}">${esc(repo.latestRelease.tagName)}</text>`
     : '';
 
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img" aria-label="${esc(`${repo.name}: ${plain(repo.description)}`)}">
@@ -582,7 +590,8 @@ ${description}
   return svg;
 }
 
-// Newest tagged release of each public repository, newest first.
+// Newest published release of each public repository, newest first.
+// Stable tags are green, prereleases (alpha, beta, rc) are orange.
 function releasesCard(data) {
   const rows = data.repos
     .filter((r) => r.latestRelease && !r.isArchived)
@@ -612,7 +621,7 @@ function releasesCard(data) {
     <path d="${poly([[32, y - 8], [26, y - 5], [26, y + 1], [32, y - 2]])}" fill="${shade(color, 0.45)}"/>
     <text x="44" y="${y}" class="text" font-weight="600">${esc(repo.name)}</text>
     <line x1="${from.toFixed(1)}" y1="${y - 4}" x2="${to.toFixed(1)}" y2="${y - 4}" stroke="${theme.faint}" stroke-dasharray="1 5" stroke-linecap="round"/>
-    <text x="560" y="${y}" text-anchor="end" fill="${fresh ? theme.green : theme.blue}" font-weight="600">${esc(rel.tagName)}</text>
+    <text x="560" y="${y}" text-anchor="end" fill="${rel.isPrerelease ? theme.orange : theme.green}" font-weight="600">${esc(rel.tagName)}</text>
     <text x="${width - 150}" y="${y}" text-anchor="end" class="muted">${esc(repo.primaryLanguage?.name || '')}</text>
     <text x="${width - 20}" y="${y}" text-anchor="end" class="${fresh ? 'text' : 'muted'}">${date}</text>
   </g>`;
@@ -661,6 +670,234 @@ async function updateReadme(projects) {
   return true;
 }
 
+// Isometric cube centred on (cx, cy) with half-width s.
+function isoCube(cx, cy, s, color) {
+  return `<path d="${poly([[cx, cy - s], [cx + s, cy - s / 2], [cx, cy], [cx - s, cy - s / 2]])}" fill="${shade(color, 1.25)}"/><path d="${poly([[cx - s, cy - s / 2], [cx, cy], [cx, cy + s], [cx - s, cy + s / 2]])}" fill="${shade(color, 0.78)}"/><path d="${poly([[cx + s, cy - s / 2], [cx, cy], [cx, cy + s], [cx + s, cy + s / 2]])}" fill="${shade(color, 0.48)}"/>`;
+}
+
+// Header: the name extruded in 3D over a perspective floor that scrolls
+// towards the viewer, with language cubes orbiting in front of and behind it.
+function heroCard() {
+  const width = 840;
+  const height = 322;
+  const cx = width / 2;
+  const horizon = 224;
+  const floorH = height - horizon;
+
+  // Floor: cross lines sit on a quadratic depth curve; each one slides to the
+  // next line's position, so the loop is seamless.
+  const rows = 9;
+  const rowY = (i) => (i / rows) ** 2 * floorH;
+  const cross = Array.from({ length: rows }, (_, i) => {
+    const a = rowY(i);
+    const b = rowY(i + 1);
+    return `      <line class="fl" x1="0" x2="${width}" y1="${horizon}" y2="${horizon}" style="--a:${n1(a)}px;--b:${n1(b)}px;--oa:${(i / rows).toFixed(2)};--ob:${((i + 1) / rows).toFixed(2)}"/>`;
+  }).join('\n');
+  const rays = Array.from({ length: 29 }, (_, i) => {
+    const k = i - 14;
+    return `      <line x1="${cx + k * 6}" y1="${horizon}" x2="${cx + k * 96}" y2="${height}"/>`;
+  }).join('\n');
+
+  // Extrusion: the same text stacked along a diagonal, darkest at the back.
+  const layers = 16;
+  const extrusion = Array.from({ length: layers }, (_, i) => {
+    const o = (layers - i) * 0.9;
+    return `      <use href="#name" x="${n1(o)}" y="${n1(o)}" fill="${shade(theme.blue, 0.22 + (i / layers) * 0.38)}"/>`;
+  }).join('\n');
+
+  // Orbit: x and y run the same sine a quarter period apart, which traces an
+  // ellipse. Each cube exists twice, behind and in front of the name, and the
+  // two copies swap visibility as the cube crosses the ends of the ellipse.
+  const period = 16;
+  const orbit = (layer) =>
+    HERO.orbit
+      .map(([label, color], i) => {
+        const phase = (i * period) / HERO.orbit.length;
+        const s = 15;
+        return `      <g class="ox" style="animation-delay:${(-(phase + period / 4)).toFixed(2)}s"><g class="oy" style="animation-delay:${(-phase).toFixed(2)}s"><g class="${layer}" style="animation-delay:${(-phase).toFixed(2)}s">${isoCube(0, 0, s, color)}<text transform="matrix(1 .5 0 1 ${-s / 2} ${s / 2 + 0.5})" text-anchor="middle" style="font-size:9px;font-weight:700" fill="#fff" fill-opacity=".92">${esc(label)}</text></g></g></g>`;
+      })
+      .join('\n');
+
+  const chipY = 270;
+  const chipW = (t) => t.length * 6.7 + 22;
+  const chipsWidth = HERO.focus.reduce((sum, t) => sum + chipW(t), 0) + (HERO.focus.length - 1) * 10;
+  let chipX = cx - chipsWidth / 2;
+  const chips = HERO.focus
+    .map((t, i) => {
+      const w = chipW(t);
+      const out = `    <g class="fade" style="--d:${(1.1 + i * 0.12).toFixed(2)}s"><rect x="${n1(chipX)}" y="${chipY - 15}" width="${n1(w)}" height="22" rx="11" fill="${theme.bg}" fill-opacity=".85" stroke="${theme.border}"/><text x="${n1(chipX + w / 2)}" y="${chipY}" text-anchor="middle" class="muted small">${esc(t)}</text></g>`;
+      chipX += w + 10;
+      return out;
+    })
+    .join('\n');
+
+  const taglineWidth = HERO.tagline.length * 7.8;
+  const body = `  <style>
+    .fl { animation: flow 1.5s linear infinite; }
+    .ox { animation: ox ${period / 2}s cubic-bezier(.37,0,.63,1) infinite alternate; }
+    .oy { animation: oy ${period / 2}s cubic-bezier(.37,0,.63,1) infinite alternate; }
+    .front { animation: front ${period}s linear infinite; }
+    .back { animation: back ${period}s linear infinite; }
+    .hover { animation: hover 6s ease-in-out infinite; }
+    .glow { animation: glow 6s ease-in-out infinite; }
+    .cursor { animation: blink 1.1s steps(1) infinite; }
+    .fade { animation: fade .7s ease-out both; animation-delay: var(--d); }
+    @keyframes flow { from { transform: translateY(var(--a)); opacity: var(--oa); } to { transform: translateY(var(--b)); opacity: var(--ob); } }
+    @keyframes ox { from { transform: translateX(-340px); } to { transform: translateX(340px); } }
+    @keyframes oy { from { transform: translateY(-34px) scale(.7); } to { transform: translateY(34px) scale(1.15); } }
+    @keyframes front { 0%, 24.99% { opacity: 0; } 25%, 75% { opacity: 1; } 75.01%, 100% { opacity: 0; } }
+    @keyframes back { 0%, 24.99% { opacity: .75; } 25%, 75% { opacity: 0; } 75.01%, 100% { opacity: .75; } }
+    @keyframes hover { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+    @keyframes glow { 0%, 100% { opacity: .55; } 50% { opacity: .9; } }
+    @keyframes blink { 50% { opacity: 0; } }
+    @keyframes fade { from { opacity: 0; transform: translateY(6px); } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } .orbit { display: none; } }
+  </style>
+  <defs>
+    <clipPath id="stage"><rect x="1" y="35" width="${width - 2}" height="${height - 36}" rx="9"/></clipPath>
+    <radialGradient id="halo"><stop offset="0" stop-color="${theme.blue}" stop-opacity=".34"/><stop offset="1" stop-color="${theme.blue}" stop-opacity="0"/></radialGradient>
+    <linearGradient id="mist" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${theme.bg}"/><stop offset=".55" stop-color="${theme.bg}" stop-opacity="0"/></linearGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="${theme.blue}" stop-opacity="0"/><stop offset=".5" stop-color="${theme.blue}"/><stop offset="1" stop-color="${theme.blue}" stop-opacity="0"/></linearGradient>
+    <linearGradient id="ink" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#a9d4ff"/></linearGradient>
+    <text id="name" x="${cx}" y="168" text-anchor="middle" style="font-size:88px;font-weight:800;letter-spacing:10px">${esc(HERO.name)}</text>
+  </defs>
+  <g clip-path="url(#stage)">
+    <ellipse class="glow" cx="${cx}" cy="150" rx="330" ry="120" fill="url(#halo)"/>
+    <g stroke="${theme.blue}" stroke-opacity=".5" stroke-width="1">
+${rays}
+${cross}
+    </g>
+    <rect x="0" y="${horizon}" width="${width}" height="${floorH}" fill="url(#mist)"/>
+    <rect x="60" y="${horizon - 0.5}" width="${width - 120}" height="1.5" fill="url(#edge)"/>
+    <g class="orbit" transform="translate(${cx}, 138)">
+${orbit('back')}
+    </g>
+    <g class="hover">
+${extrusion}
+      <use href="#name" fill="url(#ink)"/>
+    </g>
+    <g class="orbit" transform="translate(${cx}, 138)">
+${orbit('front')}
+    </g>
+    <text x="${cx}" y="76" text-anchor="middle" class="fade" style="--d:.2s"><tspan fill="${theme.blue}">$</tspan><tspan class="muted" dx="7">${esc(HERO.greeting)}</tspan></text>
+    <g class="fade" style="--d:.7s">
+      <text x="${cx}" y="208" text-anchor="middle" class="text" stroke="${theme.bg}" stroke-width="4" stroke-linejoin="round" paint-order="stroke">${esc(HERO.tagline)}</text>
+      <rect class="cursor" x="${n1(cx + taglineWidth / 2 + 5)}" y="196" width="8" height="15" fill="${theme.blue}"/>
+    </g>
+    <text x="${cx}" y="244" text-anchor="middle" class="fade small" style="--d:.9s" fill="${theme.blue}" stroke="${theme.bg}" stroke-width="4" stroke-linejoin="round" paint-order="stroke">${esc(HERO.role)}</text>
+${chips}
+  </g>`;
+  return card({
+    width,
+    height,
+    command: 'aiyu — portfolio',
+    label: `Hi, I'm Ayaan. ${HERO.tagline} ${HERO.role}.`,
+    body,
+  });
+}
+
+// Tech stack as rows of raised keys, one row group per area.
+function stackCard() {
+  const width = 840;
+  const labelX = 20;
+  const tilesX = 190;
+  const maxX = width - 20;
+  const tileH = 26;
+  const depth = 5;
+  const gap = 8;
+  const lineH = tileH + depth + 9;
+  let y = 54;
+  let index = 0;
+  const parts = [];
+  for (const [area, color, tools] of STACK) {
+    parts.push(`  <g class="fade" style="--d:${(index * 0.03).toFixed(2)}s">${isoCube(labelX + 8, y + 15, 8, color)}<text x="${labelX + 26}" y="${y + 19}" class="muted small" style="letter-spacing:.6px">${esc(area.toUpperCase())}</text></g>`);
+    let x = tilesX;
+    for (const tool of tools) {
+      const w = Math.round(tool.length * 7.3 + 22);
+      if (x + w > maxX) {
+        x = tilesX;
+        y += lineH;
+      }
+      parts.push(`  <g class="pop" style="--i:${index}"><rect x="${x}" y="${y + depth}" width="${w}" height="${tileH}" rx="6" fill="${shade(color, 0.36)}"/><g class="key" style="--i:${index}"><rect x="${x}" y="${y}" width="${w}" height="${tileH}" rx="6" fill="#17171b" stroke="${shade(color, 0.7)}"/><rect x="${x + 7}" y="${y + 1}" width="${w - 14}" height="1" fill="${color}" fill-opacity=".7"/><text x="${x + w / 2}" y="${y + 17.5}" text-anchor="middle" class="text" style="font-size:12px">${esc(tool)}</text></g></g>`);
+      x += w + gap;
+      index++;
+    }
+    y += lineH + 8;
+  }
+  const height = y + 4;
+  const body = `  <style>
+    .pop { animation: pop .5s cubic-bezier(.2,.9,.25,1.3) both; animation-delay: calc(var(--i) * 35ms); }
+    .key { animation: press 9s ease-in-out infinite; animation-delay: calc(2.5s + var(--i) * 110ms); }
+    .fade { animation: fade .6s ease-out both; animation-delay: var(--d); }
+    @keyframes pop { from { opacity: 0; transform: translateY(8px); } }
+    @keyframes press { 0%, 5%, 100% { transform: translateY(0); } 2.5% { transform: translateY(${depth - 1}px); } }
+    @keyframes fade { from { opacity: 0; } }
+    ${REDUCED_MOTION}
+  </style>
+${parts.join('\n')}`;
+  return card({
+    width,
+    height,
+    command: 'cat ./stack.toml',
+    label: `Tech stack. ${STACK.map(([area, , tools]) => `${area}: ${tools.join(', ')}`).join('. ')}.`,
+    body,
+  });
+}
+
+// Experience and education on one extruded rail, newest at the top.
+function experienceCard() {
+  const width = 840;
+  const railX = 34;
+  const textX = 64;
+  let y = 62;
+  const nodes = [];
+  const rows = EXPERIENCE.map((item, i) => {
+    const lines = wrap(item.text, 96, 3);
+    const top = y;
+    nodes.push([top - 4, item]);
+    const out = `  <g class="row" style="--i:${i}">
+    <text x="${textX}" y="${top}" class="text" style="font-size:14px;font-weight:700">${esc(item.title)}<tspan class="muted" style="font-size:13px;font-weight:400" dx="8">at</tspan><tspan fill="${item.color}" style="font-size:13px;font-weight:600" dx="8">${esc(item.org)}</tspan></text>
+    <text x="${width - 20}" y="${top}" text-anchor="end" class="${item.current ? 'text' : 'muted'} small">${esc(item.period)}</text>
+${lines.map((line, j) => `    <text x="${textX}" y="${top + 21 + j * 17}" class="muted" style="font-size:12px">${esc(line)}</text>`).join('\n')}
+  </g>`;
+    y = top + 21 + lines.length * 17 + 20;
+    return out;
+  }).join('\n');
+  const height = y - 12;
+  const railTop = nodes[0][0];
+  const railBottom = nodes[nodes.length - 1][0];
+  const cubes = nodes
+    .map(([ny, item], i) => {
+      const ring = item.current
+        ? `<ellipse class="ping" cx="${railX}" cy="${ny + 9}" rx="13" ry="6.5" fill="none" stroke="${item.color}" stroke-width="1.5"/>`
+        : '';
+      return `  <g class="row" style="--i:${i}">${ring}${isoCube(railX, ny, 9, item.color)}</g>`;
+    })
+    .join('\n');
+  const body = `  <style>
+    .row { animation: in .6s ease-out both; animation-delay: calc(.2s + var(--i) * 160ms); }
+    .rail { transform-box: fill-box; transform-origin: 50% 0; animation: draw 1.1s ease-out both; }
+    .ping { transform-box: fill-box; transform-origin: center; animation: ping 2.4s ease-out infinite; }
+    @keyframes in { from { opacity: 0; transform: translateX(-10px); } }
+    @keyframes draw { from { transform: scaleY(0); } }
+    @keyframes ping { from { opacity: .9; transform: scale(.6); } to { opacity: 0; transform: scale(1.7); } }
+    ${REDUCED_MOTION}
+  </style>
+  <g class="rail">
+    <rect x="${railX - 2}" y="${railTop}" width="4" height="${railBottom - railTop}" fill="${theme.faint}"/>
+    <rect x="${railX + 2}" y="${railTop}" width="2.5" height="${railBottom - railTop}" fill="#232327"/>
+  </g>
+${cubes}
+${rows}`;
+  return card({
+    width,
+    height,
+    command: 'git log --author=ayaan --format=career',
+    label: `Experience: ${EXPERIENCE.map((e) => `${e.title} at ${e.org}, ${e.period}`).join('; ')}.`,
+    body,
+  });
+}
+
 const data = await collect();
 const stats = statsCard(data);
 const statsHeight = Number(stats.match(/height="(\d+)"/)[1]);
@@ -671,6 +908,9 @@ await mkdir(OUT_DIR, { recursive: true });
 await writeFile(join(OUT_DIR, 'stats.svg'), stats);
 await writeFile(join(OUT_DIR, 'languages.svg'), languagesCard(data, statsHeight));
 await writeFile(join(OUT_DIR, 'skyline.svg'), skylineCard(data));
+await writeFile(join(OUT_DIR, 'hero.svg'), heroCard());
+await writeFile(join(OUT_DIR, 'stack.svg'), stackCard());
+await writeFile(join(OUT_DIR, 'experience.svg'), experienceCard());
 if (releases) await writeFile(join(OUT_DIR, 'releases.svg'), releases);
 await Promise.all(projects.map((repo, i) => writeFile(join(OUT_DIR, `latest-${i + 1}.svg`), projectCard(repo, i))));
 await updateReadme(projects);
