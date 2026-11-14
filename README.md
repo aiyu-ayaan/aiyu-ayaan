@@ -1,5 +1,5 @@
 <a href="https://me.aiyu.co.in/">
-  <img src="assets/header.gif" width="100%" alt="Hi, I'm Ayaan. Writes code on Linux, plays on Windows." />
+  <img src="assets/hero.svg" width="100%" alt="Hi, I'm Ayaan. Writes code on Linux, plays on Windows. Software Engineer at Adrosonic." />
 </a>
 
 <p align="center">
@@ -29,7 +29,7 @@ I work spec-first with AI coding agents. The architecture, threat model and phas
 
 ## Latest projects
 
-The four repositories I pushed to most recently. This section rebuilds itself every day, so it always shows what I am working on now.
+The four repositories I pushed to most recently. This section rebuilds itself every six hours, so it always shows what I am working on now.
 
 <!-- latest-projects:start -->
 <p align="center">
@@ -80,6 +80,14 @@ The four repositories I pushed to most recently. This section rebuilds itself ev
 
 ## Experience
 
+<p align="center">
+  <img src="assets/experience.svg" width="100%" alt="Experience and education timeline; the same content is in the text version below" />
+</p>
+
+<details>
+<summary>Text version</summary>
+<br>
+
 | Period | Role | Highlights |
 | :-- | :-- | :-- |
 | Jun 2025 – Present | **Software Engineer**, Adrosonic | Own delivery on two live client projects in C#, .NET Core, Azure Functions and APIM. |
@@ -88,7 +96,17 @@ The four repositories I pushed to most recently. This section rebuilds itself ev
 
 **Education:** Master of Computer Applications (2023 – 2025, CGPA 8.1) and Bachelor of Computer Applications (2019 – 2022, CGPA 8.2), Birla Institute of Technology, Mesra.
 
+</details>
+
 ## Tech stack
+
+<p align="center">
+  <img src="assets/stack.svg" width="100%" alt="Tech stack by area; the same content is in the text version below" />
+</p>
+
+<details>
+<summary>Text version</summary>
+<br>
 
 | Area | Tools |
 | :-- | :-- |
@@ -99,10 +117,12 @@ The four repositories I pushed to most recently. This section rebuilds itself ev
 | Data | PostgreSQL, MongoDB, Redis, Prisma, Firebase, BullMQ |
 | Infrastructure | Docker, Nginx, Azure, GitHub Actions, pnpm + Turborepo |
 
+</details>
+
 ## GitHub activity
 
 <p align="center">
   <img src="assets/stats.svg" width="49%" alt="GitHub stats" />
   <img src="assets/languages.svg" width="49%" alt="Most used languages" />
 </p>
-<sub>Every card on this page is a hand-built SVG: the 3D solids are projected to plain paths by <a href="scripts/generate-stats.mjs"><code>scripts/generate-stats.mjs</code></a>, which has no dependencies, and the motion is CSS inside the image. A GitHub Action in this repository regenerates the cards and the latest-projects links every day. The header is a <a href="https://github.com/heygen-com/hyperframes">HyperFrames</a> composition in <a href="hyperframes/profile"><code>hyperframes/profile</code></a>, in the same style as the story on my portfolio.</sub>
+<sub>Every card on this page is a hand-built SVG: the 3D solids are projected to plain paths by <a href="scripts/generate-stats.mjs"><code>scripts/generate-stats.mjs</code></a>, which has no dependencies, and the motion is CSS inside the image. A GitHub Action in this repository regenerates the cards and the latest-projects links every six hours. The hero, stack and timeline content lives in <a href="scripts/profile.mjs"><code>scripts/profile.mjs</code></a>.</sub>
