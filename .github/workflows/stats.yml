@@ -7,6 +7,7 @@ on:
   push:
     paths:
       - 'scripts/**'
+      - 'data/**'
       - '.github/workflows/stats.yml'
 
 permissions:
@@ -29,7 +30,7 @@ jobs:
 
       # STATS_TOKEN is optional: a personal access token (read:user, repo) makes
       # private contributions count. Without it only public activity is shown.
-      # Also rewrites the latest-projects block in README.md.
+      # Also rebuilds the marked blocks of README.md from data/*.json.
       - name: Generate cards
         run: node scripts/generate-stats.mjs
         env:
