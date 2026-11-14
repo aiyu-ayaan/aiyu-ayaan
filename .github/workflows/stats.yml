@@ -2,11 +2,11 @@ name: Update profile stats
 
 on:
   schedule:
-    - cron: '17 0 * * *'
+    - cron: '17 */6 * * *'
   workflow_dispatch:
   push:
     paths:
-      - 'scripts/generate-stats.mjs'
+      - 'scripts/**'
       - '.github/workflows/stats.yml'
 
 permissions:
