@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "achievements",
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "source": {
+        "type": "string",
+        "enum": [
+          "contributions",
+          "commits",
+          "longestStreak",
+          "currentStreak",
+          "pullRequests",
+          "issues",
+          "stars",
+          "repositories",
+          "followers"
+        ]
+      },
+      "value": {
+        "type": "string",
+        "minLength": 1
+      },
+      "label": {
+        "type": "string",
+        "minLength": 1
+      },
+      "color": {
+        "type": "string",
+        "pattern": "^#[0-9a-fA-F]{6}$"
+      }
+    },
+    "required": [
+      "label"
+    ],
+    "oneOf": [
+      {
+        "required": [
+          "source"
+        ]
+      },
+      {
+        "required": [
+          "value"
+        ]
+      }
+    ]
+  },
+  "maxItems": 8
+}

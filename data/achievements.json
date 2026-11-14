@@ -1,0 +1,30 @@
+[
+  {
+    "source": "contributions",
+    "label": "contributions, past year"
+  },
+  {
+    "source": "longestStreak",
+    "label": "day longest streak"
+  },
+  {
+    "source": "pullRequests",
+    "label": "pull requests"
+  },
+  {
+    "source": "stars",
+    "label": "stars earned"
+  },
+  {
+    "source": "repositories",
+    "label": "public repositories"
+  },
+  {
+    "value": "1,000+",
+    "label": "students on BIT App"
+  },
+  {
+    "value": "500+",
+    "label": "tts-engine downloads"
+  }
+]

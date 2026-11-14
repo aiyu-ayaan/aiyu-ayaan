@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "featured-projects",
+  "type": "array",
+  "minItems": 1,
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "name": {
+        "type": "string",
+        "minLength": 1
+      },
+      "url": {
+        "type": "string",
+        "pattern": "^(https?://|mailto:)\\S+$"
+      },
+      "summary": {
+        "type": "string",
+        "minLength": 1
+      },
+      "stack": {
+        "type": "string",
+        "minLength": 1
+      },
+      "platforms": {
+        "type": "array",
+        "minItems": 1,
+        "items": {
+          "type": "string",
+          "enum": [
+            "android",
+            "web",
+            "desktop",
+            "server"
+          ]
+        }
+      }
+    },
+    "required": [
+      "name",
+      "url",
+      "summary",
+      "stack",
+      "platforms"
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "label": "portfolio",
+    "text": "me.aiyu.co.in",
+    "url": "https://me.aiyu.co.in/",
+    "alt": "Portfolio: me.aiyu.co.in"
+  },
+  {
+    "label": "resume",
+    "text": "PDF",
+    "url": "https://me.aiyu.co.in/api/resume",
+    "alt": "Resume (PDF)"
+  },
+  {
+    "label": "linkedin",
+    "text": "in/aiyu",
+    "url": "https://www.linkedin.com/in/aiyu/",
+    "alt": "LinkedIn: in/aiyu"
+  },
+  {
+    "label": "email",
+    "text": "ayaan35200@gmail.com",
+    "url": "mailto:ayaan35200@gmail.com",
+    "alt": "Email: ayaan35200@gmail.com"
+  }
+]

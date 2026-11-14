@@ -1,0 +1,21 @@
+[
+  {
+    "period": "Jun 2025 – Present",
+    "title": "Software Engineer",
+    "company": "Adrosonic",
+    "highlight": "Own delivery on two live client projects in C#, .NET Core, Azure Functions and APIM.",
+    "current": true
+  },
+  {
+    "period": "Dec 2024 – Jun 2025",
+    "title": "Software Engineer (Trainee)",
+    "company": "Adrosonic",
+    "highlight": "Built a Dynamics 365 + Instanda integration proof of concept that cut process automation time by 40%."
+  },
+  {
+    "period": "Jul 2022 – Mar 2023",
+    "title": "Android Developer Intern",
+    "company": "BeyondSchool",
+    "highlight": "Shipped text-to-speech and speech-to-text accessibility (+35% engagement) and gamification (+40% retention)."
+  }
+]

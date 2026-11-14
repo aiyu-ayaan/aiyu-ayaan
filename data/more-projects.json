@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Unpack",
+    "url": "https://github.com/aiyu-ayaan/Unpack",
+    "summary": "Installs anything on Linux in one drop: `.deb`, `.rpm`, AppImage, Flatpak, Snap, scripts, archives and git URLs. Detects the distro, shows the plan, then installs, tracks and uninstalls. Rust and Tauri."
+  },
+  {
+    "name": "Monolith",
+    "url": "https://github.com/aiyu-ayaan/Monolith",
+    "summary": "Single-container backend suite in Rust: multi-app SQLite, compiled access rules, auth, realtime, sync and an embedded admin UI."
+  },
+  {
+    "name": "RideLink",
+    "url": "https://github.com/aiyu-ayaan/RideLink",
+    "summary": "Open-source TVS Connect alternative for the TVS Ntorq 125. Turn-by-turn arrows on the scooter display, caller ID and ride analytics, with no account and no cloud."
+  },
+  {
+    "name": "Parley",
+    "url": "https://github.com/aiyu-ayaan/Parley",
+    "summary": "Lightweight multi-account WhatsApp desktop app for Linux, built with Go and Wails instead of Electron."
+  },
+  {
+    "name": "Agent-Verse",
+    "url": "https://github.com/aiyu-ayaan/Agent-Verse",
+    "summary": "Multi-agent orchestration framework for Android."
+  },
+  {
+    "name": "CodeDock",
+    "url": "https://github.com/aiyu-ayaan/CodeDock",
+    "summary": "Self-hosted Codespaces alternative that provisions code-server containers through the Docker SDK. Written in Go."
+  },
+  {
+    "name": "CodePilot",
+    "url": "https://github.com/aiyu-ayaan/Code-Pilot",
+    "summary": "Local-first CI/CD dashboard that runs GitHub Actions with `nektos/act`."
+  },
+  {
+    "name": "Roadlyn",
+    "url": "https://github.com/aiyu-ayaan/Roadlyn",
+    "summary": "AI roadmap SaaS. LangChain and the Vercel AI SDK on Fastify, with BullMQ jobs."
+  },
+  {
+    "name": "BIT App",
+    "url": "https://github.com/aiyu-ayaan/BIT-App",
+    "summary": "Campus app for BIT Mesra. Used by 1,000+ students, rated 4.7/5 on Google Play."
+  },
+  {
+    "name": "TTS-Engine",
+    "url": "https://github.com/aiyu-ayaan/tts-engine",
+    "summary": "Android text-to-speech library published on JitPack, 500+ downloads."
+  }
+]

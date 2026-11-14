@@ -1,0 +1,85 @@
+[
+  {
+    "name": "BetweenUs",
+    "url": "https://github.com/aiyu-ayaan/BetweenUs",
+    "summary": "End-to-end encrypted, Discord-style messaging and calls for desktop, web and Android. Eight NestJS services behind Nginx. Messages are encrypted on the client with AES-256-GCM, so the server stores only ciphertext. Calls use a peer-to-peer WebRTC mesh with no media server.",
+    "stack": "NestJS, TypeScript, Electron, React, Jetpack Compose, WebRTC, PostgreSQL, Redis",
+    "platforms": [
+      "desktop",
+      "web",
+      "android",
+      "server"
+    ]
+  },
+  {
+    "name": "Aiyu",
+    "url": "https://github.com/aiyu-ayaan/Aiyu",
+    "summary": "The portfolio and CMS behind [me.aiyu.co.in](https://me.aiyu.co.in/). 52 themes, a Markdown blog with Notion sync, a LaTeX resume editor, a visual cron scheduler with encrypted secrets, and an MCP server.",
+    "stack": "Next.js 16, React 19, PostgreSQL, Prisma, Gemini, Docker",
+    "platforms": [
+      "web",
+      "server"
+    ]
+  },
+  {
+    "name": "Findex",
+    "url": "https://github.com/aiyu-ayaan/Findex",
+    "summary": "Android file manager with multi-tab and dual-pane browsing, a storage analyzer, duplicate finder, cleaner, archive tools and a recycle bin. Privacy-focused.",
+    "stack": "Kotlin, Jetpack Compose, Material 3 Expressive",
+    "platforms": [
+      "android"
+    ]
+  },
+  {
+    "name": "Pull",
+    "url": "https://github.com/aiyu-ayaan/Pull",
+    "summary": "Android download manager. Segmented multi-connection HTTP, torrents and magnet links, video sites through yt-dlp, and a built-in browser with an ad blocker.",
+    "stack": "Kotlin, Material 3 Expressive",
+    "platforms": [
+      "android"
+    ]
+  },
+  {
+    "name": "Kinema",
+    "url": "https://github.com/aiyu-ayaan/Kinema",
+    "summary": "Self-hosted media server, a lightweight alternative to Plex and Jellyfin. Direct play first, near-zero idle CPU, TMDB metadata and family profiles. Runs on a Raspberry Pi.",
+    "stack": "Rust, web, desktop, Android",
+    "platforms": [
+      "server",
+      "web",
+      "desktop",
+      "android"
+    ]
+  },
+  {
+    "name": "Domus",
+    "url": "https://github.com/aiyu-ayaan/Domus",
+    "summary": "Local-first smart-home hub. Tuya, Tapo, Xiaomi, Hue and MQTT/Zigbee2MQTT devices, a built-in Matter bridge for Google Home, Apple Home and Alexa, energy bill tracking and automations.",
+    "stack": "Rust, web, desktop, Android",
+    "platforms": [
+      "server",
+      "web",
+      "desktop",
+      "android"
+    ]
+  },
+  {
+    "name": "Switchboard",
+    "url": "https://github.com/aiyu-ayaan/Switchboard",
+    "summary": "Control your PC from your phone: brightness and contrast for every monitor over DDC/CI, volume, media playback and power. End-to-end encrypted on your own network, paired by QR code.",
+    "stack": "Rust daemon, Electron, Kotlin",
+    "platforms": [
+      "desktop",
+      "android"
+    ]
+  },
+  {
+    "name": "Rewire",
+    "url": "https://github.com/aiyu-ayaan/Rewire",
+    "summary": "Android app that reduces unwanted habits by adding intentional friction before distracting apps open. It creates a pause, lets you choose, and shows your own patterns. No punishment, no surveillance.",
+    "stack": "Kotlin, Android",
+    "platforms": [
+      "android"
+    ]
+  }
+]

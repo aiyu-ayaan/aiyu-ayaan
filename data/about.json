@@ -1,0 +1,20 @@
+{
+  "paragraphs": [
+    "Software Engineer at [Adrosonic](https://www.adrosonic.com/) in Mumbai, delivering client projects in C#, .NET Core, Azure Functions and APIM. Outside of work I design and ship full-stack systems, mostly in TypeScript and Kotlin.",
+    "I work spec-first with AI coding agents. The architecture, threat model and phased backlog are written down as context the agent can read (`CLAUDE.md`, decision logs) before any code exists. The agent implements against that contract. I own review, integration and hardening."
+  ],
+  "bullets": [
+    {
+      "label": "Currently building",
+      "text": "[BetweenUs](https://github.com/aiyu-ayaan/BetweenUs), an end-to-end encrypted communication platform across desktop, web and Android."
+    },
+    {
+      "label": "Focus areas",
+      "text": "agentic development workflows, LLM integration, applied cryptography, microservice architecture."
+    },
+    {
+      "label": "Writing and more work",
+      "text": "[blog](https://me.aiyu.co.in/blogs), [project write-ups](https://me.aiyu.co.in/projects) and a [contact form](https://me.aiyu.co.in/contact-us) on my portfolio."
+    }
+  ]
+}

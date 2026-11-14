@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="410" height="282" viewBox="0 0 410 282" role="img" aria-label="Aiyu: The portfolio and CMS behind me.aiyu.co.in. 52 themes, a Markdown blog with Notion sync, a LaTeX resume editor, a visual cron scheduler with encrypted secrets, and an MCP server. Runs on web, server. Stack: Next.js 16, React 19, PostgreSQL, Prisma, Gemini, Docker.">
+  <title>Aiyu</title>
+  <style>
+    text { font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; font-size: 12px; }
+    .muted { fill: #86868b; }
+    .text { fill: #f5f5f7; }
+    .small { font-size: 11px; }
+    .tiny { font-size: 9px; }
+    .slab { animation: float 6s ease-in-out infinite; animation-delay: -1.5s; }
+    .shadow { transform-box: fill-box; transform-origin: center; animation: shadow 6s ease-in-out infinite; animation-delay: -1.5s; }
+    .cube { transform-box: fill-box; transform-origin: center; animation: bob 3s ease-in-out infinite; animation-delay: -0.7s; }
+    .dev { animation: lift 4s ease-in-out infinite; }
+    .scr { animation: lit 3s ease-in-out infinite; }
+    .led { animation: blink 1.6s steps(1) infinite; }
+    .sheen { animation: sheen 6s ease-in-out infinite; animation-delay: 0.9s; }
+    @keyframes float { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(-2px, -4px); } }
+    @keyframes shadow { 0%, 100% { opacity: .75; transform: scale(1); } 50% { opacity: .45; transform: scale(.97); } }
+    @keyframes bob { 0%, 100% { transform: translateY(0) scale(1); } 50% { transform: translateY(-2.5px) scale(1.06); } }
+    @keyframes lift { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+    @keyframes lit { 0%, 100% { opacity: 1; } 50% { opacity: .6; } }
+    @keyframes blink { 50% { opacity: .15; } }
+    @keyframes sheen { 0%, 55% { transform: translateX(-140px); } 100% { transform: translateX(550px); } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+  <defs>
+    <linearGradient id="face" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#17171b"/><stop offset="1" stop-color="#0b0b0d"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f1e05a"/><stop offset="1" stop-color="#f1e05a" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="shine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".07"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="clip"><rect x="6" y="8" width="388" height="254" rx="12"/></clipPath>
+  </defs>
+  <rect class="shadow" x="18" y="22" width="388" height="254" rx="12" fill="#000"/>
+  <g class="slab">
+    <rect x="15" y="19" width="388" height="254" rx="12" fill="#48431b"/>
+    <path d="M18 262L27 273H391L403 261V31L394 20V262Z" fill="#655e26"/>
+    <rect x="6" y="8" width="388" height="254" rx="12" fill="url(#face)"/>
+    <g clip-path="url(#clip)">
+      <rect x="6" y="8" width="388" height="3" fill="url(#glow)"/>
+      <rect class="sheen" x="0" y="8" width="120" height="254" fill="url(#shine)" transform="skewX(-18)"/>
+    </g>
+    <rect x="6.5" y="8.5" width="387" height="253" rx="12" fill="none" stroke="#2b2b30"/>
+    <g transform="translate(6, 8)">
+      <g class="cube"><path d="M34 25L45 30.5L34 36L23 30.5Z" fill="#f5e883"/><path d="M23 30.5L34 36L34 47L23 41.5Z" fill="#bcaf46"/><path d="M45 30.5L34 36L34 47L45 41.5Z" fill="#746c2b"/></g>
+      <text x="56" y="34" class="text" style="font-size:16px;font-weight:700">Aiyu</text>
+      <path d="M6 .6l1.7 3.4 3.7.5-2.7 2.6.6 3.7L6 9.1 2.7 10.8l.6-3.7L.6 4.5l3.7-.5z" transform="translate(56, 40) scale(.85)" fill="#ff9f0a"/>
+      <text x="70" y="50" class="small text">7</text>
+      <text x="84.7" y="50" class="small" fill="#30d158">v6.1.0</text>
+      <g class="dev" style="animation-delay:0.0s"><path d="M291.2 43.4L315.4 57.4L315.4 35.4L291.2 21.4Z" fill="#3b3b44"/><path d="M316.8 56.6L315.4 57.4L315.4 35.4L316.8 34.6Z" fill="#232329"/><path d="M292.6 20.6L316.8 34.6L315.4 35.4L291.2 21.4Z" fill="#808085"/><path d="M292.2 42.8L314.4 55.6L314.4 36L292.2 23.2Z" fill="#15151a"/><path d="M292.2 26.8L314.4 39.6L314.4 36L292.2 23.2Z" fill="#f1e05a" class="scr"/><path d="M294.3 33.2L306.8 40.4L306.8 38.8L294.3 31.6Z" fill="#86868b" fill-opacity=".55"/><path d="M294.3 37.6L310.9 47.2L310.9 45.6L294.3 36Z" fill="#86868b" fill-opacity=".35"/></g>
+      <text x="304" y="76" text-anchor="middle" class="muted tiny">web</text>
+      <g class="dev" style="animation-delay:-0.9s"><path d="M340.1 52L354 60L354 34L340.1 26Z" fill="#3b3b44"/><path d="M367.9 52L354 60L354 34L367.9 26Z" fill="#232329"/><path d="M354 18L367.9 26L354 34L340.1 26Z" fill="#808085"/><path d="M341.5 48.4L352.6 54.8L352.6 50.8L341.5 44.4Z" fill="#15151a"/><path d="M349.8 52L351.7 53.1L351.7 51.5L349.8 50.4Z" fill="#f1e05a" class="led" style="animation-delay:0s"/><path d="M341.5 41.6L352.6 48L352.6 44L341.5 37.6Z" fill="#15151a"/><path d="M349.8 45.2L351.7 46.3L351.7 44.7L349.8 43.6Z" fill="#f1e05a" class="led" style="animation-delay:0.4s"/><path d="M341.5 34.8L352.6 41.2L352.6 37.2L341.5 30.8Z" fill="#15151a"/><path d="M349.8 38.4L351.7 39.5L351.7 37.9L349.8 36.8Z" fill="#f1e05a" class="led" style="animation-delay:0.8s"/></g>
+      <text x="354" y="76" text-anchor="middle" class="muted tiny">server</text>
+      <text x="20" y="106" class="muted">The portfolio and CMS behind me.aiyu.co.in. 52</text>
+      <text x="20" y="123" class="muted">themes, a Markdown blog with Notion sync, a</text>
+      <text x="20" y="140" class="muted">LaTeX resume editor, a visual cron scheduler</text>
+      <text x="20" y="157" class="muted">with encrypted secrets, and an MCP server.</text>
+      <rect x="20" y="202" width="348" height="1" fill="#2b2b30"/>
+      <text x="20" y="222" class="small" fill="#f6eb94">Next.js 16, React 19, PostgreSQL, Prisma, Gemini,</text>
+      <text x="20" y="237" class="small" fill="#f6eb94">Docker</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,78 @@
+[
+  {
+    "area": "Languages",
+    "color": "#2997ff",
+    "tools": [
+      "TypeScript",
+      "Kotlin",
+      "Rust",
+      "Python",
+      "C#",
+      "Go",
+      "Java",
+      "SQL"
+    ]
+  },
+  {
+    "area": "Backend",
+    "color": "#30d158",
+    "tools": [
+      "NestJS",
+      "Fastify",
+      "FastAPI",
+      ".NET Core",
+      "Azure Functions",
+      "APIM",
+      "WebSockets",
+      "WebRTC"
+    ]
+  },
+  {
+    "area": "Frontend and mobile",
+    "color": "#bf5af2",
+    "tools": [
+      "Next.js",
+      "React",
+      "Tailwind",
+      "Electron",
+      "Tauri",
+      "Jetpack Compose",
+      "Kotlin Multiplatform"
+    ]
+  },
+  {
+    "area": "AI and agents",
+    "color": "#ff9f0a",
+    "tools": [
+      "Claude",
+      "Gemini",
+      "OpenAI",
+      "Vercel AI SDK",
+      "MCP",
+      "n8n"
+    ]
+  },
+  {
+    "area": "Data",
+    "color": "#ff375f",
+    "tools": [
+      "PostgreSQL",
+      "MongoDB",
+      "Redis",
+      "Prisma",
+      "Firebase",
+      "BullMQ"
+    ]
+  },
+  {
+    "area": "Infrastructure",
+    "color": "#64d2ff",
+    "tools": [
+      "Docker",
+      "Nginx",
+      "Azure",
+      "GitHub Actions",
+      "pnpm + Turborepo"
+    ]
+  }
+]
