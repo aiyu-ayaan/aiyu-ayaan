@@ -1,7 +1,7 @@
 // Generates the cards used in README.md (stats, languages, 3D contribution
 // skyline, latest projects, releases, plus the hero, stack and experience
-// cards whose content lives in profile.mjs) and rewrites the README's
-// latest-projects block so each card links to the right repository.
+// cards whose content lives in data/*.json) and rebuilds the marked blocks
+// of README.md from that data.
 // No dependencies: Node 20+ and a GitHub token in GITHUB_TOKEN.
 //
 //   GITHUB_TOKEN=... node scripts/generate-stats.mjs
@@ -11,7 +11,6 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { EXPERIENCE, HERO, STACK } from './profile.mjs';
 
 const LOGIN = process.env.GITHUB_LOGIN || 'aiyu-ayaan';
 const TOKEN = process.env.GITHUB_TOKEN;
@@ -20,6 +19,7 @@ const EXCLUDED_LANGS = new Set(
   (process.env.EXCLUDE_LANGS || '').split(',').map((s) => s.trim().toLowerCase()).filter(Boolean),
 );
 const README = join(OUT_DIR, '..', 'README.md');
+const DATA_DIR = join(OUT_DIR, '..', 'data');
 const MAX_LANGS = 6;
 const LATEST_COUNT = 4;
 const RELEASE_COUNT = 8;
@@ -38,6 +38,39 @@ const theme = {
   purple: '#bf5af2',
 };
 const FONT = `ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace`;
+
+// Hand-written content. One JSON file per section in data/; edit those files,
+// not the README blocks between <!-- name:start --> and <!-- name:end -->.
+const load = async (name) => JSON.parse(await readFile(join(DATA_DIR, `${name}.json`), 'utf8'));
+const content = {
+  hero: await load('hero'),
+  links: await load('links'),
+  about: await load('about'),
+  featured: await load('featured-projects'),
+  more: await load('more-projects'),
+  experience: await load('experience'),
+  education: await load('education'),
+  stack: await load('stack'),
+};
+const HERO = { ...content.hero, orbit: content.hero.orbit.map((o) => [o.label, o.color]) };
+const STACK = content.stack.map((s) => [s.area.replace(' and ', ' + '), s.color, s.tools]);
+const EXPERIENCE = [
+  ...content.experience.map((e) => ({
+    period: e.period,
+    title: e.title,
+    org: e.company,
+    text: e.highlight,
+    color: e.current ? theme.green : theme.blue,
+    current: Boolean(e.current),
+  })),
+  ...content.education.map((e) => ({
+    period: e.period,
+    title: e.degree,
+    org: e.school,
+    text: `${e.detail}.`,
+    color: theme.purple,
+  })),
+];
 
 if (!TOKEN) {
   console.error('GITHUB_TOKEN is not set');
@@ -642,32 +675,62 @@ function releasesCard(data) {
   });
 }
 
-// Card links live in README.md, so the block between the markers is rewritten
-// whenever the set of latest projects changes.
+// README.md is partly generated: each block between <!-- name:start --> and
+// <!-- name:end --> is rebuilt from data/*.json or from GitHub.
+const table = (head, rows) =>
+  [`| ${head.join(' | ')} |`, `| ${head.map(() => ':--').join(' | ')} |`, ...rows.map((r) => `| ${r.join(' | ')} |`)].join('\n');
+
+// shields.io path segment: dashes and underscores are doubled, spaces become underscores.
+const badgePart = (s) => encodeURIComponent(s.replace(/-/g, '--').replace(/_/g, '__').replace(/ /g, '_'));
+
+function readmeBlocks(projects) {
+  const cell = (repo, i) =>
+    `  <a href="${repo.url}"><img src="assets/latest-${i + 1}.svg" width="49%" alt="${esc(`${repo.name}: ${plain(repo.description)}`)}" /></a>`;
+  const latest = [];
+  for (let i = 0; i < projects.length; i += 2) {
+    latest.push(`<p align="center">\n${projects.slice(i, i + 2).map((repo, j) => cell(repo, i + j)).join('\n')}\n</p>`);
+  }
+  const project = (p) => `[**${p.name}**](${p.url})`;
+  return {
+    links: `<p align="center">\n${content.links
+      .map(
+        (l) =>
+          `  <a href="${l.url}"><img src="https://img.shields.io/badge/${badgePart(l.label)}-${badgePart(l.text)}-007ec6?style=flat-square" alt="${esc(l.alt)}" /></a>`,
+      )
+      .join('\n')}\n</p>`,
+    about: [...content.about.paragraphs, content.about.bullets.map((b) => `- **${b.label}:** ${b.text}`).join('\n')].join('\n\n'),
+    'latest-projects': latest.join('\n'),
+    'featured-projects': table(['Project', 'Summary', 'Stack'], content.featured.map((p) => [project(p), p.summary, p.stack])),
+    'more-projects': table(['Project', 'Summary'], content.more.map((p) => [project(p), p.summary])),
+    experience: table(
+      ['Period', 'Role', 'Highlights'],
+      content.experience.map((e) => [e.period, `**${e.title}**, ${e.company}`, e.highlight]),
+    ),
+    education: `**Education:** ${content.education.map((e) => `${e.degree} (${e.period}, ${e.detail}), ${e.school}`).join('; ')}.`,
+    stack: table(['Area', 'Tools'], content.stack.map((s) => [s.area, s.tools.join(', ')])),
+  };
+}
+
 async function updateReadme(projects) {
-  const start = '<!-- latest-projects:start -->';
-  const end = '<!-- latest-projects:end -->';
   let readme;
   try {
     readme = await readFile(README, 'utf8');
   } catch {
-    return false;
+    return;
   }
-  const from = readme.indexOf(start);
-  const to = readme.indexOf(end);
-  if (from === -1 || to === -1 || to < from) {
-    console.warn('README.md has no latest-projects markers; links were not updated');
-    return false;
+  let next = readme;
+  for (const [name, body] of Object.entries(readmeBlocks(projects))) {
+    const start = `<!-- ${name}:start -->`;
+    const end = `<!-- ${name}:end -->`;
+    const from = next.indexOf(start);
+    const to = next.indexOf(end);
+    if (from === -1 || to === -1 || to < from) {
+      console.warn(`README.md has no ${name} markers; that block was not updated`);
+      continue;
+    }
+    next = `${next.slice(0, from + start.length)}\n${body}\n${next.slice(to)}`;
   }
-  const cell = (repo, i) =>
-    `  <a href="${repo.url}"><img src="assets/latest-${i + 1}.svg" width="49%" alt="${esc(`${repo.name}: ${plain(repo.description)}`)}" /></a>`;
-  const rowsOf = [];
-  for (let i = 0; i < projects.length; i += 2) {
-    rowsOf.push(`<p align="center">\n${projects.slice(i, i + 2).map((repo, j) => cell(repo, i + j)).join('\n')}\n</p>`);
-  }
-  const next = `${readme.slice(0, from + start.length)}\n${rowsOf.join('\n')}\n${readme.slice(to)}`;
   if (next !== readme) await writeFile(README, next);
-  return true;
 }
 
 // Isometric cube centred on (cx, cy) with half-width s.
@@ -852,7 +915,7 @@ function experienceCard() {
   let y = 62;
   const nodes = [];
   const rows = EXPERIENCE.map((item, i) => {
-    const lines = wrap(item.text, 96, 3);
+    const lines = wrap(item.text, 103, 3);
     const top = y;
     nodes.push([top - 4, item]);
     const out = `  <g class="row" style="--i:${i}">

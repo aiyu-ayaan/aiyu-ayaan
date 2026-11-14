@@ -1,0 +1,38 @@
+{
+  "name": "AYAAN",
+  "greeting": "whoami",
+  "tagline": "Writes code on Linux, plays on Windows.",
+  "role": "Software Engineer at Adrosonic",
+  "focus": [
+    "agentic workflows",
+    "LLM integration",
+    "applied cryptography",
+    "microservices"
+  ],
+  "orbit": [
+    {
+      "label": "TS",
+      "color": "#3178c6"
+    },
+    {
+      "label": "Kt",
+      "color": "#a97bff"
+    },
+    {
+      "label": "Rs",
+      "color": "#dea584"
+    },
+    {
+      "label": "Py",
+      "color": "#3572a5"
+    },
+    {
+      "label": "C#",
+      "color": "#178600"
+    },
+    {
+      "label": "Go",
+      "color": "#00add8"
+    }
+  ]
+}
