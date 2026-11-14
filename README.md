@@ -18,6 +18,9 @@
 <p align="center">
   <a href="https://github.com/aiyu-ayaan?tab=overview"><img src="assets/skyline.svg" width="100%" alt="A year of contributions drawn as a 3D skyline, with current streak, longest streak and best day" /></a>
 </p>
+<p align="center">
+  <img src="assets/achievements.svg" width="100%" alt="Achievements: contributions, longest streak, pull requests, stars, public repositories, BIT App users and tts-engine downloads" />
+</p>
 
 ## About
 
@@ -53,17 +56,46 @@ The four repositories I pushed to most recently. This section rebuilds itself ev
 ## Featured projects
 
 <!-- featured-projects:start -->
-| Project | Summary | Stack |
-| :-- | :-- | :-- |
-| [**BetweenUs**](https://github.com/aiyu-ayaan/BetweenUs) | End-to-end encrypted, Discord-style messaging and calls for desktop, web and Android. Eight NestJS services behind Nginx. Messages are encrypted on the client with AES-256-GCM, so the server stores only ciphertext. Calls use a peer-to-peer WebRTC mesh with no media server. | NestJS, TypeScript, Electron, React, Jetpack Compose, WebRTC, PostgreSQL, Redis |
-| [**Aiyu**](https://github.com/aiyu-ayaan/Aiyu) | The portfolio and CMS behind [me.aiyu.co.in](https://me.aiyu.co.in/). 52 themes, a Markdown blog with Notion sync, a LaTeX resume editor, a visual cron scheduler with encrypted secrets, and an MCP server. | Next.js 16, React 19, PostgreSQL, Prisma, Gemini, Docker |
-| [**Findex**](https://github.com/aiyu-ayaan/Findex) | Android file manager with multi-tab and dual-pane browsing, a storage analyzer, duplicate finder, cleaner, archive tools and a recycle bin. Privacy-focused. | Kotlin, Jetpack Compose, Material 3 Expressive |
-| [**Pull**](https://github.com/aiyu-ayaan/Pull) | Android download manager. Segmented multi-connection HTTP, torrents and magnet links, video sites through yt-dlp, and a built-in browser with an ad blocker. | Kotlin, Material 3 Expressive |
-| [**Kinema**](https://github.com/aiyu-ayaan/Kinema) | Self-hosted media server, a lightweight alternative to Plex and Jellyfin. Direct play first, near-zero idle CPU, TMDB metadata and family profiles. Runs on a Raspberry Pi. | Rust, web, desktop, Android |
-| [**Domus**](https://github.com/aiyu-ayaan/Domus) | Local-first smart-home hub. Tuya, Tapo, Xiaomi, Hue and MQTT/Zigbee2MQTT devices, a built-in Matter bridge for Google Home, Apple Home and Alexa, energy bill tracking and automations. | Rust, web, desktop, Android |
-| [**Switchboard**](https://github.com/aiyu-ayaan/Switchboard) | Control your PC from your phone: brightness and contrast for every monitor over DDC/CI, volume, media playback and power. End-to-end encrypted on your own network, paired by QR code. | Rust daemon, Electron, Kotlin |
-| [**Rewire**](https://github.com/aiyu-ayaan/Rewire) | Android app that reduces unwanted habits by adding intentional friction before distracting apps open. It creates a pause, lets you choose, and shows your own patterns. No punishment, no surveillance. | Kotlin, Android |
+<p align="center">
+  <a href="https://github.com/aiyu-ayaan/BetweenUs"><img src="assets/featured-1.svg" width="49%" alt="BetweenUs: End-to-end encrypted, Discord-style messaging and calls for desktop, web and Android. Eight NestJS services behind Nginx. Messages are encrypted on the client with AES-256-GCM, so the server stores only ciphertext. Calls use a peer-to-peer WebRTC mesh with no media server." /></a>
+  <a href="https://github.com/aiyu-ayaan/Aiyu"><img src="assets/featured-2.svg" width="49%" alt="Aiyu: The portfolio and CMS behind me.aiyu.co.in. 52 themes, a Markdown blog with Notion sync, a LaTeX resume editor, a visual cron scheduler with encrypted secrets, and an MCP server." /></a>
+</p>
+<p align="center">
+  <a href="https://github.com/aiyu-ayaan/Findex"><img src="assets/featured-3.svg" width="49%" alt="Findex: Android file manager with multi-tab and dual-pane browsing, a storage analyzer, duplicate finder, cleaner, archive tools and a recycle bin. Privacy-focused." /></a>
+  <a href="https://github.com/aiyu-ayaan/Pull"><img src="assets/featured-4.svg" width="49%" alt="Pull: Android download manager. Segmented multi-connection HTTP, torrents and magnet links, video sites through yt-dlp, and a built-in browser with an ad blocker." /></a>
+</p>
+<p align="center">
+  <a href="https://github.com/aiyu-ayaan/Kinema"><img src="assets/featured-5.svg" width="49%" alt="Kinema: Self-hosted media server, a lightweight alternative to Plex and Jellyfin. Direct play first, near-zero idle CPU, TMDB metadata and family profiles. Runs on a Raspberry Pi." /></a>
+  <a href="https://github.com/aiyu-ayaan/Domus"><img src="assets/featured-6.svg" width="49%" alt="Domus: Local-first smart-home hub. Tuya, Tapo, Xiaomi, Hue and MQTT/Zigbee2MQTT devices, a built-in Matter bridge for Google Home, Apple Home and Alexa, energy bill tracking and automations." /></a>
+</p>
+<p align="center">
+  <a href="https://github.com/aiyu-ayaan/Switchboard"><img src="assets/featured-7.svg" width="49%" alt="Switchboard: Control your PC from your phone: brightness and contrast for every monitor over DDC/CI, volume, media playback and power. End-to-end encrypted on your own network, paired by QR code." /></a>
+  <a href="https://github.com/aiyu-ayaan/Rewire"><img src="assets/featured-8.svg" width="49%" alt="Rewire: Android app that reduces unwanted habits by adding intentional friction before distracting apps open. It creates a pause, lets you choose, and shows your own patterns. No punishment, no surveillance." /></a>
+</p>
+
+<details>
+<summary>Text version</summary>
+<br>
+
+| Project | Summary | Stack | Platforms |
+| :-- | :-- | :-- | :-- |
+| [**BetweenUs**](https://github.com/aiyu-ayaan/BetweenUs) | End-to-end encrypted, Discord-style messaging and calls for desktop, web and Android. Eight NestJS services behind Nginx. Messages are encrypted on the client with AES-256-GCM, so the server stores only ciphertext. Calls use a peer-to-peer WebRTC mesh with no media server. | NestJS, TypeScript, Electron, React, Jetpack Compose, WebRTC, PostgreSQL, Redis | desktop, web, android, server |
+| [**Aiyu**](https://github.com/aiyu-ayaan/Aiyu) | The portfolio and CMS behind [me.aiyu.co.in](https://me.aiyu.co.in/). 52 themes, a Markdown blog with Notion sync, a LaTeX resume editor, a visual cron scheduler with encrypted secrets, and an MCP server. | Next.js 16, React 19, PostgreSQL, Prisma, Gemini, Docker | web, server |
+| [**Findex**](https://github.com/aiyu-ayaan/Findex) | Android file manager with multi-tab and dual-pane browsing, a storage analyzer, duplicate finder, cleaner, archive tools and a recycle bin. Privacy-focused. | Kotlin, Jetpack Compose, Material 3 Expressive | android |
+| [**Pull**](https://github.com/aiyu-ayaan/Pull) | Android download manager. Segmented multi-connection HTTP, torrents and magnet links, video sites through yt-dlp, and a built-in browser with an ad blocker. | Kotlin, Material 3 Expressive | android |
+| [**Kinema**](https://github.com/aiyu-ayaan/Kinema) | Self-hosted media server, a lightweight alternative to Plex and Jellyfin. Direct play first, near-zero idle CPU, TMDB metadata and family profiles. Runs on a Raspberry Pi. | Rust, web, desktop, Android | server, web, desktop, android |
+| [**Domus**](https://github.com/aiyu-ayaan/Domus) | Local-first smart-home hub. Tuya, Tapo, Xiaomi, Hue and MQTT/Zigbee2MQTT devices, a built-in Matter bridge for Google Home, Apple Home and Alexa, energy bill tracking and automations. | Rust, web, desktop, Android | server, web, desktop, android |
+| [**Switchboard**](https://github.com/aiyu-ayaan/Switchboard) | Control your PC from your phone: brightness and contrast for every monitor over DDC/CI, volume, media playback and power. End-to-end encrypted on your own network, paired by QR code. | Rust daemon, Electron, Kotlin | desktop, android |
+| [**Rewire**](https://github.com/aiyu-ayaan/Rewire) | Android app that reduces unwanted habits by adding intentional friction before distracting apps open. It creates a pause, lets you choose, and shows your own patterns. No punishment, no surveillance. | Kotlin, Android | android |
+
+</details>
 <!-- featured-projects:end -->
+
+### How BetweenUs is built
+
+<p align="center">
+  <a href="https://github.com/aiyu-ayaan/BetweenUs#readme"><img src="assets/architecture.svg" width="100%" alt="BetweenUs architecture: desktop, web and Android clients reach seven NestJS services through a Cloudflare Tunnel and an Nginx gateway, backed by PostgreSQL and Redis. Calls go client to client over WebRTC with no media server." /></a>
+</p>
 
 <details>
 <summary><b>More projects</b></summary>
@@ -136,7 +168,10 @@ The four repositories I pushed to most recently. This section rebuilds itself ev
 ## GitHub activity
 
 <p align="center">
+  <a href="https://github.com/aiyu-ayaan?tab=repositories"><img src="assets/galaxy.svg" width="100%" alt="Every public repository drawn as a rotating galaxy, sized by stars and coloured by language" /></a>
+</p>
+<p align="center">
   <img src="assets/stats.svg" width="49%" alt="GitHub stats" />
   <img src="assets/languages.svg" width="49%" alt="Most used languages" />
 </p>
-<sub>Every card on this page is a hand-built SVG: the 3D solids are projected to plain paths by <a href="scripts/generate-stats.mjs"><code>scripts/generate-stats.mjs</code></a>, which has no dependencies, and the motion is CSS inside the image. A GitHub Action in this repository regenerates the cards and the latest-projects links every six hours. The hero, stack and timeline content and every text section on this page live as JSON in <a href="data"><code>data/</code></a>.</sub>
+<sub>Every card on this page is a hand-built SVG: the 3D solids are projected to plain paths by <a href="scripts/generate-stats.mjs"><code>scripts/generate-stats.mjs</code></a>, which has no dependencies, and the motion is CSS inside the image. Each data file is checked against a schema in <a href="data/schema"><code>data/schema</code></a> before anything is built. A GitHub Action in this repository regenerates the cards and the latest-projects links every six hours. The hero, stack and timeline content and every text section on this page live as JSON in <a href="data"><code>data/</code></a>.</sub>
