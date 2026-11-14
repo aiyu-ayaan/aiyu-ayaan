@@ -1,0 +1,137 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "architecture",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "project": {
+      "type": "string",
+      "minLength": 1
+    },
+    "url": {
+      "type": "string",
+      "pattern": "^(https?://|mailto:)\\S+$"
+    },
+    "p2p": {
+      "type": "string",
+      "minLength": 1
+    },
+    "clients": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "android",
+              "web",
+              "desktop",
+              "server"
+            ]
+          }
+        },
+        "required": [
+          "name",
+          "kind"
+        ]
+      },
+      "maxItems": 4
+    },
+    "edge": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "detail": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "name",
+          "detail"
+        ]
+      },
+      "maxItems": 3
+    },
+    "services": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 14
+          },
+          "port": {
+            "type": "integer"
+          },
+          "detail": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 15
+          }
+        },
+        "required": [
+          "name",
+          "port",
+          "detail"
+        ]
+      },
+      "maxItems": 8
+    },
+    "stores": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "detail": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "name",
+          "detail"
+        ]
+      },
+      "maxItems": 3
+    },
+    "encryption": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "project",
+    "url",
+    "encryption",
+    "p2p",
+    "clients",
+    "edge",
+    "services",
+    "stores"
+  ]
+}

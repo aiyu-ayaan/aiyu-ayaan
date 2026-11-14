@@ -1,0 +1,30 @@
+name: Validate profile data
+
+on:
+  pull_request:
+    paths:
+      - 'data/**'
+      - 'scripts/**'
+      - '.github/workflows/validate.yml'
+  push:
+    branches: [master]
+    paths:
+      - 'data/**'
+      - 'scripts/**'
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      # Fails the check when a data/*.json file does not match its schema.
+      - name: Validate data files
+        run: node scripts/validate-data.mjs
