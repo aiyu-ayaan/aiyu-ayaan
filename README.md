@@ -2,12 +2,14 @@
   <img src="assets/hero.svg" width="100%" alt="Hi, I'm Ayaan. Writes code on Linux, plays on Windows. Software Engineer at Adrosonic." />
 </a>
 
+<!-- links:start -->
 <p align="center">
   <a href="https://me.aiyu.co.in/"><img src="https://img.shields.io/badge/portfolio-me.aiyu.co.in-007ec6?style=flat-square" alt="Portfolio: me.aiyu.co.in" /></a>
   <a href="https://me.aiyu.co.in/api/resume"><img src="https://img.shields.io/badge/resume-PDF-007ec6?style=flat-square" alt="Resume (PDF)" /></a>
   <a href="https://www.linkedin.com/in/aiyu/"><img src="https://img.shields.io/badge/linkedin-in%2Faiyu-007ec6?style=flat-square" alt="LinkedIn: in/aiyu" /></a>
   <a href="mailto:ayaan35200@gmail.com"><img src="https://img.shields.io/badge/email-ayaan35200%40gmail.com-007ec6?style=flat-square" alt="Email: ayaan35200@gmail.com" /></a>
 </p>
+<!-- links:end -->
 <p align="center">
   <a href="https://github.com/aiyu-ayaan?tab=followers"><img src="https://img.shields.io/github/followers/aiyu-ayaan?style=flat-square&logo=github&label=followers&color=007ec6" alt="GitHub followers" /></a>
   <a href="https://wakatime.com/@3a4240f0-6bea-4626-be2a-1129790e4336"><img src="https://wakatime.com/badge/user/3a4240f0-6bea-4626-be2a-1129790e4336.svg?style=flat-square" alt="Total time coded, tracked by WakaTime" /></a>
@@ -19,6 +21,7 @@
 
 ## About
 
+<!-- about:start -->
 Software Engineer at [Adrosonic](https://www.adrosonic.com/) in Mumbai, delivering client projects in C#, .NET Core, Azure Functions and APIM. Outside of work I design and ship full-stack systems, mostly in TypeScript and Kotlin.
 
 I work spec-first with AI coding agents. The architecture, threat model and phased backlog are written down as context the agent can read (`CLAUDE.md`, decision logs) before any code exists. The agent implements against that contract. I own review, integration and hardening.
@@ -26,6 +29,7 @@ I work spec-first with AI coding agents. The architecture, threat model and phas
 - **Currently building:** [BetweenUs](https://github.com/aiyu-ayaan/BetweenUs), an end-to-end encrypted communication platform across desktop, web and Android.
 - **Focus areas:** agentic development workflows, LLM integration, applied cryptography, microservice architecture.
 - **Writing and more work:** [blog](https://me.aiyu.co.in/blogs), [project write-ups](https://me.aiyu.co.in/projects) and a [contact form](https://me.aiyu.co.in/contact-us) on my portfolio.
+<!-- about:end -->
 
 ## Latest projects
 
@@ -48,6 +52,7 @@ The four repositories I pushed to most recently. This section rebuilds itself ev
 
 ## Featured projects
 
+<!-- featured-projects:start -->
 | Project | Summary | Stack |
 | :-- | :-- | :-- |
 | [**BetweenUs**](https://github.com/aiyu-ayaan/BetweenUs) | End-to-end encrypted, Discord-style messaging and calls for desktop, web and Android. Eight NestJS services behind Nginx. Messages are encrypted on the client with AES-256-GCM, so the server stores only ciphertext. Calls use a peer-to-peer WebRTC mesh with no media server. | NestJS, TypeScript, Electron, React, Jetpack Compose, WebRTC, PostgreSQL, Redis |
@@ -58,11 +63,13 @@ The four repositories I pushed to most recently. This section rebuilds itself ev
 | [**Domus**](https://github.com/aiyu-ayaan/Domus) | Local-first smart-home hub. Tuya, Tapo, Xiaomi, Hue and MQTT/Zigbee2MQTT devices, a built-in Matter bridge for Google Home, Apple Home and Alexa, energy bill tracking and automations. | Rust, web, desktop, Android |
 | [**Switchboard**](https://github.com/aiyu-ayaan/Switchboard) | Control your PC from your phone: brightness and contrast for every monitor over DDC/CI, volume, media playback and power. End-to-end encrypted on your own network, paired by QR code. | Rust daemon, Electron, Kotlin |
 | [**Rewire**](https://github.com/aiyu-ayaan/Rewire) | Android app that reduces unwanted habits by adding intentional friction before distracting apps open. It creates a pause, lets you choose, and shows your own patterns. No punishment, no surveillance. | Kotlin, Android |
+<!-- featured-projects:end -->
 
 <details>
 <summary><b>More projects</b></summary>
 <br>
 
+<!-- more-projects:start -->
 | Project | Summary |
 | :-- | :-- |
 | [**Unpack**](https://github.com/aiyu-ayaan/Unpack) | Installs anything on Linux in one drop: `.deb`, `.rpm`, AppImage, Flatpak, Snap, scripts, archives and git URLs. Detects the distro, shows the plan, then installs, tracks and uninstalls. Rust and Tauri. |
@@ -75,6 +82,7 @@ The four repositories I pushed to most recently. This section rebuilds itself ev
 | [**Roadlyn**](https://github.com/aiyu-ayaan/Roadlyn) | AI roadmap SaaS. LangChain and the Vercel AI SDK on Fastify, with BullMQ jobs. |
 | [**BIT App**](https://github.com/aiyu-ayaan/BIT-App) | Campus app for BIT Mesra. Used by 1,000+ students, rated 4.7/5 on Google Play. |
 | [**TTS-Engine**](https://github.com/aiyu-ayaan/tts-engine) | Android text-to-speech library published on JitPack, 500+ downloads. |
+<!-- more-projects:end -->
 
 </details>
 
@@ -88,13 +96,17 @@ The four repositories I pushed to most recently. This section rebuilds itself ev
 <summary>Text version</summary>
 <br>
 
+<!-- experience:start -->
 | Period | Role | Highlights |
 | :-- | :-- | :-- |
 | Jun 2025 – Present | **Software Engineer**, Adrosonic | Own delivery on two live client projects in C#, .NET Core, Azure Functions and APIM. |
 | Dec 2024 – Jun 2025 | **Software Engineer (Trainee)**, Adrosonic | Built a Dynamics 365 + Instanda integration proof of concept that cut process automation time by 40%. |
 | Jul 2022 – Mar 2023 | **Android Developer Intern**, BeyondSchool | Shipped text-to-speech and speech-to-text accessibility (+35% engagement) and gamification (+40% retention). |
+<!-- experience:end -->
 
-**Education:** Master of Computer Applications (2023 – 2025, CGPA 8.1) and Bachelor of Computer Applications (2019 – 2022, CGPA 8.2), Birla Institute of Technology, Mesra.
+<!-- education:start -->
+**Education:** Master of Computer Applications (2023 – 2025, CGPA 8.1), Birla Institute of Technology, Mesra; Bachelor of Computer Applications (2019 – 2022, CGPA 8.2), Birla Institute of Technology, Mesra.
+<!-- education:end -->
 
 </details>
 
@@ -108,14 +120,16 @@ The four repositories I pushed to most recently. This section rebuilds itself ev
 <summary>Text version</summary>
 <br>
 
+<!-- stack:start -->
 | Area | Tools |
 | :-- | :-- |
 | Languages | TypeScript, Kotlin, Rust, Python, C#, Go, Java, SQL |
 | Backend | NestJS, Fastify, FastAPI, .NET Core, Azure Functions, APIM, WebSockets, WebRTC |
 | Frontend and mobile | Next.js, React, Tailwind, Electron, Tauri, Jetpack Compose, Kotlin Multiplatform |
-| AI and agents | Gemini, OpenAI, Claude, LangChain, Vercel AI SDK, MCP, n8n |
+| AI and agents | Claude, Gemini, OpenAI, Vercel AI SDK, MCP, n8n |
 | Data | PostgreSQL, MongoDB, Redis, Prisma, Firebase, BullMQ |
 | Infrastructure | Docker, Nginx, Azure, GitHub Actions, pnpm + Turborepo |
+<!-- stack:end -->
 
 </details>
 
@@ -125,4 +139,4 @@ The four repositories I pushed to most recently. This section rebuilds itself ev
   <img src="assets/stats.svg" width="49%" alt="GitHub stats" />
   <img src="assets/languages.svg" width="49%" alt="Most used languages" />
 </p>
-<sub>Every card on this page is a hand-built SVG: the 3D solids are projected to plain paths by <a href="scripts/generate-stats.mjs"><code>scripts/generate-stats.mjs</code></a>, which has no dependencies, and the motion is CSS inside the image. A GitHub Action in this repository regenerates the cards and the latest-projects links every six hours. The hero, stack and timeline content lives in <a href="scripts/profile.mjs"><code>scripts/profile.mjs</code></a>.</sub>
+<sub>Every card on this page is a hand-built SVG: the 3D solids are projected to plain paths by <a href="scripts/generate-stats.mjs"><code>scripts/generate-stats.mjs</code></a>, which has no dependencies, and the motion is CSS inside the image. A GitHub Action in this repository regenerates the cards and the latest-projects links every six hours. The hero, stack and timeline content and every text section on this page live as JSON in <a href="data"><code>data/</code></a>.</sub>

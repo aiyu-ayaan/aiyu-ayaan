@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="840" height="374" viewBox="0 0 840 374" role="img" aria-label="Experience: Software Engineer at Adrosonic, Jun 2025 – Present; Software Engineer (Trainee) at Adrosonic, Dec 2024 – Jun 2025; Android Developer Intern at BeyondSchool, Jul 2022 – Mar 2023; Master of Computer Applications at Birla Institute of Technology, Mesra, 2023 – 2025; Bachelor of Computer Applications at Birla Institute of Technology, Mesra, 2019 – 2022.">
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="357" viewBox="0 0 840 357" role="img" aria-label="Experience: Software Engineer at Adrosonic, Jun 2025 – Present; Software Engineer (Trainee) at Adrosonic, Dec 2024 – Jun 2025; Android Developer Intern at BeyondSchool, Jul 2022 – Mar 2023; Master of Computer Applications at Birla Institute of Technology, Mesra, 2023 – 2025; Bachelor of Computer Applications at Birla Institute of Technology, Mesra, 2019 – 2022.">
   <title>Experience: Software Engineer at Adrosonic, Jun 2025 – Present; Software Engineer (Trainee) at Adrosonic, Dec 2024 – Jun 2025; Android Developer Intern at BeyondSchool, Jul 2022 – Mar 2023; Master of Computer Applications at Birla Institute of Technology, Mesra, 2023 – 2025; Bachelor of Computer Applications at Birla Institute of Technology, Mesra, 2019 – 2022.</title>
   <style>
     text { font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; font-size: 13px; }
@@ -6,13 +6,13 @@
     .text { fill: #f5f5f7; }
     .small { font-size: 11px; }
   </style>
-  <clipPath id="frame"><rect width="840" height="374" rx="10"/></clipPath>
+  <clipPath id="frame"><rect width="840" height="357" rx="10"/></clipPath>
   <g clip-path="url(#frame)">
-    <rect width="840" height="374" fill="#0b0b0d"/>
+    <rect width="840" height="357" fill="#0b0b0d"/>
     <rect width="840" height="34" fill="#111114"/>
     <rect y="34" width="840" height="1" fill="#2b2b30"/>
   </g>
-  <rect x="0.5" y="0.5" width="839" height="373" rx="10" fill="none" stroke="#2b2b30"/>
+  <rect x="0.5" y="0.5" width="839" height="356" rx="10" fill="none" stroke="#2b2b30"/>
   <circle cx="20" cy="17" r="5" fill="#ff375f"/>
   <circle cx="38" cy="17" r="5" fill="#ff9f0a"/>
   <circle cx="56" cy="17" r="5" fill="#30d158"/>
@@ -27,14 +27,14 @@
     @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
   </style>
   <g class="rail">
-    <rect x="32" y="58" width="4" height="266" fill="#3a3a3c"/>
-    <rect x="36" y="58" width="2.5" height="266" fill="#232327"/>
+    <rect x="32" y="58" width="4" height="249" fill="#3a3a3c"/>
+    <rect x="36" y="58" width="2.5" height="249" fill="#232327"/>
   </g>
   <g class="row" style="--i:0"><ellipse class="ping" cx="34" cy="67" rx="13" ry="6.5" fill="none" stroke="#30d158" stroke-width="1.5"/><path d="M34 49L43 53.5L34 58L25 53.5Z" fill="#64dd82"/><path d="M25 53.5L34 58L34 67L25 62.5Z" fill="#25a345"/><path d="M43 53.5L34 58L34 67L43 62.5Z" fill="#17642a"/></g>
   <g class="row" style="--i:1"><path d="M34 107L43 111.5L34 116L25 111.5Z" fill="#5fb1ff"/><path d="M25 111.5L34 116L34 125L25 120.5Z" fill="#2076c7"/><path d="M43 111.5L34 116L34 125L43 120.5Z" fill="#14487a"/></g>
-  <g class="row" style="--i:2"><path d="M34 182L43 186.5L34 191L25 186.5Z" fill="#5fb1ff"/><path d="M25 186.5L34 191L34 200L25 195.5Z" fill="#2076c7"/><path d="M43 186.5L34 191L34 200L43 195.5Z" fill="#14487a"/></g>
-  <g class="row" style="--i:3"><path d="M34 257L43 261.5L34 266L25 261.5Z" fill="#cf83f5"/><path d="M25 261.5L34 266L34 275L25 270.5Z" fill="#9546bd"/><path d="M43 261.5L34 266L34 275L43 270.5Z" fill="#5c2b74"/></g>
-  <g class="row" style="--i:4"><path d="M34 315L43 319.5L34 324L25 319.5Z" fill="#cf83f5"/><path d="M25 319.5L34 324L34 333L25 328.5Z" fill="#9546bd"/><path d="M43 319.5L34 324L34 333L43 328.5Z" fill="#5c2b74"/></g>
+  <g class="row" style="--i:2"><path d="M34 165L43 169.5L34 174L25 169.5Z" fill="#5fb1ff"/><path d="M25 169.5L34 174L34 183L25 178.5Z" fill="#2076c7"/><path d="M43 169.5L34 174L34 183L43 178.5Z" fill="#14487a"/></g>
+  <g class="row" style="--i:3"><path d="M34 240L43 244.5L34 249L25 244.5Z" fill="#cf83f5"/><path d="M25 244.5L34 249L34 258L25 253.5Z" fill="#9546bd"/><path d="M43 244.5L34 249L34 258L43 253.5Z" fill="#5c2b74"/></g>
+  <g class="row" style="--i:4"><path d="M34 298L43 302.5L34 307L25 302.5Z" fill="#cf83f5"/><path d="M25 302.5L34 307L34 316L25 311.5Z" fill="#9546bd"/><path d="M43 302.5L34 307L34 316L43 311.5Z" fill="#5c2b74"/></g>
   <g class="row" style="--i:0">
     <text x="64" y="62" class="text" style="font-size:14px;font-weight:700">Software Engineer<tspan class="muted" style="font-size:13px;font-weight:400" dx="8">at</tspan><tspan fill="#30d158" style="font-size:13px;font-weight:600" dx="8">Adrosonic</tspan></text>
     <text x="820" y="62" text-anchor="end" class="text small">Jun 2025 – Present</text>
@@ -43,23 +43,22 @@
   <g class="row" style="--i:1">
     <text x="64" y="120" class="text" style="font-size:14px;font-weight:700">Software Engineer (Trainee)<tspan class="muted" style="font-size:13px;font-weight:400" dx="8">at</tspan><tspan fill="#2997ff" style="font-size:13px;font-weight:600" dx="8">Adrosonic</tspan></text>
     <text x="820" y="120" text-anchor="end" class="muted small">Dec 2024 – Jun 2025</text>
-    <text x="64" y="141" class="muted" style="font-size:12px">Built a Dynamics 365 + Instanda integration proof of concept that cut process automation time by</text>
-    <text x="64" y="158" class="muted" style="font-size:12px">40%.</text>
+    <text x="64" y="141" class="muted" style="font-size:12px">Built a Dynamics 365 + Instanda integration proof of concept that cut process automation time by 40%.</text>
   </g>
   <g class="row" style="--i:2">
-    <text x="64" y="195" class="text" style="font-size:14px;font-weight:700">Android Developer Intern<tspan class="muted" style="font-size:13px;font-weight:400" dx="8">at</tspan><tspan fill="#2997ff" style="font-size:13px;font-weight:600" dx="8">BeyondSchool</tspan></text>
-    <text x="820" y="195" text-anchor="end" class="muted small">Jul 2022 – Mar 2023</text>
-    <text x="64" y="216" class="muted" style="font-size:12px">Shipped text-to-speech and speech-to-text accessibility (+35% engagement) and gamification (+40%</text>
-    <text x="64" y="233" class="muted" style="font-size:12px">retention).</text>
+    <text x="64" y="178" class="text" style="font-size:14px;font-weight:700">Android Developer Intern<tspan class="muted" style="font-size:13px;font-weight:400" dx="8">at</tspan><tspan fill="#2997ff" style="font-size:13px;font-weight:600" dx="8">BeyondSchool</tspan></text>
+    <text x="820" y="178" text-anchor="end" class="muted small">Jul 2022 – Mar 2023</text>
+    <text x="64" y="199" class="muted" style="font-size:12px">Shipped text-to-speech and speech-to-text accessibility (+35% engagement) and gamification (+40%</text>
+    <text x="64" y="216" class="muted" style="font-size:12px">retention).</text>
   </g>
   <g class="row" style="--i:3">
-    <text x="64" y="270" class="text" style="font-size:14px;font-weight:700">Master of Computer Applications<tspan class="muted" style="font-size:13px;font-weight:400" dx="8">at</tspan><tspan fill="#bf5af2" style="font-size:13px;font-weight:600" dx="8">Birla Institute of Technology, Mesra</tspan></text>
-    <text x="820" y="270" text-anchor="end" class="muted small">2023 – 2025</text>
-    <text x="64" y="291" class="muted" style="font-size:12px">CGPA 8.1.</text>
+    <text x="64" y="253" class="text" style="font-size:14px;font-weight:700">Master of Computer Applications<tspan class="muted" style="font-size:13px;font-weight:400" dx="8">at</tspan><tspan fill="#bf5af2" style="font-size:13px;font-weight:600" dx="8">Birla Institute of Technology, Mesra</tspan></text>
+    <text x="820" y="253" text-anchor="end" class="muted small">2023 – 2025</text>
+    <text x="64" y="274" class="muted" style="font-size:12px">CGPA 8.1.</text>
   </g>
   <g class="row" style="--i:4">
-    <text x="64" y="328" class="text" style="font-size:14px;font-weight:700">Bachelor of Computer Applications<tspan class="muted" style="font-size:13px;font-weight:400" dx="8">at</tspan><tspan fill="#bf5af2" style="font-size:13px;font-weight:600" dx="8">Birla Institute of Technology, Mesra</tspan></text>
-    <text x="820" y="328" text-anchor="end" class="muted small">2019 – 2022</text>
-    <text x="64" y="349" class="muted" style="font-size:12px">CGPA 8.2.</text>
+    <text x="64" y="311" class="text" style="font-size:14px;font-weight:700">Bachelor of Computer Applications<tspan class="muted" style="font-size:13px;font-weight:400" dx="8">at</tspan><tspan fill="#bf5af2" style="font-size:13px;font-weight:600" dx="8">Birla Institute of Technology, Mesra</tspan></text>
+    <text x="820" y="311" text-anchor="end" class="muted small">2019 – 2022</text>
+    <text x="64" y="332" class="muted" style="font-size:12px">CGPA 8.2.</text>
   </g>
 </svg>
