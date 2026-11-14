@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="252" viewBox="0 0 840 252" role="img" aria-label="Achievements: 6.7k contributions, past year; 55 day longest streak; 255 pull requests; 115 stars earned; 108 public repositories; 1,000+ students on BIT App; 500+ tts-engine downloads.">
+  <title>Achievements: 6.7k contributions, past year; 55 day longest streak; 255 pull requests; 115 stars earned; 108 public repositories; 1,000+ students on BIT App; 500+ tts-engine downloads.</title>
+  <style>
+    text { font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; font-size: 13px; }
+    .muted { fill: #86868b; }
+    .text { fill: #f5f5f7; }
+    .small { font-size: 11px; }
+  </style>
+  <clipPath id="frame"><rect width="840" height="252" rx="10"/></clipPath>
+  <g clip-path="url(#frame)">
+    <rect width="840" height="252" fill="#0b0b0d"/>
+    <rect width="840" height="34" fill="#111114"/>
+    <rect y="34" width="840" height="1" fill="#2b2b30"/>
+  </g>
+  <rect x="0.5" y="0.5" width="839" height="251" rx="10" fill="none" stroke="#2b2b30"/>
+  <circle cx="20" cy="17" r="5" fill="#ff375f"/>
+  <circle cx="38" cy="17" r="5" fill="#ff9f0a"/>
+  <circle cx="56" cy="17" r="5" fill="#30d158"/>
+  <text x="76" y="21.5" class="small"><tspan fill="#2997ff">$</tspan><tspan class="muted" dx="7">ls ./achievements</tspan></text>
+  <style>
+    .rise { animation: rise .7s cubic-bezier(.2,.9,.25,1.15) both; animation-delay: calc(var(--i) * 110ms); }
+    .gem { animation: hover 3.8s ease-in-out infinite; }
+    .pool { transform-box: fill-box; transform-origin: center; animation: pool 3.8s ease-in-out infinite; }
+    @keyframes rise { from { opacity: 0; transform: translateY(16px); } }
+    @keyframes hover { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+    @keyframes pool { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(.7); opacity: .5; } }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+  <g class="rise" style="--i:0">
+    <path d="M47.7 176L77.1 193L77.1 167L47.7 150Z" fill="#26262c"/><path d="M106.6 176L77.1 193L77.1 167L106.6 150Z" fill="#17171a"/><path d="M77.1 133L106.6 150L77.1 167L47.7 150Z" fill="#727276"/>
+    <path d="M47.7 150L77.1 167L106.6 150Z" fill="none" stroke="#2997ff" stroke-width="1.2" stroke-linejoin="round"/>
+    <ellipse class="pool" style="animation-delay:0.00s" cx="77.1" cy="150" rx="11" ry="5" fill="#2997ff" fill-opacity=".35"/>
+    <g class="gem" style="animation-delay:0.00s">
+      <path d="M77.1 101L66.1 116L79.1 119Z" fill="#94cbff"/>
+      <path d="M77.1 101L88.1 116L79.1 119Z" fill="#349cff"/>
+      <path d="M77.1 131L66.1 116L79.1 119Z" fill="#1e6db8"/>
+      <path d="M77.1 131L88.1 116L79.1 119Z" fill="#113f6b"/>
+    </g>
+    <text x="77.1" y="88" text-anchor="middle" class="text" style="font-size:19px;font-weight:700">6.7k</text>
+    <text x="77.1" y="214" text-anchor="middle" class="muted" style="font-size:10px">contributions,</text><text x="77.1" y="227" text-anchor="middle" class="muted" style="font-size:10px">past year</text>
+  </g>
+  <g class="rise" style="--i:1">
+    <path d="M162 176L191.4 193L191.4 167L162 150Z" fill="#26262c"/><path d="M220.9 176L191.4 193L191.4 167L220.9 150Z" fill="#17171a"/><path d="M191.4 133L220.9 150L191.4 167L162 150Z" fill="#727276"/>
+    <path d="M162 150L191.4 167L220.9 150Z" fill="none" stroke="#30d158" stroke-width="1.2" stroke-linejoin="round"/>
+    <ellipse class="pool" style="animation-delay:-0.55s" cx="191.4" cy="150" rx="11" ry="5" fill="#30d158" fill-opacity=".35"/>
+    <g class="gem" style="animation-delay:-0.55s">
+      <path d="M191.4 101L180.4 116L193.4 119Z" fill="#98e8ac"/>
+      <path d="M191.4 101L202.4 116L193.4 119Z" fill="#3ad360"/>
+      <path d="M191.4 131L180.4 116L193.4 119Z" fill="#23963f"/>
+      <path d="M191.4 131L202.4 116L193.4 119Z" fill="#145825"/>
+    </g>
+    <text x="191.4" y="88" text-anchor="middle" class="text" style="font-size:19px;font-weight:700">55</text>
+    <text x="191.4" y="214" text-anchor="middle" class="muted" style="font-size:10px">day longest</text><text x="191.4" y="227" text-anchor="middle" class="muted" style="font-size:10px">streak</text>
+  </g>
+  <g class="rise" style="--i:2">
+    <path d="M276.3 176L305.7 193L305.7 167L276.3 150Z" fill="#26262c"/><path d="M335.2 176L305.7 193L305.7 167L335.2 150Z" fill="#17171a"/><path d="M305.7 133L335.2 150L305.7 167L276.3 150Z" fill="#727276"/>
+    <path d="M276.3 150L305.7 167L335.2 150Z" fill="none" stroke="#ff9f0a" stroke-width="1.2" stroke-linejoin="round"/>
+    <ellipse class="pool" style="animation-delay:-1.10s" cx="305.7" cy="150" rx="11" ry="5" fill="#ff9f0a" fill-opacity=".35"/>
+    <g class="gem" style="animation-delay:-1.10s">
+      <path d="M305.7 101L294.7 116L307.7 119Z" fill="#ffcf85"/>
+      <path d="M305.7 101L316.7 116L307.7 119Z" fill="#ffa416"/>
+      <path d="M305.7 131L294.7 116L307.7 119Z" fill="#b87207"/>
+      <path d="M305.7 131L316.7 116L307.7 119Z" fill="#6b4304"/>
+    </g>
+    <text x="305.7" y="88" text-anchor="middle" class="text" style="font-size:19px;font-weight:700">255</text>
+    <text x="305.7" y="214" text-anchor="middle" class="muted" style="font-size:10px">pull requests</text>
+  </g>
+  <g class="rise" style="--i:3">
+    <path d="M390.6 176L420 193L420 167L390.6 150Z" fill="#26262c"/><path d="M449.4 176L420 193L420 167L449.4 150Z" fill="#17171a"/><path d="M420 133L449.4 150L420 167L390.6 150Z" fill="#727276"/>
+    <path d="M390.6 150L420 167L449.4 150Z" fill="none" stroke="#bf5af2" stroke-width="1.2" stroke-linejoin="round"/>
+    <ellipse class="pool" style="animation-delay:-1.65s" cx="420" cy="150" rx="11" ry="5" fill="#bf5af2" fill-opacity=".35"/>
+    <g class="gem" style="animation-delay:-1.65s">
+      <path d="M420 101L409 116L422 119Z" fill="#dfadf9"/>
+      <path d="M420 101L431 116L422 119Z" fill="#c262f3"/>
+      <path d="M420 131L409 116L422 119Z" fill="#8a41ae"/>
+      <path d="M420 131L431 116L422 119Z" fill="#502666"/>
+    </g>
+    <text x="420" y="88" text-anchor="middle" class="text" style="font-size:19px;font-weight:700">115</text>
+    <text x="420" y="214" text-anchor="middle" class="muted" style="font-size:10px">stars earned</text>
+  </g>
+  <g class="rise" style="--i:4">
+    <path d="M504.8 176L534.3 193L534.3 167L504.8 150Z" fill="#26262c"/><path d="M563.7 176L534.3 193L534.3 167L563.7 150Z" fill="#17171a"/><path d="M534.3 133L563.7 150L534.3 167L504.8 150Z" fill="#727276"/>
+    <path d="M504.8 150L534.3 167L563.7 150Z" fill="none" stroke="#ff375f" stroke-width="1.2" stroke-linejoin="round"/>
+    <ellipse class="pool" style="animation-delay:-2.20s" cx="534.3" cy="150" rx="11" ry="5" fill="#ff375f" fill-opacity=".35"/>
+    <g class="gem" style="animation-delay:-2.20s">
+      <path d="M534.3 101L523.3 116L536.3 119Z" fill="#ff9baf"/>
+      <path d="M534.3 101L545.3 116L536.3 119Z" fill="#ff4167"/>
+      <path d="M534.3 131L523.3 116L536.3 119Z" fill="#b82844"/>
+      <path d="M534.3 131L545.3 116L536.3 119Z" fill="#6b1728"/>
+    </g>
+    <text x="534.3" y="88" text-anchor="middle" class="text" style="font-size:19px;font-weight:700">108</text>
+    <text x="534.3" y="214" text-anchor="middle" class="muted" style="font-size:10px">public</text><text x="534.3" y="227" text-anchor="middle" class="muted" style="font-size:10px">repositories</text>
+  </g>
+  <g class="rise" style="--i:5">
+    <path d="M619.1 176L648.6 193L648.6 167L619.1 150Z" fill="#26262c"/><path d="M678 176L648.6 193L648.6 167L678 150Z" fill="#17171a"/><path d="M648.6 133L678 150L648.6 167L619.1 150Z" fill="#727276"/>
+    <path d="M619.1 150L648.6 167L678 150Z" fill="none" stroke="#64d2ff" stroke-width="1.2" stroke-linejoin="round"/>
+    <ellipse class="pool" style="animation-delay:-2.75s" cx="648.6" cy="150" rx="11" ry="5" fill="#64d2ff" fill-opacity=".35"/>
+    <g class="gem" style="animation-delay:-2.75s">
+      <path d="M648.6 101L637.6 116L650.6 119Z" fill="#b2e9ff"/>
+      <path d="M648.6 101L659.6 116L650.6 119Z" fill="#6cd4ff"/>
+      <path d="M648.6 131L637.6 116L650.6 119Z" fill="#4897b8"/>
+      <path d="M648.6 131L659.6 116L650.6 119Z" fill="#2a586b"/>
+    </g>
+    <text x="648.6" y="88" text-anchor="middle" class="text" style="font-size:19px;font-weight:700">1,000+</text>
+    <text x="648.6" y="214" text-anchor="middle" class="muted" style="font-size:10px">students on BIT</text><text x="648.6" y="227" text-anchor="middle" class="muted" style="font-size:10px">App</text>
+  </g>
+  <g class="rise" style="--i:6">
+    <path d="M733.4 176L762.9 193L762.9 167L733.4 150Z" fill="#26262c"/><path d="M792.3 176L762.9 193L762.9 167L792.3 150Z" fill="#17171a"/><path d="M762.9 133L792.3 150L762.9 167L733.4 150Z" fill="#727276"/>
+    <path d="M733.4 150L762.9 167L792.3 150Z" fill="none" stroke="#ffd60a" stroke-width="1.2" stroke-linejoin="round"/>
+    <ellipse class="pool" style="animation-delay:-3.30s" cx="762.9" cy="150" rx="11" ry="5" fill="#ffd60a" fill-opacity=".35"/>
+    <g class="gem" style="animation-delay:-3.30s">
+      <path d="M762.9 101L751.9 116L764.9 119Z" fill="#ffeb85"/>
+      <path d="M762.9 101L773.9 116L764.9 119Z" fill="#ffd816"/>
+      <path d="M762.9 131L751.9 116L764.9 119Z" fill="#b89a07"/>
+      <path d="M762.9 131L773.9 116L764.9 119Z" fill="#6b5a04"/>
+    </g>
+    <text x="762.9" y="88" text-anchor="middle" class="text" style="font-size:19px;font-weight:700">500+</text>
+    <text x="762.9" y="214" text-anchor="middle" class="muted" style="font-size:10px">tts-engine</text><text x="762.9" y="227" text-anchor="middle" class="muted" style="font-size:10px">downloads</text>
+  </g>
+</svg>
