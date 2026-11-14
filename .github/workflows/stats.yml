@@ -29,6 +29,7 @@ jobs:
 
       # STATS_TOKEN is optional: a personal access token (read:user, repo) makes
       # private contributions count. Without it only public activity is shown.
+      # Also rewrites the latest-projects block in README.md.
       - name: Generate cards
         run: node scripts/generate-stats.mjs
         env:
@@ -39,7 +40,9 @@ jobs:
         id: cpr
         uses: peter-evans/create-pull-request@v7
         with:
-          add-paths: assets
+          add-paths: |
+            assets
+            README.md
           commit-message: "chore: refresh profile stats"
           committer: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
           author: github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>
