@@ -40,12 +40,12 @@ The four repositories I pushed to most recently. This section rebuilds itself ev
 
 <!-- latest-projects:start -->
 <p align="center">
-  <a href="https://github.com/aiyu-ayaan/Pull"><img src="assets/latest-1.svg" width="49%" alt="Pull: Android download manager: segmented multi-connection HTTP, torrents and magnet links, video sites via yt-dlp, built-in browser with ad blocker. Material 3 Expressive. Open source (GPL-3.0)." /></a>
-  <a href="https://github.com/aiyu-ayaan/Aiyu"><img src="assets/latest-2.svg" width="49%" alt="Aiyu: Open-source developer portfolio + CMS you can self-host. Next.js 16, React 19, Tailwind 4, PostgreSQL/Prisma. Admin panel, 52 themes, Gemini AI theme generator, LaTeX resume studio, blog, gallery, cron jobs and webhooks. Docker-ready." /></a>
+  <a href="https://github.com/aiyu-ayaan/Clavis"><img src="assets/latest-1.svg" width="49%" alt="Clavis: Offline Android card vault: PIN + biometric lock, AES-256-GCM encrypted fields, smart copy and safe share. Kotlin, Jetpack Compose, Material 3 Expressive." /></a>
+  <a href="https://github.com/aiyu-ayaan/Pull"><img src="assets/latest-2.svg" width="49%" alt="Pull: Android download manager: segmented multi-connection HTTP, torrents and magnet links, video sites via yt-dlp, built-in browser with ad blocker. Material 3 Expressive. Open source (GPL-3.0)." /></a>
 </p>
 <p align="center">
-  <a href="https://github.com/aiyu-ayaan/Linux-Config"><img src="assets/latest-3.svg" width="49%" alt="Linux-Config: Personal Linux setup kits and notes (Linux Mint / Cinnamon / GNOME on X11). Each kit is self-contained: copy the folder to another machine and run its installer. No root needed unless noted." /></a>
-  <a href="https://github.com/aiyu-ayaan/Kinema"><img src="assets/latest-4.svg" width="49%" alt="Kinema: Fast self-hosted media server in Rust, a lightweight Plex and Jellyfin alternative. Direct play first, near-zero idle CPU, TMDB metadata, family profiles, HTTPS by default. Stream movies and TV to web, desktop and native Android. Runs on a Raspberry Pi." /></a>
+  <a href="https://github.com/aiyu-ayaan/Aiyu"><img src="assets/latest-3.svg" width="49%" alt="Aiyu: Open-source developer portfolio + CMS you can self-host. Next.js 16, React 19, Tailwind 4, PostgreSQL/Prisma. Admin panel, 52 themes, Gemini AI theme generator, LaTeX resume studio, blog, gallery, cron jobs and webhooks. Docker-ready." /></a>
+  <a href="https://github.com/aiyu-ayaan/Linux-Config"><img src="assets/latest-4.svg" width="49%" alt="Linux-Config: Personal Linux setup kits and notes (Linux Mint / Cinnamon / GNOME on X11). Each kit is self-contained: copy the folder to another machine and run its installer. No root needed unless noted." /></a>
 </p>
 <!-- latest-projects:end -->
 

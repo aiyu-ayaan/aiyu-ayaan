@@ -25,16 +25,16 @@
     @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
   </style>
   <ellipse cx="205" cy="95" rx="183" ry="5" fill="#000" opacity=".55"/>
-  <g class="seg" style="--i:0"><path d="M20 66L104 66L104 86L20 86Z" fill="#8762cc"/><path d="M20 66L104 66L120 55L36 55Z" fill="#b68fff"/><path d="M104 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
-  <g class="seg" style="--i:1"><path d="M104 66L169.2 66L169.2 86L104 86Z" fill="#c1b348"/><path d="M104 66L169.2 66L185.2 55L120 55Z" fill="#f3e573"/><path d="M169.2 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
-  <g class="seg" style="--i:2"><path d="M169.2 66L232.7 66L232.7 86L169.2 86Z" fill="#27609e"/><path d="M169.2 66L232.7 66L248.7 55L185.2 55Z" fill="#508ccf"/><path d="M232.7 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
-  <g class="seg" style="--i:3"><path d="M232.7 66L291.9 66L291.9 86L232.7 86Z" fill="#2a5b84"/><path d="M232.7 66L291.9 66L307.9 55L248.7 55Z" fill="#5387b3"/><path d="M291.9 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
-  <g class="seg" style="--i:4"><path d="M291.9 66L311.4 66L311.4 86L291.9 86Z" fill="#b63d1e"/><path d="M291.9 66L311.4 66L327.4 55L307.9 55Z" fill="#e76747"/><path d="M311.4 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
-  <g class="seg" style="--i:5"><path d="M311.4 66L329.1 66L329.1 86L311.4 86Z" fill="#b2846a"/><path d="M311.4 66L329.1 66L345.1 55L327.4 55Z" fill="#e3b396"/><path d="M329.1 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
-  <g class="seg" style="--i:6"><path d="M329.1 66L374 66L374 86L329.1 86Z" fill="#6b6b6f"/><path d="M329.1 66L374 66L390 55L345.1 55Z" fill="#98989c"/><path d="M374 66L390 55L390 75L374 86Z" fill="#3c3c3f"/><path d="M374 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
+  <g class="seg" style="--i:0"><path d="M20 66L104.3 66L104.3 86L20 86Z" fill="#8762cc"/><path d="M20 66L104.3 66L120.3 55L36 55Z" fill="#b68fff"/><path d="M104.3 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
+  <g class="seg" style="--i:1"><path d="M104.3 66L169.5 66L169.5 86L104.3 86Z" fill="#c1b348"/><path d="M104.3 66L169.5 66L185.5 55L120.3 55Z" fill="#f3e573"/><path d="M169.5 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
+  <g class="seg" style="--i:2"><path d="M169.5 66L232.9 66L232.9 86L169.5 86Z" fill="#27609e"/><path d="M169.5 66L232.9 66L248.9 55L185.5 55Z" fill="#508ccf"/><path d="M232.9 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
+  <g class="seg" style="--i:3"><path d="M232.9 66L292 66L292 86L232.9 86Z" fill="#2a5b84"/><path d="M232.9 66L292 66L308 55L248.9 55Z" fill="#5387b3"/><path d="M292 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
+  <g class="seg" style="--i:4"><path d="M292 66L311.5 66L311.5 86L292 86Z" fill="#b63d1e"/><path d="M292 66L311.5 66L327.5 55L308 55Z" fill="#e76747"/><path d="M311.5 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
+  <g class="seg" style="--i:5"><path d="M311.5 66L329.2 66L329.2 86L311.5 86Z" fill="#b2846a"/><path d="M311.5 66L329.2 66L345.2 55L327.5 55Z" fill="#e3b396"/><path d="M329.2 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
+  <g class="seg" style="--i:6"><path d="M329.2 66L374 66L374 86L329.2 86Z" fill="#6b6b6f"/><path d="M329.2 66L374 66L390 55L345.2 55Z" fill="#98989c"/><path d="M374 66L390 55L390 75L374 86Z" fill="#3c3c3f"/><path d="M374 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
   <g class="fade" style="--i:0"><rect x="20" y="112.5" width="10" height="10" rx="2.5" fill="#A97BFF"/>
   <text x="38" y="122" class="text">Kotlin</text>
-  <text x="189" y="122" class="muted" text-anchor="end">23.7%</text></g>
+  <text x="189" y="122" class="muted" text-anchor="end">23.8%</text></g>
   <g class="fade" style="--i:1"><rect x="205" y="112.5" width="10" height="10" rx="2.5" fill="#f1e05a"/>
   <text x="223" y="122" class="text">JavaScript</text>
   <text x="374" y="122" class="muted" text-anchor="end">18.4%</text></g>
