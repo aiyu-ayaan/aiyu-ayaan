@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="840" height="252" viewBox="0 0 840 252" role="img" aria-label="Achievements: 6.7k contributions, past year; 55 day longest streak; 256 pull requests; 115 stars earned; 108 public repositories; 1,000+ students on BIT App; 500+ tts-engine downloads.">
-  <title>Achievements: 6.7k contributions, past year; 55 day longest streak; 256 pull requests; 115 stars earned; 108 public repositories; 1,000+ students on BIT App; 500+ tts-engine downloads.</title>
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="252" viewBox="0 0 840 252" role="img" aria-label="Achievements: 6.7k contributions, past year; 55 day longest streak; 256 pull requests; 116 stars earned; 108 public repositories; 1,000+ students on BIT App; 500+ tts-engine downloads.">
+  <title>Achievements: 6.7k contributions, past year; 55 day longest streak; 256 pull requests; 116 stars earned; 108 public repositories; 1,000+ students on BIT App; 500+ tts-engine downloads.</title>
   <style>
     text { font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; font-size: 13px; }
     .muted { fill: #86868b; }
@@ -75,7 +75,7 @@
       <path d="M420 131L409 116L422 119Z" fill="#8a41ae"/>
       <path d="M420 131L431 116L422 119Z" fill="#502666"/>
     </g>
-    <text x="420" y="88" text-anchor="middle" class="text" style="font-size:19px;font-weight:700">115</text>
+    <text x="420" y="88" text-anchor="middle" class="text" style="font-size:19px;font-weight:700">116</text>
     <text x="420" y="214" text-anchor="middle" class="muted" style="font-size:10px">stars earned</text>
   </g>
   <g class="rise" style="--i:4">
