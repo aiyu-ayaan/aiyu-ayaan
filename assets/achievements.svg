@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="840" height="252" viewBox="0 0 840 252" role="img" aria-label="Achievements: 6.7k contributions, past year; 55 day longest streak; 256 pull requests; 120 stars earned; 110 public repositories; 1,000+ students on BIT App; 500+ tts-engine downloads.">
-  <title>Achievements: 6.7k contributions, past year; 55 day longest streak; 256 pull requests; 120 stars earned; 110 public repositories; 1,000+ students on BIT App; 500+ tts-engine downloads.</title>
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="252" viewBox="0 0 840 252" role="img" aria-label="Achievements: 6.8k contributions, past year; 55 day longest streak; 257 pull requests; 121 stars earned; 110 public repositories; 1,000+ students on BIT App; 500+ tts-engine downloads.">
+  <title>Achievements: 6.8k contributions, past year; 55 day longest streak; 257 pull requests; 121 stars earned; 110 public repositories; 1,000+ students on BIT App; 500+ tts-engine downloads.</title>
   <style>
     text { font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; font-size: 13px; }
     .muted { fill: #86868b; }
@@ -36,7 +36,7 @@
       <path d="M77.1 131L66.1 116L79.1 119Z" fill="#1e6db8"/>
       <path d="M77.1 131L88.1 116L79.1 119Z" fill="#113f6b"/>
     </g>
-    <text x="77.1" y="88" text-anchor="middle" class="text" style="font-size:19px;font-weight:700">6.7k</text>
+    <text x="77.1" y="88" text-anchor="middle" class="text" style="font-size:19px;font-weight:700">6.8k</text>
     <text x="77.1" y="214" text-anchor="middle" class="muted" style="font-size:10px">contributions,</text><text x="77.1" y="227" text-anchor="middle" class="muted" style="font-size:10px">past year</text>
   </g>
   <g class="rise" style="--i:1">
@@ -62,7 +62,7 @@
       <path d="M305.7 131L294.7 116L307.7 119Z" fill="#b87207"/>
       <path d="M305.7 131L316.7 116L307.7 119Z" fill="#6b4304"/>
     </g>
-    <text x="305.7" y="88" text-anchor="middle" class="text" style="font-size:19px;font-weight:700">256</text>
+    <text x="305.7" y="88" text-anchor="middle" class="text" style="font-size:19px;font-weight:700">257</text>
     <text x="305.7" y="214" text-anchor="middle" class="muted" style="font-size:10px">pull requests</text>
   </g>
   <g class="rise" style="--i:3">
@@ -75,7 +75,7 @@
       <path d="M420 131L409 116L422 119Z" fill="#8a41ae"/>
       <path d="M420 131L431 116L422 119Z" fill="#502666"/>
     </g>
-    <text x="420" y="88" text-anchor="middle" class="text" style="font-size:19px;font-weight:700">120</text>
+    <text x="420" y="88" text-anchor="middle" class="text" style="font-size:19px;font-weight:700">121</text>
     <text x="420" y="214" text-anchor="middle" class="muted" style="font-size:10px">stars earned</text>
   </g>
   <g class="rise" style="--i:4">
