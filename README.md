@@ -40,12 +40,12 @@ The four repositories I pushed to most recently. This section rebuilds itself ev
 
 <!-- latest-projects:start -->
 <p align="center">
-  <a href="https://github.com/aiyu-ayaan/Findex-Rust"><img src="assets/latest-1.svg" width="49%" alt="Findex-Rust: Fast, native file explorer in Rust and Slint with a Windows 11 File Explorer look, for Linux and Windows. Desktop edition of Findex." /></a>
-  <a href="https://github.com/aiyu-ayaan/Clavis"><img src="assets/latest-2.svg" width="49%" alt="Clavis: Offline Android card vault: PIN + biometric lock, AES-256-GCM encrypted fields, smart copy and safe share. Kotlin, Jetpack Compose, Material 3 Expressive." /></a>
+  <a href="https://github.com/aiyu-ayaan/RideLink"><img src="assets/latest-1.svg" width="49%" alt="RideLink: Open-source TVS Connect alternative for TVS Ntorq 125 (Race XP, XT, SmartXonnect). Google Maps turn-by-turn arrows on the scooter display, caller ID, WhatsApp counts, ride analytics. No account, no cloud, no tracking." /></a>
+  <a href="https://github.com/aiyu-ayaan/Findex-Rust"><img src="assets/latest-2.svg" width="49%" alt="Findex-Rust: Fast, native file explorer in Rust and Slint with a Windows 11 File Explorer look, for Linux and Windows. Desktop edition of Findex." /></a>
 </p>
 <p align="center">
-  <a href="https://github.com/aiyu-ayaan/Pull"><img src="assets/latest-3.svg" width="49%" alt="Pull: Android download manager: segmented multi-connection HTTP, torrents and magnet links, video sites via yt-dlp, built-in browser with ad blocker. Material 3 Expressive. Open source (GPL-3.0)." /></a>
-  <a href="https://github.com/aiyu-ayaan/Aiyu"><img src="assets/latest-4.svg" width="49%" alt="Aiyu: Open-source developer portfolio + CMS you can self-host. Next.js 16, React 19, Tailwind 4, PostgreSQL/Prisma. Admin panel, 52 themes, Gemini AI theme generator, LaTeX resume studio, blog, gallery, cron jobs and webhooks. Docker-ready." /></a>
+  <a href="https://github.com/aiyu-ayaan/Clavis"><img src="assets/latest-3.svg" width="49%" alt="Clavis: Offline Android card vault: PIN + biometric lock, AES-256-GCM encrypted fields, smart copy and safe share. Kotlin, Jetpack Compose, Material 3 Expressive." /></a>
+  <a href="https://github.com/aiyu-ayaan/Pull"><img src="assets/latest-4.svg" width="49%" alt="Pull: Android download manager: segmented multi-connection HTTP, torrents and magnet links, video sites via yt-dlp, built-in browser with ad blocker. Material 3 Expressive. Open source (GPL-3.0)." /></a>
 </p>
 <!-- latest-projects:end -->
 
