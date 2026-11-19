@@ -53,7 +53,7 @@
     <g class="gx" style="--r:336.3;--x:10.6;animation-delay:-38.3s"><g class="gy" style="--r:134.5;--y:-134.4;--s:0.73;animation-delay:-0.8s"><circle r="3.2" fill="url(#s0)"/></g></g>
     <g class="gx" style="--r:274.1;--x:-14;animation-delay:-186.3s"><g class="gy" style="--r:109.7;--y:-109.5;--s:0.73;animation-delay:-148.8s"><circle r="3.2" fill="url(#s5)"/></g></g>
     <g class="gx" style="--r:225.5;--x:18.6;animation-delay:-39.5s"><g class="gy" style="--r:90.2;--y:-89.9;--s:0.73;animation-delay:-2.0s"><circle r="3.2" fill="url(#s3)"/></g></g>
-    <g class="gx" style="--r:187.2;--x:-25;animation-delay:-184.3s"><g class="gy" style="--r:74.9;--y:-74.2;--s:0.73;animation-delay:-146.8s"><circle r="5.9" fill="url(#s1)"/></g></g>
+    <g class="gx" style="--r:187.2;--x:-25;animation-delay:-184.3s"><g class="gy" style="--r:74.9;--y:-74.2;--s:0.73;animation-delay:-146.8s"><circle r="5.9" fill="url(#s2)"/></g></g>
     <g class="gx" style="--r:299.7;--x:49.3;animation-delay:-41.4s"><g class="gy" style="--r:119.9;--y:-118.2;--s:0.73;animation-delay:-3.9s"><circle r="3.2" fill="url(#s0)"/></g></g>
     <g class="gx" style="--r:314.2;--x:-57.7;animation-delay:-183.1s"><g class="gy" style="--r:125.7;--y:-123.5;--s:0.73;animation-delay:-145.6s"><circle r="3.2" fill="url(#s11)"/></g></g>
     <g class="gx" style="--r:157.5;--x:33.8;animation-delay:-42.7s"><g class="gy" style="--r:63;--y:-61.5;--s:0.74;animation-delay:-5.2s"><circle r="7" fill="url(#s1)"/></g></g>
@@ -76,7 +76,7 @@
     <g class="gx" style="--r:169.5;--x:-109.2;animation-delay:-170.8s"><g class="gy" style="--r:67.8;--y:-51.8;--s:0.78;animation-delay:-133.3s"><circle r="7" fill="url(#s0)"/></g></g>
     <g class="gx" style="--r:308.8;--x:206.4;animation-delay:-55.0s"><g class="gy" style="--r:123.5;--y:-91.9;--s:0.79;animation-delay:-17.5s"><circle r="3.2" fill="url(#s2)"/></g></g>
     <g class="gx" style="--r:305.2;--x:-208.4;animation-delay:-169.6s"><g class="gy" style="--r:122.1;--y:-89.2;--s:0.79;animation-delay:-132.1s"><circle r="3.2" fill="url(#s0)"/></g></g>
-    <g class="gx" style="--r:176.9;--x:124.8;animation-delay:-56.2s"><g class="gy" style="--r:70.7;--y:-50.1;--s:0.79;animation-delay:-18.7s"><circle r="5.9" fill="url(#s7)"/></g></g>
+    <g class="gx" style="--r:176.9;--x:124.8;animation-delay:-56.2s"><g class="gy" style="--r:70.7;--y:-50.1;--s:0.79;animation-delay:-18.7s"><circle r="5.9" fill="url(#s1)"/></g></g>
     <g class="gx" style="--r:364.3;--x:265;animation-delay:-56.9s"><g class="gy" style="--r:145.7;--y:-100;--s:0.80;animation-delay:-19.4s"><circle r="3.2" fill="url(#s12)"/></g></g>
     <g class="gx" style="--r:233.2;--x:-172.7;animation-delay:-167.6s"><g class="gy" style="--r:93.3;--y:-62.7;--s:0.80;animation-delay:-130.1s"><circle r="3.2" fill="url(#s8)"/></g></g>
     <g class="gx" style="--r:267.8;--x:204;animation-delay:-58.2s"><g class="gy" style="--r:107.1;--y:-69.4;--s:0.81;animation-delay:-20.7s"><circle r="3.2" fill="url(#s5)"/></g></g>
@@ -96,8 +96,8 @@
     <g class="gx" style="--r:148.8;--x:-141.9;animation-delay:-157.3s"><g class="gy" style="--r:59.5;--y:-17.8;--s:0.88;animation-delay:-119.8s"><circle r="7" fill="url(#s4)"/></g></g>
     <g class="gx" style="--r:317.7;--x:306;animation-delay:-68.5s"><g class="gy" style="--r:127.1;--y:-34.2;--s:0.89;animation-delay:-31.0s"><circle r="3.2" fill="url(#s2)"/></g></g>
     <g class="gx" style="--r:295.9;--x:-286.5;animation-delay:-156.0s"><g class="gy" style="--r:118.4;--y:-29.6;--s:0.89;animation-delay:-118.5s"><circle r="3.2" fill="url(#s10)"/></g></g>
-    <g class="gx" style="--r:193.8;--x:189;animation-delay:-69.7s"><g class="gy" style="--r:77.5;--y:-17;--s:0.90;animation-delay:-32.2s"><circle r="5.9" fill="url(#s0)"/></g></g>
-    <g class="gx" style="--r:220.1;--x:-216.9;animation-delay:-154.1s"><g class="gy" style="--r:88;--y:-14.9;--s:0.91;animation-delay:-116.6s"><circle r="3.2" fill="url(#s3)"/></g></g>
+    <g class="gx" style="--r:193.8;--x:189;animation-delay:-69.7s"><g class="gy" style="--r:77.5;--y:-17;--s:0.90;animation-delay:-32.2s"><circle r="5.9" fill="url(#s4)"/></g></g>
+    <g class="gx" style="--r:220.1;--x:-216.9;animation-delay:-154.1s"><g class="gy" style="--r:88;--y:-14.9;--s:0.91;animation-delay:-116.6s"><circle r="5.9" fill="url(#s0)"/></g></g>
     <g class="gx" style="--r:278.3;--x:275.6;animation-delay:-71.7s"><g class="gy" style="--r:111.3;--y:-15.4;--s:0.92;animation-delay:-34.2s"><circle r="3.2" fill="url(#s4)"/></g></g>
     <g class="gx" style="--r:333;--x:-330.6;animation-delay:-152.8s"><g class="gy" style="--r:133.2;--y:-15.8;--s:0.92;animation-delay:-115.3s"><circle r="3.2" fill="url(#s6)"/></g></g>
     <g class="gx" style="--r:92.8;--x:92.5;animation-delay:-72.9s"><g class="gy" style="--r:37.1;--y:-3.2;--s:0.93;animation-delay:-35.4s"><circle r="12.9" fill="url(#s0)"/><text x="17.9" y="3.5" class="text" style="font-size:10px">Findex</text></g></g>
@@ -105,7 +105,7 @@
     <g class="gx" style="--r:270;--x:-269.8;animation-delay:-150.9s"><g class="gy" style="--r:108;--y:-3.9;--s:0.94;animation-delay:-113.4s"><circle r="3.2" fill="url(#s5)"/></g></g>
     <g class="gx" style="--r:230.6;--x:230.6;animation-delay:-74.9s"><g class="gy" style="--r:92.3;--y:-0.5;--s:0.95;animation-delay:-37.4s"><circle r="3.2" fill="url(#s1)"/></g></g>
     <g class="gx" style="--r:365.8;--x:-365.7;animation-delay:-149.7s"><g class="gy" style="--r:146.3;--y:2.1;--s:0.95;animation-delay:-112.2s"><circle r="3.2" fill="url(#s0)"/></g></g>
-    <g class="gx" style="--r:180.4;--x:-180.2;animation-delay:-148.9s"><g class="gy" style="--r:72.2;--y:3.3;--s:0.96;animation-delay:-111.4s"><circle r="5.9" fill="url(#s5)"/></g></g>
+    <g class="gx" style="--r:180.4;--x:-180.2;animation-delay:-148.9s"><g class="gy" style="--r:72.2;--y:3.3;--s:0.96;animation-delay:-111.4s"><circle r="5.9" fill="url(#s7)"/></g></g>
     <g class="gx" style="--r:303.4;--x:302.5;animation-delay:-76.9s"><g class="gy" style="--r:121.4;--y:9.4;--s:0.97;animation-delay:-39.4s"><circle r="3.2" fill="url(#s0)"/></g></g>
     <g class="gx" style="--r:310.6;--x:-309.2;animation-delay:-147.7s"><g class="gy" style="--r:124.3;--y:12.1;--s:0.97;animation-delay:-110.2s"><circle r="3.2" fill="url(#s0)"/></g></g>
     <g class="gx" style="--r:165.6;--x:164.2;animation-delay:-78.1s"><g class="gy" style="--r:66.2;--y:8.5;--s:0.98;animation-delay:-40.6s"><circle r="7" fill="url(#s0)"/></g></g>
@@ -128,7 +128,7 @@
     <g class="gx" style="--r:161.6;--x:-132.2;animation-delay:-135.4s"><g class="gy" style="--r:64.7;--y:37.2;--s:1.08;animation-delay:-97.9s"><circle r="7" fill="url(#s6)"/></g></g>
     <g class="gx" style="--r:312.4;--x:249.8;animation-delay:-90.4s"><g class="gy" style="--r:125;--y:75.1;--s:1.08;animation-delay:-52.9s"><circle r="3.2" fill="url(#s0)"/></g></g>
     <g class="gx" style="--r:301.5;--x:-237.5;animation-delay:-134.2s"><g class="gy" style="--r:120.6;--y:74.3;--s:1.09;animation-delay:-96.7s"><circle r="3.2" fill="url(#s2)"/></g></g>
-    <g class="gx" style="--r:183.9;--x:141.2;animation-delay:-91.6s"><g class="gy" style="--r:73.5;--y:47.1;--s:1.09;animation-delay:-54.1s"><circle r="5.9" fill="url(#s2)"/></g></g>
+    <g class="gx" style="--r:183.9;--x:141.2;animation-delay:-91.6s"><g class="gy" style="--r:73.5;--y:47.1;--s:1.09;animation-delay:-54.1s"><circle r="5.9" fill="url(#s5)"/></g></g>
     <g class="gx" style="--r:367.3;--x:274.4;animation-delay:-92.4s"><g class="gy" style="--r:146.9;--y:97.6;--s:1.10;animation-delay:-54.9s"><circle r="3.2" fill="url(#s10)"/></g></g>
     <g class="gx" style="--r:228.1;--x:-167.4;animation-delay:-132.2s"><g class="gy" style="--r:91.2;--y:61.9;--s:1.10;animation-delay:-94.7s"><circle r="3.2" fill="url(#s3)"/></g></g>
     <g class="gx" style="--r:272.1;--x:193.8;animation-delay:-93.6s"><g class="gy" style="--r:108.8;--y:76.4;--s:1.10;animation-delay:-56.1s"><circle r="3.2" fill="url(#s9)"/></g></g>
@@ -137,7 +137,7 @@
     <g class="gx" style="--r:334.6;--x:218.1;animation-delay:-95.5s"><g class="gy" style="--r:133.8;--y:101.5;--s:1.12;animation-delay:-58.0s"><circle r="3.2" fill="url(#s6)"/></g></g>
     <g class="gx" style="--r:276.2;--x:-175.9;animation-delay:-129.0s"><g class="gy" style="--r:110.5;--y:85.2;--s:1.12;animation-delay:-91.5s"><circle r="3.2" fill="url(#s9)"/></g></g>
     <g class="gx" style="--r:222.8;--x:136.4;animation-delay:-96.8s"><g class="gy" style="--r:89.1;--y:70.5;--s:1.12;animation-delay:-59.3s"><circle r="3.2" fill="url(#s0)"/></g></g>
-    <g class="gx" style="--r:190.5;--x:-108.8;animation-delay:-127.0s"><g class="gy" style="--r:76.2;--y:62.6;--s:1.13;animation-delay:-89.5s"><circle r="5.9" fill="url(#s4)"/></g></g>
+    <g class="gx" style="--r:190.5;--x:-108.8;animation-delay:-127.0s"><g class="gy" style="--r:76.2;--y:62.6;--s:1.13;animation-delay:-89.5s"><circle r="5.9" fill="url(#s1)"/></g></g>
     <g class="gx" style="--r:297.8;--x:162.3;animation-delay:-98.7s"><g class="gy" style="--r:119.1;--y:99.9;--s:1.13;animation-delay:-61.2s"><circle r="3.2" fill="url(#s0)"/></g></g>
     <g class="gx" style="--r:316;--x:-167;animation-delay:-125.8s"><g class="gy" style="--r:126.4;--y:107.3;--s:1.14;animation-delay:-88.3s"><circle r="3.2" fill="url(#s2)"/></g></g>
     <g class="gx" style="--r:153.2;--x:76.8;animation-delay:-100.0s"><g class="gy" style="--r:61.3;--y:53;--s:1.14;animation-delay:-62.5s"><circle r="7" fill="url(#s5)"/></g></g>
@@ -157,7 +157,7 @@
     <g class="gx" style="--r:265.7;--x:-32.9;animation-delay:-115.5s"><g class="gy" style="--r:106.3;--y:105.5;--s:1.17;animation-delay:-78.0s"><circle r="3.2" fill="url(#s5)"/></g></g>
     <g class="gx" style="--r:235.7;--x:21.7;animation-delay:-110.3s"><g class="gy" style="--r:94.3;--y:93.9;--s:1.17;animation-delay:-72.8s"><circle r="3.2" fill="url(#s8)"/></g></g>
     <g class="gx" style="--r:362.8;--x:-26.4;animation-delay:-114.2s"><g class="gy" style="--r:145.1;--y:144.7;--s:1.17;animation-delay:-76.7s"><circle r="3.2" fill="url(#s0)"/></g></g>
-    <g class="gx" style="--r:173.2;--x:-7.2;animation-delay:-113.5s"><g class="gy" style="--r:69.3;--y:69.2;--s:1.17;animation-delay:-76.0s"><circle r="5.9" fill="url(#s1)"/></g></g>
+    <g class="gx" style="--r:173.2;--x:-7.2;animation-delay:-113.5s"><g class="gy" style="--r:69.3;--y:69.2;--s:1.17;animation-delay:-76.0s"><circle r="5.9" fill="url(#s3)"/></g></g>
     <g class="gx" style="--r:307;--x:3;animation-delay:-112.3s"><g class="gy" style="--r:122.8;--y:122.8;--s:1.17;animation-delay:-74.8s"><circle r="3.2" fill="url(#s2)"/></g></g>
     </g>
   </g>
