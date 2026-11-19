@@ -48,7 +48,7 @@
       <g class="cube"><path d="M34 25L45 30.5L34 36L23 30.5Z" fill="#bf9cff"/><path d="M23 30.5L34 36L34 47L23 41.5Z" fill="#8460c7"/><path d="M45 30.5L34 36L34 47L45 41.5Z" fill="#513b7a"/></g>
       <text x="56" y="34" class="text" style="font-size:16px;font-weight:700">Findex</text>
       <path d="M6 .6l1.7 3.4 3.7.5-2.7 2.6.6 3.7L6 9.1 2.7 10.8l.6-3.7L.6 4.5l3.7-.5z" transform="translate(56, 40) scale(.85)" fill="#ff9f0a"/>
-      <text x="70" y="50" class="small text">12</text>
+      <text x="70" y="50" class="small text">13</text>
       <text x="91.4" y="50" class="small" fill="#ff9f0a">v0.0.1-alpha.5</text>
       <g class="dev" style="animation-delay:0.0s"><path d="M347.6 49.7L358 55.7L358 31.7L347.6 25.7Z" fill="#3b3b44"/><path d="M360.4 54.3L358 55.7L358 31.7L360.4 30.3Z" fill="#232329"/><path d="M350 24.3L360.4 30.3L358 31.7L347.6 25.7Z" fill="#808085"/><path d="M348.6 48.5L356.9 53.3L356.9 32.9L348.6 28.1Z" fill="#A97BFF" class="scr"/></g>
       <text x="354" y="76" text-anchor="middle" class="muted tiny">android</text>
