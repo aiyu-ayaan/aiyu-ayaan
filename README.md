@@ -40,12 +40,12 @@ The four repositories I pushed to most recently. This section rebuilds itself ev
 
 <!-- latest-projects:start -->
 <p align="center">
-  <a href="https://github.com/aiyu-ayaan/RideLink"><img src="assets/latest-1.svg" width="49%" alt="RideLink: Open-source TVS Connect alternative for TVS Ntorq 125 (Race XP, XT, SmartXonnect). Google Maps turn-by-turn arrows on the scooter display, caller ID, WhatsApp counts, ride analytics. No account, no cloud, no tracking." /></a>
+  <a href="https://github.com/aiyu-ayaan/Findex"><img src="assets/latest-1.svg" width="49%" alt="Findex: Beautiful open-source Android file manager built with Jetpack Compose and Material 3 Expressive. Multi-tab and dual-pane browsing, storage analyzer, duplicate finder, cleaner, archive tools, recycle bin. Fast, fluid and privacy-focused." /></a>
   <a href="https://github.com/aiyu-ayaan/Findex-Rust"><img src="assets/latest-2.svg" width="49%" alt="Findex-Rust: Fast, native file explorer in Rust and Slint with a Windows 11 File Explorer look, for Linux and Windows. Desktop edition of Findex." /></a>
 </p>
 <p align="center">
-  <a href="https://github.com/aiyu-ayaan/Clavis"><img src="assets/latest-3.svg" width="49%" alt="Clavis: Offline Android card vault: PIN + biometric lock, AES-256-GCM encrypted fields, smart copy and safe share. Kotlin, Jetpack Compose, Material 3 Expressive." /></a>
-  <a href="https://github.com/aiyu-ayaan/Pull"><img src="assets/latest-4.svg" width="49%" alt="Pull: Android download manager: segmented multi-connection HTTP, torrents and magnet links, video sites via yt-dlp, built-in browser with ad blocker. Material 3 Expressive. Open source (GPL-3.0)." /></a>
+  <a href="https://github.com/aiyu-ayaan/RideLink"><img src="assets/latest-3.svg" width="49%" alt="RideLink: Open-source TVS Connect alternative for TVS Ntorq 125 (Race XP, XT, SmartXonnect). Google Maps turn-by-turn arrows on the scooter display, caller ID, WhatsApp counts, ride analytics. No account, no cloud, no tracking." /></a>
+  <a href="https://github.com/aiyu-ayaan/Clavis"><img src="assets/latest-4.svg" width="49%" alt="Clavis: Offline Android card vault: PIN + biometric lock, AES-256-GCM encrypted fields, smart copy and safe share. Kotlin, Jetpack Compose, Material 3 Expressive." /></a>
 </p>
 <!-- latest-projects:end -->
 
