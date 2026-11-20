@@ -25,32 +25,32 @@
     @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
   </style>
   <ellipse cx="205" cy="95" rx="183" ry="5" fill="#000" opacity=".55"/>
-  <g class="seg" style="--i:0"><path d="M20 66L104.4 66L104.4 86L20 86Z" fill="#8762cc"/><path d="M20 66L104.4 66L120.4 55L36 55Z" fill="#b68fff"/><path d="M104.4 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
-  <g class="seg" style="--i:1"><path d="M104.4 66L168.8 66L168.8 86L104.4 86Z" fill="#c1b348"/><path d="M104.4 66L168.8 66L184.8 55L120.4 55Z" fill="#f3e573"/><path d="M168.8 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
-  <g class="seg" style="--i:2"><path d="M168.8 66L231.3 66L231.3 86L168.8 86Z" fill="#27609e"/><path d="M168.8 66L231.3 66L247.3 55L184.8 55Z" fill="#508ccf"/><path d="M231.3 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
-  <g class="seg" style="--i:3"><path d="M231.3 66L289.7 66L289.7 86L231.3 86Z" fill="#2a5b84"/><path d="M231.3 66L289.7 66L305.7 55L247.3 55Z" fill="#5387b3"/><path d="M289.7 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
-  <g class="seg" style="--i:4"><path d="M289.7 66L309.5 66L309.5 86L289.7 86Z" fill="#b2846a"/><path d="M289.7 66L309.5 66L325.5 55L305.7 55Z" fill="#e3b396"/><path d="M309.5 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
-  <g class="seg" style="--i:5"><path d="M309.5 66L328.7 66L328.7 86L309.5 86Z" fill="#b63d1e"/><path d="M309.5 66L328.7 66L344.7 55L325.5 55Z" fill="#e76747"/><path d="M328.7 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
-  <g class="seg" style="--i:6"><path d="M328.7 66L374 66L374 86L328.7 86Z" fill="#6b6b6f"/><path d="M328.7 66L374 66L390 55L344.7 55Z" fill="#98989c"/><path d="M374 66L390 55L390 75L374 86Z" fill="#3c3c3f"/><path d="M374 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
+  <g class="seg" style="--i:0"><path d="M20 66L103.9 66L103.9 86L20 86Z" fill="#8762cc"/><path d="M20 66L103.9 66L119.9 55L36 55Z" fill="#b68fff"/><path d="M103.9 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
+  <g class="seg" style="--i:1"><path d="M103.9 66L167.9 66L167.9 86L103.9 86Z" fill="#c1b348"/><path d="M103.9 66L167.9 66L183.9 55L119.9 55Z" fill="#f3e573"/><path d="M167.9 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
+  <g class="seg" style="--i:2"><path d="M167.9 66L230.5 66L230.5 86L167.9 86Z" fill="#27609e"/><path d="M167.9 66L230.5 66L246.5 55L183.9 55Z" fill="#508ccf"/><path d="M230.5 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
+  <g class="seg" style="--i:3"><path d="M230.5 66L288.6 66L288.6 86L230.5 86Z" fill="#2a5b84"/><path d="M230.5 66L288.6 66L304.6 55L246.5 55Z" fill="#5387b3"/><path d="M288.6 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
+  <g class="seg" style="--i:4"><path d="M288.6 66L309.3 66L309.3 86L288.6 86Z" fill="#b63d1e"/><path d="M288.6 66L309.3 66L325.3 55L304.6 55Z" fill="#e76747"/><path d="M309.3 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
+  <g class="seg" style="--i:5"><path d="M309.3 66L329 66L329 86L309.3 86Z" fill="#b2846a"/><path d="M309.3 66L329 66L345 55L325.3 55Z" fill="#e3b396"/><path d="M329 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
+  <g class="seg" style="--i:6"><path d="M329 66L374 66L374 86L329 86Z" fill="#6b6b6f"/><path d="M329 66L374 66L390 55L345 55Z" fill="#98989c"/><path d="M374 66L390 55L390 75L374 86Z" fill="#3c3c3f"/><path d="M374 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
   <g class="fade" style="--i:0"><rect x="20" y="112.5" width="10" height="10" rx="2.5" fill="#A97BFF"/>
   <text x="38" y="122" class="text">Kotlin</text>
-  <text x="189" y="122" class="muted" text-anchor="end">23.8%</text></g>
+  <text x="189" y="122" class="muted" text-anchor="end">23.7%</text></g>
   <g class="fade" style="--i:1"><rect x="205" y="112.5" width="10" height="10" rx="2.5" fill="#f1e05a"/>
   <text x="223" y="122" class="text">JavaScript</text>
-  <text x="374" y="122" class="muted" text-anchor="end">18.2%</text></g>
+  <text x="374" y="122" class="muted" text-anchor="end">18.1%</text></g>
   <g class="fade" style="--i:2"><rect x="20" y="134.83333333333334" width="10" height="10" rx="2.5" fill="#3178c6"/>
   <text x="38" y="144.33333333333334" class="text">TypeScript</text>
   <text x="189" y="144.33333333333334" class="muted" text-anchor="end">17.7%</text></g>
   <g class="fade" style="--i:3"><rect x="205" y="134.83333333333334" width="10" height="10" rx="2.5" fill="#3572A5"/>
   <text x="223" y="144.33333333333334" class="text">Python</text>
-  <text x="374" y="144.33333333333334" class="muted" text-anchor="end">16.5%</text></g>
-  <g class="fade" style="--i:4"><rect x="20" y="157.16666666666666" width="10" height="10" rx="2.5" fill="#dea584"/>
-  <text x="38" y="166.66666666666666" class="text">Rust</text>
-  <text x="189" y="166.66666666666666" class="muted" text-anchor="end">5.6%</text></g>
-  <g class="fade" style="--i:5"><rect x="205" y="157.16666666666666" width="10" height="10" rx="2.5" fill="#e34c26"/>
-  <text x="223" y="166.66666666666666" class="text">HTML</text>
-  <text x="374" y="166.66666666666666" class="muted" text-anchor="end">5.4%</text></g>
+  <text x="374" y="144.33333333333334" class="muted" text-anchor="end">16.4%</text></g>
+  <g class="fade" style="--i:4"><rect x="20" y="157.16666666666666" width="10" height="10" rx="2.5" fill="#e34c26"/>
+  <text x="38" y="166.66666666666666" class="text">HTML</text>
+  <text x="189" y="166.66666666666666" class="muted" text-anchor="end">5.8%</text></g>
+  <g class="fade" style="--i:5"><rect x="205" y="157.16666666666666" width="10" height="10" rx="2.5" fill="#dea584"/>
+  <text x="223" y="166.66666666666666" class="text">Rust</text>
+  <text x="374" y="166.66666666666666" class="muted" text-anchor="end">5.6%</text></g>
   <g class="fade" style="--i:6"><rect x="20" y="179.5" width="10" height="10" rx="2.5" fill="#86868b"/>
   <text x="38" y="189" class="text">Other</text>
-  <text x="189" y="189" class="muted" text-anchor="end">12.8%</text></g>
+  <text x="189" y="189" class="muted" text-anchor="end">12.7%</text></g>
 </svg>
