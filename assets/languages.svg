@@ -26,30 +26,30 @@
   </style>
   <ellipse cx="205" cy="95" rx="183" ry="5" fill="#000" opacity=".55"/>
   <g class="seg" style="--i:0"><path d="M20 66L104.2 66L104.2 86L20 86Z" fill="#8762cc"/><path d="M20 66L104.2 66L120.2 55L36 55Z" fill="#b68fff"/><path d="M104.2 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
-  <g class="seg" style="--i:1"><path d="M104.2 66L168.6 66L168.6 86L104.2 86Z" fill="#c1b348"/><path d="M104.2 66L168.6 66L184.6 55L120.2 55Z" fill="#f3e573"/><path d="M168.6 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
-  <g class="seg" style="--i:2"><path d="M168.6 66L231.3 66L231.3 86L168.6 86Z" fill="#27609e"/><path d="M168.6 66L231.3 66L247.3 55L184.6 55Z" fill="#508ccf"/><path d="M231.3 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
-  <g class="seg" style="--i:3"><path d="M231.3 66L289.8 66L289.8 86L231.3 86Z" fill="#2a5b84"/><path d="M231.3 66L289.8 66L305.8 55L247.3 55Z" fill="#5387b3"/><path d="M289.8 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
-  <g class="seg" style="--i:4"><path d="M289.8 66L309.6 66L309.6 86L289.8 86Z" fill="#b2846a"/><path d="M289.8 66L309.6 66L325.6 55L305.8 55Z" fill="#e3b396"/><path d="M309.6 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
-  <g class="seg" style="--i:5"><path d="M309.6 66L328.8 66L328.8 86L309.6 86Z" fill="#b63d1e"/><path d="M309.6 66L328.8 66L344.8 55L325.6 55Z" fill="#e76747"/><path d="M328.8 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
-  <g class="seg" style="--i:6"><path d="M328.8 66L374 66L374 86L328.8 86Z" fill="#6b6b6f"/><path d="M328.8 66L374 66L390 55L344.8 55Z" fill="#98989c"/><path d="M374 66L390 55L390 75L374 86Z" fill="#3c3c3f"/><path d="M374 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
+  <g class="seg" style="--i:1"><path d="M104.2 66L168.4 66L168.4 86L104.2 86Z" fill="#c1b348"/><path d="M104.2 66L168.4 66L184.4 55L120.2 55Z" fill="#f3e573"/><path d="M168.4 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
+  <g class="seg" style="--i:2"><path d="M168.4 66L231.1 66L231.1 86L168.4 86Z" fill="#27609e"/><path d="M168.4 66L231.1 66L247.1 55L184.4 55Z" fill="#508ccf"/><path d="M231.1 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
+  <g class="seg" style="--i:3"><path d="M231.1 66L289.3 66L289.3 86L231.1 86Z" fill="#2a5b84"/><path d="M231.1 66L289.3 66L305.3 55L247.1 55Z" fill="#5387b3"/><path d="M289.3 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
+  <g class="seg" style="--i:4"><path d="M289.3 66L309.4 66L309.4 86L289.3 86Z" fill="#b2846a"/><path d="M289.3 66L309.4 66L325.4 55L305.3 55Z" fill="#e3b396"/><path d="M309.4 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
+  <g class="seg" style="--i:5"><path d="M309.4 66L328.7 66L328.7 86L309.4 86Z" fill="#b63d1e"/><path d="M309.4 66L328.7 66L344.7 55L325.4 55Z" fill="#e76747"/><path d="M328.7 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
+  <g class="seg" style="--i:6"><path d="M328.7 66L374 66L374 86L328.7 86Z" fill="#6b6b6f"/><path d="M328.7 66L374 66L390 55L344.7 55Z" fill="#98989c"/><path d="M374 66L390 55L390 75L374 86Z" fill="#3c3c3f"/><path d="M374 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
   <g class="fade" style="--i:0"><rect x="20" y="112.5" width="10" height="10" rx="2.5" fill="#A97BFF"/>
   <text x="38" y="122" class="text">Kotlin</text>
   <text x="189" y="122" class="muted" text-anchor="end">23.8%</text></g>
   <g class="fade" style="--i:1"><rect x="205" y="112.5" width="10" height="10" rx="2.5" fill="#f1e05a"/>
   <text x="223" y="122" class="text">JavaScript</text>
-  <text x="374" y="122" class="muted" text-anchor="end">18.2%</text></g>
+  <text x="374" y="122" class="muted" text-anchor="end">18.1%</text></g>
   <g class="fade" style="--i:2"><rect x="20" y="134.83333333333334" width="10" height="10" rx="2.5" fill="#3178c6"/>
   <text x="38" y="144.33333333333334" class="text">TypeScript</text>
   <text x="189" y="144.33333333333334" class="muted" text-anchor="end">17.7%</text></g>
   <g class="fade" style="--i:3"><rect x="205" y="134.83333333333334" width="10" height="10" rx="2.5" fill="#3572A5"/>
   <text x="223" y="144.33333333333334" class="text">Python</text>
-  <text x="374" y="144.33333333333334" class="muted" text-anchor="end">16.5%</text></g>
+  <text x="374" y="144.33333333333334" class="muted" text-anchor="end">16.4%</text></g>
   <g class="fade" style="--i:4"><rect x="20" y="157.16666666666666" width="10" height="10" rx="2.5" fill="#dea584"/>
   <text x="38" y="166.66666666666666" class="text">Rust</text>
-  <text x="189" y="166.66666666666666" class="muted" text-anchor="end">5.6%</text></g>
+  <text x="189" y="166.66666666666666" class="muted" text-anchor="end">5.7%</text></g>
   <g class="fade" style="--i:5"><rect x="205" y="157.16666666666666" width="10" height="10" rx="2.5" fill="#e34c26"/>
   <text x="223" y="166.66666666666666" class="text">HTML</text>
-  <text x="374" y="166.66666666666666" class="muted" text-anchor="end">5.4%</text></g>
+  <text x="374" y="166.66666666666666" class="muted" text-anchor="end">5.5%</text></g>
   <g class="fade" style="--i:6"><rect x="20" y="179.5" width="10" height="10" rx="2.5" fill="#86868b"/>
   <text x="38" y="189" class="text">Other</text>
   <text x="189" y="189" class="muted" text-anchor="end">12.8%</text></g>
