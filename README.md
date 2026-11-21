@@ -40,8 +40,8 @@ The four repositories I pushed to most recently. This section rebuilds itself ev
 
 <!-- latest-projects:start -->
 <p align="center">
-  <a href="https://github.com/aiyu-ayaan/VS-Code-Settings"><img src="assets/latest-1.svg" width="49%" alt="VS-Code-Settings: My Vs Code Settings" /></a>
-  <a href="https://github.com/aiyu-ayaan/film-studio-agents"><img src="assets/latest-2.svg" width="49%" alt="film-studio-agents: AI agent film studio: one prompt to a finished narrated film. Claude Code skills, local TTS, HyperFrames, Remotion, Three.js, ffmpeg." /></a>
+  <a href="https://github.com/aiyu-ayaan/film-studio-agents"><img src="assets/latest-1.svg" width="49%" alt="film-studio-agents: AI agent film studio: one prompt to a finished narrated film. Claude Code skills, local TTS, HyperFrames, Remotion, Three.js, ffmpeg." /></a>
+  <a href="https://github.com/aiyu-ayaan/VS-Code-Settings"><img src="assets/latest-2.svg" width="49%" alt="VS-Code-Settings: My Vs Code Settings" /></a>
 </p>
 <p align="center">
   <a href="https://github.com/aiyu-ayaan/Findex"><img src="assets/latest-3.svg" width="49%" alt="Findex: Beautiful open-source Android file manager built with Jetpack Compose and Material 3 Expressive. Multi-tab and dual-pane browsing, storage analyzer, duplicate finder, cleaner, archive tools, recycle bin. Fast, fluid and privacy-focused." /></a>
