@@ -47,7 +47,7 @@
     <g transform="translate(6, 8)">
       <g class="cube"><path d="M34 25L45 30.5L34 36L23 30.5Z" fill="#f5e883"/><path d="M23 30.5L34 36L34 47L23 41.5Z" fill="#bcaf46"/><path d="M45 30.5L34 36L34 47L45 41.5Z" fill="#746c2b"/></g>
       <text x="56" y="34" class="text" style="font-size:16px;font-weight:700">Aiyu</text>
-      <text x="56" y="50" class="small muted">pushed Nov 23</text>
+      <text x="56" y="50" class="small muted">pushed Nov 24</text>
       <g transform="translate(368, 22)">
         <text x="0" y="12" text-anchor="end" class="text" font-weight="600">7</text>
         <path d="M6 .6l1.7 3.4 3.7.5-2.7 2.6.6 3.7L6 9.1 2.7 10.8l.6-3.7L.6 4.5l3.7-.5z" transform="translate(-24.3, 1.5)" fill="#ff9f0a"/>
