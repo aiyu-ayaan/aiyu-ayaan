@@ -69,7 +69,7 @@
     <g class="gx" style="--r:211;--x:-98.2;animation-delay:-175.9s"><g class="gy" style="--r:84.4;--y:-74.7;--s:0.76;animation-delay:-138.4s"><circle r="5.9" fill="url(#s0)"/></g></g>
     <g class="gx" style="--r:283.2;--x:139.6;animation-delay:-49.8s"><g class="gy" style="--r:113.3;--y:-98.6;--s:0.76;animation-delay:-12.3s"><circle r="3.2" fill="url(#s0)"/></g></g>
     <g class="gx" style="--r:326.7;--x:-166.6;animation-delay:-174.7s"><g class="gy" style="--r:130.7;--y:-112.4;--s:0.76;animation-delay:-137.2s"><circle r="3.2" fill="url(#s10)"/></g></g>
-    <g class="gx" style="--r:116.1;--x:62.3;animation-delay:-51.0s"><g class="gy" style="--r:46.4;--y:-39.2;--s:0.76;animation-delay:-13.5s"><circle r="9.2" fill="url(#s2)"/><text x="14.2" y="3.5" class="text" style="font-size:10px">Gemini-CLI</text></g></g>
+    <g class="gx" style="--r:116.1;--x:62.3;animation-delay:-51.0s"><g class="gy" style="--r:46.4;--y:-39.2;--s:0.76;animation-delay:-13.5s"><circle r="9.2" fill="url(#s0)"/><text x="14.2" y="3.5" class="text" style="font-size:10px">Rewire</text></g></g>
     <g class="gx" style="--r:343;--x:193.1;animation-delay:-51.8s"><g class="gy" style="--r:137.2;--y:-113.4;--s:0.77;animation-delay:-14.3s"><circle r="3.2" fill="url(#s0)"/></g></g>
     <g class="gx" style="--r:262.5;--x:-152;animation-delay:-172.8s"><g class="gy" style="--r:105;--y:-85.6;--s:0.77;animation-delay:-135.3s"><circle r="3.2" fill="url(#s1)"/></g></g>
     <g class="gx" style="--r:237.3;--x:143.4;animation-delay:-53.0s"><g class="gy" style="--r:94.9;--y:-75.6;--s:0.77;animation-delay:-15.5s"><circle r="3.2" fill="url(#s9)"/></g></g>
@@ -114,7 +114,7 @@
     <g class="gx" style="--r:239.7;--x:-235.8;animation-delay:-145.7s"><g class="gy" style="--r:95.9;--y:17.2;--s:0.99;animation-delay:-108.2s"><circle r="3.2" fill="url(#s9)"/></g></g>
     <g class="gx" style="--r:260.4;--x:254.6;animation-delay:-80.0s"><g class="gy" style="--r:104.1;--y:21.9;--s:1.00;animation-delay:-42.5s"><circle r="3.2" fill="url(#s0)"/></g></g>
     <g class="gx" style="--r:344.5;--x:-335.4;animation-delay:-144.5s"><g class="gy" style="--r:137.8;--y:31.6;--s:1.00;animation-delay:-107.0s"><circle r="3.2" fill="url(#s0)"/></g></g>
-    <g class="gx" style="--r:122.4;--x:-118.2;animation-delay:-143.7s"><g class="gy" style="--r:49;--y:12.7;--s:1.01;animation-delay:-106.2s"><circle r="8.6" fill="url(#s0)"/><text x="13.6" y="3.5" class="text" style="font-size:10px">RideLink</text></g></g>
+    <g class="gx" style="--r:122.4;--x:-118.2;animation-delay:-143.7s"><g class="gy" style="--r:49;--y:12.7;--s:1.01;animation-delay:-106.2s"><circle r="9.2" fill="url(#s2)"/><text x="14.2" y="3.5" class="text" style="font-size:10px">Gemini-CLI</text></g></g>
     <g class="gx" style="--r:325;--x:311.1;animation-delay:-82.0s"><g class="gy" style="--r:130;--y:37.7;--s:1.01;animation-delay:-44.5s"><circle r="3.2" fill="url(#s0)"/></g></g>
     <g class="gx" style="--r:285.2;--x:-271.3;animation-delay:-142.5s"><g class="gy" style="--r:114.1;--y:35.2;--s:1.02;animation-delay:-105.0s"><circle r="3.2" fill="url(#s6)"/></g></g>
     <g class="gx" style="--r:208.2;--x:195.9;animation-delay:-83.2s"><g class="gy" style="--r:83.3;--y:28.2;--s:1.02;animation-delay:-45.7s"><circle r="5.9" fill="url(#s0)"/></g></g>
