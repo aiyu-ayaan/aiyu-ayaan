@@ -40,7 +40,7 @@ The four repositories I pushed to most recently. This section rebuilds itself ev
 
 <!-- latest-projects:start -->
 <p align="center">
-  <a href="https://github.com/aiyu-ayaan/Aiyu"><img src="assets/latest-1.svg" width="49%" alt="Aiyu: Open-source developer portfolio + CMS you can self-host. Next.js 16, React 19, Tailwind 4, PostgreSQL/Prisma. Admin panel, 52 themes, Gemini AI theme generator, LaTeX resume studio, blog, gallery, cron jobs and webhooks. Docker-ready." /></a>
+  <a href="https://github.com/aiyu-ayaan/Aiyu"><img src="assets/latest-1.svg" width="49%" alt="Aiyu: Developer portfolio &amp; CMS built with Rust (Axum), Vite, React 19, Tailwind 4, and SQLite. Admin panel, 52 themes, Gemini AI, LaTeX resume studio, blog, gallery, cron scheduler, and MCP server." /></a>
   <a href="https://github.com/aiyu-ayaan/film-studio-agents"><img src="assets/latest-2.svg" width="49%" alt="film-studio-agents: AI agent film studio: one prompt to a finished narrated film. Claude Code skills, local TTS, HyperFrames, Remotion, Three.js, ffmpeg." /></a>
 </p>
 <p align="center">
