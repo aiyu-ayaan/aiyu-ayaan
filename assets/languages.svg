@@ -25,32 +25,32 @@
     @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
   </style>
   <ellipse cx="205" cy="95" rx="183" ry="5" fill="#000" opacity=".55"/>
-  <g class="seg" style="--i:0"><path d="M20 66L106.2 66L106.2 86L20 86Z" fill="#8762cc"/><path d="M20 66L106.2 66L122.2 55L36 55Z" fill="#b68fff"/><path d="M106.2 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
-  <g class="seg" style="--i:1"><path d="M106.2 66L170.6 66L170.6 86L106.2 86Z" fill="#27609e"/><path d="M106.2 66L170.6 66L186.6 55L122.2 55Z" fill="#508ccf"/><path d="M170.6 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
-  <g class="seg" style="--i:2"><path d="M170.6 66L229.6 66L229.6 86L170.6 86Z" fill="#2a5b84"/><path d="M170.6 66L229.6 66L245.6 55L186.6 55Z" fill="#5387b3"/><path d="M229.6 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
-  <g class="seg" style="--i:3"><path d="M229.6 66L285 66L285 86L229.6 86Z" fill="#c1b348"/><path d="M229.6 66L285 66L301 55L245.6 55Z" fill="#f3e573"/><path d="M285 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
-  <g class="seg" style="--i:4"><path d="M285 66L311.9 66L311.9 86L285 86Z" fill="#b2846a"/><path d="M285 66L311.9 66L327.9 55L301 55Z" fill="#e3b396"/><path d="M311.9 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
-  <g class="seg" style="--i:5"><path d="M311.9 66L328.8 66L328.8 86L311.9 86Z" fill="#52297a"/><path d="M311.9 66L328.8 66L344.8 55L327.9 55Z" fill="#7d52a8"/><path d="M328.8 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
-  <g class="seg" style="--i:6"><path d="M328.8 66L374 66L374 86L328.8 86Z" fill="#6b6b6f"/><path d="M328.8 66L374 66L390 55L344.8 55Z" fill="#98989c"/><path d="M374 66L390 55L390 75L374 86Z" fill="#3c3c3f"/><path d="M374 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
+  <g class="seg" style="--i:0"><path d="M20 66L106.7 66L106.7 86L20 86Z" fill="#8762cc"/><path d="M20 66L106.7 66L122.7 55L36 55Z" fill="#b68fff"/><path d="M106.7 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
+  <g class="seg" style="--i:1"><path d="M106.7 66L170.8 66L170.8 86L106.7 86Z" fill="#27609e"/><path d="M106.7 66L170.8 66L186.8 55L122.7 55Z" fill="#508ccf"/><path d="M170.8 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
+  <g class="seg" style="--i:2"><path d="M170.8 66L229.6 66L229.6 86L170.8 86Z" fill="#2a5b84"/><path d="M170.8 66L229.6 66L245.6 55L186.8 55Z" fill="#5387b3"/><path d="M229.6 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
+  <g class="seg" style="--i:3"><path d="M229.6 66L284.6 66L284.6 86L229.6 86Z" fill="#c1b348"/><path d="M229.6 66L284.6 66L300.6 55L245.6 55Z" fill="#f3e573"/><path d="M284.6 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
+  <g class="seg" style="--i:4"><path d="M284.6 66L312.1 66L312.1 86L284.6 86Z" fill="#b2846a"/><path d="M284.6 66L312.1 66L328.1 55L300.6 55Z" fill="#e3b396"/><path d="M312.1 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
+  <g class="seg" style="--i:5"><path d="M312.1 66L328.9 66L328.9 86L312.1 86Z" fill="#52297a"/><path d="M312.1 66L328.9 66L344.9 55L328.1 55Z" fill="#7d52a8"/><path d="M328.9 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
+  <g class="seg" style="--i:6"><path d="M328.9 66L374 66L374 86L328.9 86Z" fill="#6b6b6f"/><path d="M328.9 66L374 66L390 55L344.9 55Z" fill="#98989c"/><path d="M374 66L390 55L390 75L374 86Z" fill="#3c3c3f"/><path d="M374 66V86" stroke="#0b0b0d" stroke-opacity=".55"/></g>
   <g class="fade" style="--i:0"><rect x="20" y="112.5" width="10" height="10" rx="2.5" fill="#A97BFF"/>
   <text x="38" y="122" class="text">Kotlin</text>
-  <text x="189" y="122" class="muted" text-anchor="end">24.3%</text></g>
+  <text x="189" y="122" class="muted" text-anchor="end">24.5%</text></g>
   <g class="fade" style="--i:1"><rect x="205" y="112.5" width="10" height="10" rx="2.5" fill="#3178c6"/>
   <text x="223" y="122" class="text">TypeScript</text>
-  <text x="374" y="122" class="muted" text-anchor="end">18.2%</text></g>
+  <text x="374" y="122" class="muted" text-anchor="end">18.1%</text></g>
   <g class="fade" style="--i:2"><rect x="20" y="134.83333333333334" width="10" height="10" rx="2.5" fill="#3572A5"/>
   <text x="38" y="144.33333333333334" class="text">Python</text>
-  <text x="189" y="144.33333333333334" class="muted" text-anchor="end">16.7%</text></g>
+  <text x="189" y="144.33333333333334" class="muted" text-anchor="end">16.6%</text></g>
   <g class="fade" style="--i:3"><rect x="205" y="134.83333333333334" width="10" height="10" rx="2.5" fill="#f1e05a"/>
   <text x="223" y="144.33333333333334" class="text">JavaScript</text>
-  <text x="374" y="144.33333333333334" class="muted" text-anchor="end">15.6%</text></g>
+  <text x="374" y="144.33333333333334" class="muted" text-anchor="end">15.5%</text></g>
   <g class="fade" style="--i:4"><rect x="20" y="157.16666666666666" width="10" height="10" rx="2.5" fill="#dea584"/>
   <text x="38" y="166.66666666666666" class="text">Rust</text>
-  <text x="189" y="166.66666666666666" class="muted" text-anchor="end">7.6%</text></g>
+  <text x="189" y="166.66666666666666" class="muted" text-anchor="end">7.8%</text></g>
   <g class="fade" style="--i:5"><rect x="205" y="157.16666666666666" width="10" height="10" rx="2.5" fill="#663399"/>
   <text x="223" y="166.66666666666666" class="text">CSS</text>
-  <text x="374" y="166.66666666666666" class="muted" text-anchor="end">4.8%</text></g>
+  <text x="374" y="166.66666666666666" class="muted" text-anchor="end">4.7%</text></g>
   <g class="fade" style="--i:6"><rect x="20" y="179.5" width="10" height="10" rx="2.5" fill="#86868b"/>
   <text x="38" y="189" class="text">Other</text>
-  <text x="189" y="189" class="muted" text-anchor="end">12.8%</text></g>
+  <text x="189" y="189" class="muted" text-anchor="end">12.7%</text></g>
 </svg>
